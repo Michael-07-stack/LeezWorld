@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LeezWorld - Quality Household Furniture</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="main.css"/>
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- <div class="top-bar">
+    Quality Furniture • Free Delivery in Lagos on orders above ₦150,000 • Shop Now!
+  </div> -->
+
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">LeezWorld<span>.</span></a>
+
+      <div class="search-bar">
+        <input type="text" placeholder="Search sofas, beds, dining sets, wardrobes..."/>
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+
+      <div class="header-actions">
+        <a href="sign-up.html"><i class="fa-regular fa-user"></i><span>Account</span></a>
+        <a href="#"><i class="fa-regular fa-heart"></i><span>Wishlist</span></a>
+        <a href="#"><i class="fa-solid fa-cart-shopping cart"></i><span>Cart</span></a>
+      </div>
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <div class="nav-container">
+      <ul>
+        <li><a href="">Flash Deals</a></li>
+        <li><a href="sofas.html">Sofas & Living Room</a></li>
+        <li><a href="dining.html">Dining Sets</a></li>
+        <li><a href="beds.html">Beds & Bedroom</a></li>
+        <li><a href="wardrobe.html">Wardrobes</a></li>
+        <li><a href="decor.html">Interior Decor</a></li>
+        <li><a href="entertainment.html">Home Entertainment</a></li>
+        <li><a href="#">Office Furniture</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Upgrade Your Home – Up to 60% OFF Furniture!</h1>
+      <p>Premium sofas, beds, dining sets, wardrobes & more. Quality pieces delivered to your door in Lagos & beyond.</p>
+      <button class="hero-btn"  onclick="redirect()"">Shop Furniture Now <span>→</span></button>
+    </div>
+  </section>
+
+  <section class="categories">
+    <div class="category-card">
+      <img src="https://www.coasterfurniture.com/wp-content/uploads/apperson-cushioned-back-arm-chair.png" alt="Sofas">
+      <p>Sofas</p>
+    </div>
+    <div class="category-card">
+      <img src="https://cdn11.bigcommerce.com/s-3uyyclsi/images/stencil/original/products/1746/2583/HE2615dc_96__78105.1569432597.jpg?c=2" alt="Dining">
+      <p>Dining Sets</p>
+    </div>
+    <div class="category-card">
+      <img src="https://m.media-amazon.com/images/I/81imf690CRL._AC_UF894,1000_QL80_.jpg" alt="Beds">
+      <p>Beds</p>
+    </div>
+    <div class="category-card">
+      <img src="https://www.palaceimportsinc.com/cdn/shop/files/27a309_a9c5b11741c54b59805fa1e94cf46e5f_mv2_f1f49d49-0121-4af4-967c-60325c211472.jpg?v=1735319137&width=900" alt="Wardrobes">
+      <p>Wardrobes</p>
+    </div>
+    <div class="category-card">
+      <img src="https://images.prismic.io/luxdeco-dev/MGQ1NGZiNzgtMjBiYS00MzEwLWJkZTQtZmY3Y2QyZTUzOWQ3_how_to_style_a_coffee_table_coffee_table_styling_ideas_shop_in_luxdeco_ba4250f0-d4b7-4885-ac86-55abd1f6d578.jpg?auto=compress,format&w=1200&q=100" alt="Interior Decor">
+      <p>Interior Decor</p>
+    </div>
+    <div class="category-card">
+      <img src="https://www.woodwaves.com/cdn/shop/files/Curved-Floating-TV-Stand-Modern-Gray-Wall-Mount-Entertainment-Center-Arc-Greystone-Woodwaves_2000x1310.jpg?v=1769815914" alt="Home Entertainment">
+      <p>Home Entertainment</p>
+    </div>
+  </section>
+
+<section class="products-section">
+  <h2 class="section-title">Flash Sales – Limited Stock!</h2>
+
+  <div class="product-grid">
+    
+    <div class="product-card">
+    <a href="product.html?id=1" class="product-link">
+      <div class="product-img-container">
+        <img src="https://m.media-amazon.com/images/I/8108kcQAkaL._AC_UF894,1000_QL80_.jpg" alt="Chesterfield Sofa">
+      </div>
+      <div class="product-info">
+        <div class="product-name">Modern Chesterfield 3-Seater Sofa – Faux Leather</div>
+        <div>
+          <span class="price">₦285,000</span> 
+          <span class="old-price">₦420,000</span>
+        </div>
+      </div> 
+    </a>
+    <button><i class="fa-solid fa-cart-shopping cart"></i></button>
+    </div>
+    
+    <div class="product-card">
+    <a href="product.html?id=2" class="product-link">
+      <div class="product-img-container">
+        <img src="https://www.coasterfurniture.com/wp-content/uploads/gano-living-room-set.png" alt="Living Room Set">
+      </div>
+      <div class="product-info">
+        <div class="product-name">Contemporary Living Room Sofa Set (3+2)</div>
+        <div><span class="price">₦395,000</span></div>
+      </div>
+      
+    </a>
+    <button><i class="fa-solid fa-cart-shopping cart"></i></button>
+    </div>
+    
+    <div class="product-card">
+    <a href="product.html?id=3" class="product-link">
+      <div class="product-img-container">
+        <img src="https://m.media-amazon.com/images/I/818vNipOGKL.jpg" alt="Dining Set">
+      </div>
+      <div class="product-info">
+        <div class="product-name">9-Piece Extendable Dining Table Set – Solid Wood</div>
+        <div>
+          <span class="price">₦480,000</span>
+          <span class="old-price">₦650,000</span>
+        </div>
+      </div>
+      
+    </a>
+    <button><i class="fa-solid fa-cart-shopping cart"></i></button>
+    </div>
+    
+    <div class="product-card">
+    <a href="product.html?id=4" class="product-link">
+      <div class="product-img-container">
+        <img src="https://m.media-amazon.com/images/I/81imf690CRL._AC_UF894,1000_QL80_.jpg" alt="Queen Bed">
+      </div>
+      <div class="product-info">
+        <div class="product-name">Queen Size Upholstered Platform Bed – Beige</div>
+        <div><span class="price">₦195,000</span></div>
+      </div>
+      
+    </a>
+    <button><i class="fa-solid fa-cart-shopping cart"></i></button>
+    </div>
+    
+    <div class="product-card">
+    <a href="product.html?id=5" class="product-link">
+      <div class="product-img-container">
+        <img src="https://futonland.com/common/images/products2/large/PI-8206M-WRD-MC.jpg" alt="Wardrobe">
+      </div>
+      <div class="product-info">
+        <div class="product-name">4-Door Sliding Wardrobe with Mirror – Walnut</div>
+        <div>
+          <span class="price">₦320,000</span>
+          <span class="old-price">₦450,000</span>
+        </div>
+      </div>
+      
+    </a>
+    <button><i class="fa-solid fa-cart-shopping cart"></i></button>
+    </div>
+    
+    <div class="product-card">
+    <a href="product.html?id=6" class="product-link">
+      <div class="product-img-container">
+        <img src="https://www.expressfurniture.net/wp-content/uploads/2021/06/426449_791x633_01.jpg" alt="Coffee Table">
+      </div>
+      <div class="product-info">
+        <div class="product-name">Modern Glass Top Coffee Table with Storage</div>
+        <div><span class="price">₦85,000</span></div>
+      </div>
+      
+    </a>
+    <button><i class="fa-solid fa-cart-shopping cart"></i></button>
+    </div>
+    
+    <div class="product-card">
+    <a href="product.html?id=7" class="product-link">
+      <div class="product-img-container">
+        <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/805c58fd-4f3f-40be-9979-e7be40caf4cd.__CR0,188,1500,1125_PT0_SX800_V1___.jpg" alt="TV Stand">
+      </div>
+      <div class="product-info">
+        <div class="product-name">Floating TV Stand – 55-65 inch – Oak Finish</div>
+        <div>
+          <span class="price">₦145,000</span>
+          <span class="old-price">₦210,000</span>
+        </div>
+      </div>
+      
+    </a>
+    <button><i class="fa-solid fa-cart-shopping cart"></i></button>
+    </div>
+    
+    <div class="product-card">
+    <a href="product.html?id=8" class="product-link">
+      <div class="product-img-container">
+        <img src="https://www.content.upliftdesk.com/content/img/product/RAY344/blk.jpg?compression=lossy" alt="Office Chair">
+      </div>
+      <div class="product-info">
+        <div class="product-name">Ergonomic Home Office Chair – Mesh Back</div>
+        <div><span class="price">₦68,900</span></div>
+      </div>
+      
+    </a>
+    <button><i class="fa-solid fa-cart-shopping cart"></i></button>
+    </div>
+    
+    <div class="product-card">
+    <a href="product.html?id=9" class="product-link">
+      <div class="product-img-container">
+        <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/969f5713-23c1-4057-81fc-033a8cd71c68.__CR0,0,2910,1800_PT0_SX970_V1___.jpg" alt="5-Tier Modern Bookshelf">
+      </div>
+      <div class="product-info">
+        <div class="product-name">5-Tier Modern Bookshelf – Oak</div>
+        <div>
+          <span class="price">₦112,000</span>
+          <span class="old-price">₦158,000</span>
+        </div>
+      </div>
+      
+    </a>
+    <button><i class="fa-solid fa-cart-shopping cart"></i></button>
+    </div>
+    
+    <div class="product-card">
+    <a href="product.html?id=10" class="product-link">
+      <div class="product-img-container">
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80" alt="Single Recliner Armchair">
+      </div>
+      <div class="product-info">
+        <div class="product-name">Single Recliner Armchair – Leather Finish</div>
+        <div><span class="price">₦165,000</span></div>
+      </div>
+      
+    </a>
+    <button><i class="fa-solid fa-cart-shopping cart"></i></button>
+    </div>
+
+  </div>
+</section>
+
+<section class="newsletter">
+  <div class="newstext">
+    <h4>Stay Updated</h4>
+    <p>Subscribe to receive exclusive discounts, new arrivals, and members-only deals.</p>
+  </div>
+
+  <div class="form">
+    <input type="email" placeholder="Your email address" required>
+    <button class="normal">Sign Up</button>
+  </div>
+</section>
+
+<!-- Footer -->
+    <!-- Footer -->
+<footer class="site-footer">
+  
+  <!-- Main Footer Content -->
+  <div class="footer-main">
+    <div class="footer-container">
+      
+      <!-- Column 1: About & Logo -->
+      <div class="footer-column footer-about">
+        <a href="home.html" class="footer-logo">LeezWorld<span>.</span></a>
+        <p>Your trusted destination for premium household furniture in Nigeria. Quality pieces, affordable prices, delivered to your doorstep.</p>
+        
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 2: My Account -->
+      <div class="footer-column">
+        <h4>My Account</h4>
+        <ul>
+          <li><a href="sign-in.html">Sign In</a></li>
+          <li><a href="sign-up.html">Create Account</a></li>
+          <li><a href="orders.html">Order History</a></li>
+          <li><a href="wishlist.html">My Wishlist</a></li>
+          <li><a href="track-order.html">Track Your Order</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Contact Info -->
+      <div class="footer-column footer-contact">
+        <h4>Contact Us</h4>
+        <ul class="contact-list">
+          <li>
+            <i class="fa-solid fa-location-dot"></i>
+            <span>15 Admiralty Way, Lekki Phase 1, Lagos, Nigeria</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone"></i>
+            <span>+234 812 345 6789</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-envelope"></i>
+            <span>support@leezworld.com</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-clock"></i>
+            <span>Mon - Sat: 9AM - 7PM</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer Features Bar -->
+  <div class="footer-features">
+    <div class="footer-container">
+      <div class="feature-item">
+        <i class="fa-solid fa-truck-fast"></i>
+        <div>
+          <h5>Free Delivery</h5>
+          <p>On orders above ₦150,000</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <i class="fa-solid fa-shield-halved"></i>
+        <div>
+          <h5>Secure Payment</h5>
+          <p>100% secure transactions</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <i class="fa-solid fa-rotate-left"></i>
+        <div>
+          <h5>Easy Returns</h5>
+          <p>14-day return policy</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <i class="fa-solid fa-headset"></i>
+        <div>
+          <h5>24/7 Support</h5>
+          <p>Dedicated customer care</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Footer -->
+  <div class="footer-bottom">
+    <div class="footer-container">
+      <p>&copy; 2026 LeezWorld. All Rights Reserved.</p>
+      <ul class="footer-legal">
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms & Conditions</a></li>
+      </ul>
+    </div>
+  </div>
+
+</footer>
+
+</body>
+</html>

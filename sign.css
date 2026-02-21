@@ -1,0 +1,135 @@
+   .signup-container {
+      max-width: 480px;
+      margin: 60px auto;
+      padding: 40px 30px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .signup-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .signup-header h1 {
+      font-size: 32px;
+      color: #222;
+      margin-bottom: 8px;
+    }
+
+    .signup-header p {
+      color: #555;
+      font-size: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #222;
+      font-size: 15px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .form-group input:focus {
+      border-color: #ff6600;
+      box-shadow: 0 0 0 3px rgba(255,102,0,0.1);
+    }
+
+    .signup-btn {
+      width: 100%;
+      background: #ff6600;
+      color: white;
+      border: none;
+      padding: 16px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 12px;
+    }
+
+    .signup-btn:hover {
+      background: #e65c00;
+    }
+
+    .social-login {
+      margin: 32px 0;
+      text-align: center;
+    }
+
+    .social-login p {
+      color: #555;
+      margin-bottom: 16px;
+    }
+
+    .social-btn {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 12px;
+      border: 1px solid #4285f4;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: white;
+      color: #4285f4;
+    }
+
+    .social-btn:hover{
+        background: #4285f4;
+        color: white;
+    }
+    .terms {
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      margin-top: 24px;
+    }
+
+    .terms a {
+      color: #ff6600;
+      text-decoration: none;
+    }
+    .terms a:hover {
+      text-decoration: underline;
+    }
+
+    .login-link {
+      text-align: center;
+      margin-top: 32px;
+      font-size: 15px;
+    }
+
+    .login-link a {
+      color: #ff6600;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .login-link a:hover {
+      text-decoration: underline;
+
+    }
+
+    @media (max-width: 480px) {
+      .signup-container {
+        margin: 40px 16px;
+        padding: 32px 20px;
+      }
+    }
