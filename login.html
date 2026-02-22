@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - LeezWorld</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="main.css"/>
+  <style>
+    /* Quick inline styles for login page – move to main.css later if you want */
+    .auth-container {
+      max-width: 420px;
+      margin: 60px auto;
+      padding: 40px 30px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .auth-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .auth-header h1 {
+      font-size: 28px;
+      margin: 0 0 8px;
+      color: #333;
+    }
+    .auth-header p {
+      color: #666;
+      margin: 0;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #444;
+    }
+    .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: border-color 0.2s;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: #ff6b00;
+      box-shadow: 0 0 0 3px rgba(255,107,0,0.1);
+    }
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      margin: 20px 0;
+      font-size: 14px;
+    }
+    .checkbox-group input {
+      margin-right: 10px;
+    }
+    .forgot-link {
+      color: #ff6b00;
+      text-decoration: none;
+      font-size: 14px;
+      float: right;
+      margin-top: 4px;
+    }
+    .forgot-link:hover {
+      text-decoration: underline;
+    }
+    .btn-login {
+      width: 100%;
+      padding: 14px;
+      background: #ff6b00;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-login:hover {
+      background: #e55f00;
+    }
+    .divider {
+      text-align: center;
+      margin: 25px 0;
+      color: #888;
+      position: relative;
+    }
+    .divider::before,
+    .divider::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 45%;
+      height: 1px;
+      background: #ddd;
+    }
+    .divider::before { left: 0; }
+    .divider::after { right: 0; }
+    .social-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .btn-social {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: white;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-social:hover {
+      background: #f8f8f8;
+    }
+    .signup-link {
+      text-align: center;
+      margin-top: 25px;
+      color: #666;
+    }
+    .signup-link a {
+      color: #ff6b00;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .signup-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+
+  <!-- Login Form -->
+  <main>
+    <div class="auth-container">
+      <div class="auth-header">
+        <h1>Welcome Back</h1>
+        <p>Sign in to continue shopping</p>
+      </div>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" class="form-control" placeholder="you@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+          <a href="#" class="forgot-link">Forgot password?</a>
+        </div>
+
+        <div class="checkbox-group">
+          <input type="checkbox" id="remember">
+          <label for="remember">Remember me</label>
+        </div>
+
+        <button type="submit" class="btn-login">Sign In</button>
+      </form>
+
+      <div class="divider">or continue with</div>
+
+      <div class="social-buttons">
+        <button class="btn-social">
+          <i class="fa-brands fa-google"></i> Continue with Google
+        </button>
+        <button class="btn-social">
+          <i class="fa-brands fa-facebook-f"></i> Continue with Facebook
+        </button>
+      </div>
+
+      <div class="signup-link">
+        Don't have an account? <a href="sign-up.html">Sign Up</a>
+      </div>
+    </div>
+  </main>
+
+
+
+
+
+  <!-- Optional: Basic form validation JS -->
+  <script>
+    document.getElementById('loginForm')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+
+      if (!email || !password) {
+        alert('Please fill in both email and password');
+        return;
+      }
+
+      if (!email.includes('@')) {
+        alert('Please enter a valid email address');
+        return;
+      }
+
+      // Simulate successful login (replace with real auth later)
+      alert('Login successful! Redirecting...');
+      window.location.href = 'index.html'; // or dashboard
+    });
+  </script>
+
+</body>
+</html>
