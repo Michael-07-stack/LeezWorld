@@ -3,13 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shop All Furniture - LeezWorld</title>
+  <title>Shopping Cart - LeezWorld</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link rel="stylesheet" href="main.css"/>
-  <link rel="stylesheet" href="category.css"/>
-  <link rel="stylesheet" href="shop.css"/>
-  <script src="script.js" defer></script>
-  <script src="cart.js" defer></script>
+  <link rel="stylesheet" href="cart.css"/>
+  <link rel="stylesheet" href="category.css">
 </head>
 <body>
 
@@ -22,9 +20,9 @@
         <button><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
 
-     <div class="header-actions">
+      <div class="header-actions">
         <a href="sign-up.html"><i class="fa-regular fa-user"></i><span>Account</span></a>
-        <a href="#"><i class="fa-regular fa-heart"></i><span>Wishlist</span></a>
+        <a href="wishlist.html"><i class="fa-regular fa-heart"></i><span>Wishlist</span></a>
         <a href="cart.html" class="cart-link">
           <i class="fa-solid fa-cart-shopping"></i>
           <span class="cart-count" id="cartCount">0</span>
@@ -42,8 +40,8 @@
         <li><a href="dining.html">Dining Sets</a></li>
         <li><a href="beds.html">Beds & Bedroom</a></li>
         <li><a href="wardrobe.html">Wardrobes</a></li>
-        <li><a href="coffee-tables.html">Interior Decor</a></li>
-        <li><a href="tv-stands.html">Home Entertainment</a></li>
+        <li><a href="decor.html">Interior Decor</a></li>
+        <li><a href="entertainment.html">Home Entertainment</a></li>
         <li><a href="office-furniture.html">Office Furniture</a></li>
       </ul>
     </div>
@@ -54,40 +52,102 @@
     <div class="breadcrumb-container">
       <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
       <span><i class="fa-solid fa-chevron-right"></i></span>
-      <span class="current">Shop All Furniture</span>
+      <span class="current">Shopping Cart</span>
     </div>
   </div>
 
-  <!-- Shop Banner -->
-  <section class="shop-banner">
-    <div class="shop-banner-content">
-      <h1>Shop All Furniture</h1>
-      <p>Browse our complete collection of premium furniture for every room in your home</p>
+  <!-- Cart Section -->
+  <section class="cart-section">
+    <div class="cart-container">
+
+      <h1 class="cart-title">Shopping Cart</h1>
+
+      <!-- Empty Cart Message -->
+      <div class="empty-cart" id="emptyCart">
+        <div class="empty-cart-icon">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+        <h2>Your cart is empty</h2>
+        <p>Looks like you haven't added anything to your cart yet.</p>
+        <a href="shop.html" class="continue-shopping-btn">
+          <i class="fa-solid fa-arrow-left"></i> Continue Shopping
+        </a>
+      </div>
+
+      <!-- Cart Content -->
+      <div class="cart-content">
+
+        <!-- Cart Items -->
+        <div class="cart-items-section">
+          <div class="cart-header">
+            <div class="cart-header-product">Product</div>
+            <div class="cart-header-price">Price</div>
+            <div class="cart-header-quantity">Quantity</div>
+            <div class="cart-header-total">Total</div>
+            <div class="cart-header-remove"></div>
+          </div>
+
+          <div class="cart-items" id="cartItems">
+            <!-- Cart items will be rendered here by JavaScript -->
+          </div>
+
+          <div class="cart-actions">
+            <a href="shop.html" class="continue-shopping">
+              <i class="fa-solid fa-arrow-left"></i> Continue Shopping
+            </a>
+            <button class="clear-cart-btn" onclick="clearCart()">
+              <i class="fa-solid fa-trash"></i> Clear Cart
+            </button>
+          </div>
+        </div>
+
+        <!-- Cart Summary -->
+        <div class="cart-summary" id="cartSummary">
+          <h2>Order Summary</h2>
+          
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="cartSubtotal">₦0</span>
+          </div>
+          
+          <div class="summary-row">
+            <span>Delivery</span>
+            <span id="cartDelivery">₦0</span>
+          </div>
+
+          <div class="summary-note">
+            <i class="fa-solid fa-truck"></i>
+            Free delivery on orders above ₦150,000
+          </div>
+          
+          <div class="summary-row total">
+            <span>Total</span>
+            <span id="cartTotal">₦0</span>
+          </div>
+
+          <button class="checkout-btn">
+            Proceed to Checkout <i class="fa-solid fa-arrow-right"></i>
+          </button>
+
+          <div class="payment-methods">
+            <p>We Accept:</p>
+            <div class="payment-icons">
+              <i class="fa-brands fa-cc-visa"></i>
+              <i class="fa-brands fa-cc-mastercard"></i>
+              <i class="fa-brands fa-paypal"></i>
+            </div>
+          </div>
+
+          <div class="secure-checkout">
+            <i class="fa-solid fa-lock"></i>
+            <span>Secure Checkout</span>
+          </div>
+        </div>
+
+      </div>
+
     </div>
   </section>
-
-  <!-- Main Shop Content -->
-  <div class="shop-layout">
-
-    <div class="shop-main">
-
-      <!-- Results Count -->
-      <div class="shop-toolbar">
-        <span class="results-count" id="resultsCount">Showing <strong>1-12</strong> of <strong>36</strong> products</span>
-      </div>
-
-      <!-- Product Grid -->
-      <div class="product-grid" id="productGrid">
-        <!-- Products loaded by JavaScript -->
-      </div>
-
-      <!-- Pagination -->
-      <div class="pagination" id="pagination">
-        <!-- Pagination loaded by JavaScript -->
-      </div>
-
-    </div>
-  </div>
 
   <!-- Newsletter -->
   <section class="newsletter">
@@ -106,7 +166,7 @@
     <div class="footer-main">
       <div class="footer-container">
         <div class="footer-column footer-about">
-          <a href="home.html" class="footer-logo">LeezWorld<span>.</span></a>
+          <a href="index.html" class="footer-logo">LeezWorld<span>.</span></a>
           <p>Your trusted destination for premium household furniture in Nigeria.</p>
           <div class="footer-social">
             <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
@@ -118,10 +178,11 @@
         <div class="footer-column">
           <h4>My Account</h4>
           <ul>
-            <li><a href="login.html">Sign In</a></li>
+            <li><a href="sign-in.html">Sign In</a></li>
             <li><a href="sign-up.html">Create Account</a></li>
             <li><a href="orders.html">Order History</a></li>
             <li><a href="wishlist.html">My Wishlist</a></li>
+            <li><a href="track-order.html">Track Your Order</a></li>
           </ul>
         </div>
         <div class="footer-column footer-contact">
@@ -130,6 +191,7 @@
             <li><i class="fa-solid fa-location-dot"></i><span>15 Admiralty Way, Lekki, Lagos</span></li>
             <li><i class="fa-solid fa-phone"></i><span>+234 812 345 6789</span></li>
             <li><i class="fa-solid fa-envelope"></i><span>support@leezworld.com</span></li>
+            <li><i class="fa-solid fa-clock"></i><span>Mon - Sat: 9AM - 7PM</span></li>
           </ul>
         </div>
       </div>
@@ -153,7 +215,7 @@
     </div>
   </footer>
 
-  <script src="shop.js"></script>
+  <script src="cart.js"></script>
 
 </body>
 </html>

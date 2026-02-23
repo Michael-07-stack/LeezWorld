@@ -8,12 +8,10 @@
   <link rel="stylesheet" href="main.css"/>
   <link rel="stylesheet" href="category.css"/>
   <script src="script.js" defer></script>
+  <script src="cart.js" defer></script>
+  <script src="product.js" defer></script>
 </head>
 <body>
-
-  <!-- <div class="top-bar">
-    Quality Furniture • Free Delivery in Lagos on orders above ₦150,000 • Shop Now!
-  </div> -->
 
   <header>
     <div class="header-container">
@@ -29,7 +27,11 @@
       <div class="header-actions">
         <a href="sign-up.html"><i class="fa-regular fa-user"></i><span>Account</span></a>
         <a href="#"><i class="fa-regular fa-heart"></i><span>Wishlist</span></a>
-        <a href="#"><i class="fa-solid fa-cart-shopping cart"></i><span>Cart</span></a>
+        <a href="cart.html" class="cart-link">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+          <span>Cart</span>
+        </a>
       </div>
     </div>
   </header>
@@ -37,7 +39,7 @@
   <nav class="main-nav">
     <div class="nav-container">
       <ul>
-        <li><a href="">Flash Deals</a></li>
+        <li><a href="#">Flash Deals</a></li>
         <li><a href="sofas.html">Sofas & Living Room</a></li>
         <li><a href="dining.html">Dining Sets</a></li>
         <li><a href="beds.html">Beds & Bedroom</a></li>
@@ -53,7 +55,7 @@
     <div class="hero-content">
       <h1>Upgrade Your Home – Up to 60% OFF Furniture!</h1>
       <p>Premium sofas, beds, dining sets, wardrobes & more. Quality pieces delivered to your door in Lagos & beyond.</p>
-      <button class="hero-btn"  onclick="redirect()"">Shop Furniture Now <span>→</span></button>
+      <button class="hero-btn"  onclick="redirect()">Shop Furniture Now <span>→</span></button>
     </div>
   </section>
 
@@ -87,7 +89,7 @@
   <section class="products-section">
     <h2 class="section-title">Flash Sales – Limited Stock!</h2>
 
-    <div class="product-grid" id="flashSalesGrid"">
+    <div class="product-grid" id="flashSalesGrid">
       
       <!-- Product 1 -->
       <div class="product-card">

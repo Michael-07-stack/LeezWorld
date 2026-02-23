@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="main.css"/>
   <link rel="stylesheet" href="category.css"/>
   <script src="script.js" defer></script>
+  <script src="cart.js" defer></script>
 </head>
 <body>
 
@@ -23,7 +24,11 @@
       <div class="header-actions">
         <a href="sign-up.html"><i class="fa-regular fa-user"></i><span>Account</span></a>
         <a href="#"><i class="fa-regular fa-heart"></i><span>Wishlist</span></a>
-        <a href="#"><i class="fa-solid fa-cart-shopping cart"></i><span>Cart</span></a>
+        <a href="cart.html" class="cart-link">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+          <span>Cart</span>
+        </a>
       </div>
     </div>
   </header>

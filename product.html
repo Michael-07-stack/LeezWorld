@@ -6,6 +6,9 @@
   <title>Product Details - Nexlify</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link rel="stylesheet" href="main.css"/> <!-- your existing styles -->
+ 
+  <script src="cart.js" defer></script>
+  <script src="script.js" defer></script>
   <style>
     .product-detail-container {
       max-width: 1200px;
@@ -108,24 +111,28 @@
 </head>
 <body>
 
-  <!-- Your header, nav, etc. here (copy from index.html) -->
-     <header>
+ <!-- Header (same as index) -->
+  <header>
     <div class="header-container">
       <a href="index.html" class="logo">LeezWorld<span>.</span></a>
-
       <div class="search-bar">
         <input type="text" placeholder="Search sofas, beds, dining sets, wardrobes..."/>
+        <button type="button" class="clear-search" style="display:none;">×</button>
         <button><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
-
       <div class="header-actions">
         <a href="sign-up.html"><i class="fa-regular fa-user"></i><span>Account</span></a>
         <a href="#"><i class="fa-regular fa-heart"></i><span>Wishlist</span></a>
-        <a href="#"><i class="fa-solid fa-cart-shopping"></i><span>Cart</span></a>
+        <a href="cart.html" class="cart-link">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+          <span>Cart</span>
+        </a>
       </div>
     </div>
   </header>
 
+  <!-- Nav (same as index) -->
   <nav class="main-nav">
     <div class="nav-container">
       <ul>
@@ -141,7 +148,6 @@
     </div>
   </nav>
 
-
   <div class="product-detail-container">
     <div class="product-images">
       <img id="productImage" src="" alt="Product">
@@ -149,29 +155,24 @@
 
     <div class="product-info">
       <h1 id="productName"></h1>
-
       <div>
         <span class="price-current" id="productPrice"></span>
         <span class="price-old" id="productOldPrice"></span>
       </div>
-
       <div class="stock" id="productStock"></div>
-
       <div class="quantity">
         <label>Quantity:</label>
         <button onclick="changeQty(-1)">-</button>
         <input type="number" id="qty" value="1" min="1">
         <button onclick="changeQty(1)">+</button>
       </div>
-
       <button class="add-to-cart">Add to Cart</button>
       <button class="add-to-wishlist">Add to Wishlist</button>
-
       <div class="description" id="productDescription"></div>
     </div>
   </div>
 
-  <!-- Your footer here -->
+  <!-- Footer (same as index) -->
 <footer class="site-footer">
   
   <!-- Main Footer Content -->
@@ -180,7 +181,7 @@
       
       <!-- Column 1: About & Logo -->
       <div class="footer-column footer-about">
-        <a href="home.html" class="footer-logo">LeezWorld<span>.</span></a>
+        <a href="index.html" class="footer-logo">LeezWorld<span>.</span></a>
         <p>Your trusted destination for premium household furniture in Nigeria. Quality pieces, affordable prices, delivered to your doorstep.</p>
         
         <div class="footer-social">
@@ -275,15 +276,17 @@
   </div>
 
 </footer>
+<script src="product.js" ></script>
 
-
-  <script src="script.js"></script>
   <script>
+    
+     
+
     // Get product ID from URL
     const urlParams = new URLSearchParams(window.location.search);
     const productId = parseInt(urlParams.get('id'));
 
-    // Find the product
+    // Find the product (now coming from products.js)
     const product = products.find(p => p.id === productId);
 
     if (product) {
@@ -294,18 +297,17 @@
 
       if (product.oldPrice) {
         document.getElementById('productOldPrice').textContent = '₦' + product.oldPrice.toLocaleString();
+        document.getElementById('productOldPrice').style.display = 'inline';
+      } else {
+        document.getElementById('productOldPrice').style.display = 'none';
       }
 
       document.getElementById('productStock').textContent = `In Stock (${product.stock} units)`;
       document.getElementById('productDescription').innerHTML = `<p>${product.description}</p>`;
-
-      // Optional: rating display
-      // document.getElementById('productDescription').innerHTML += `<p>Rating: ${product.rating} ★ (${product.reviews} reviews)</p>`;
     } else {
-      document.querySelector('.product-info').innerHTML = '<h1>Product Not Found</h1><p>Sorry, this product does not exist.</p>';
+      document.querySelector('.product-info').innerHTML = '<h1>Product Not Found</h1><p>Sorry, this product does not exist or has been removed.</p>';
     }
 
-    // Simple quantity changer
     function changeQty(delta) {
       const input = document.getElementById('qty');
       let val = parseInt(input.value) + delta;
