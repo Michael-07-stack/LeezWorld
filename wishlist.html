@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Wishlist - LeezWorld</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="main.css"/>
+  <link rel="stylesheet" href="wishlist.css"/>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">LeezWorld<span>.</span></a>
+
+      <div class="search-bar">
+        <input type="text" placeholder="Search sofas, beds, dining sets, wardrobes..."/>
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+
+      <div class="header-actions">
+        <a href="sign-up.html"><i class="fa-regular fa-user"></i><span>Account</span></a>
+        <a href="wishlist.html" class="active-link">
+          <i class="fa-solid fa-heart"></i>
+          <span class="wishlist-count">0</span>
+          <span>Wishlist</span>
+        </a>
+        <a href="cart.html" class="cart-link">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+          <span>Cart</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <ul>
+        <li><a href="index.html">Flash Deals</a></li>
+        <li><a href="sofas.html">Sofas & Living Room</a></li>
+        <li><a href="dining.html">Dining Sets</a></li>
+        <li><a href="beds.html">Beds & Bedroom</a></li>
+        <li><a href="wardrobe.html">Wardrobes</a></li>
+        <li><a href="decor.html">Interior Decor</a></li>
+        <li><a href="entertainment.html">Home Entertainment</a></li>
+        <li><a href="office-furniture.html">Office Furniture</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <div class="breadcrumb-container">
+      <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+      <span><i class="fa-solid fa-chevron-right"></i></span>
+      <span class="current">My Wishlist</span>
+    </div>
+  </div>
+
+  <!-- Wishlist Section -->
+  <section class="wishlist-section">
+    <div class="wishlist-container">
+      
+      <!-- Wishlist Header -->
+      <div class="wishlist-header">
+        <div class="wishlist-title">
+          <i class="fa-solid fa-heart"></i>
+          <h1>My Wishlist</h1>
+          <span class="item-count" id="wishlistItemCount">(0 items)</span>
+        </div>
+        <button class="clear-all-btn" id="clearAllBtn">
+          <i class="fa-solid fa-trash"></i> Clear All
+        </button>
+      </div>
+
+      <!-- Wishlist Content -->
+      <div class="wishlist-content" id="wishlistContent">
+        <!-- Wishlist items will be loaded here by JavaScript -->
+      </div>
+
+      <!-- Empty Wishlist State -->
+      <div class="empty-wishlist" id="emptyWishlist" style="display: none;">
+        <div class="empty-icon">
+          <i class="fa-regular fa-heart"></i>
+        </div>
+        <h2>Your wishlist is empty</h2>
+        <p>Save items you love by clicking the heart icon on any product.</p>
+        <a href="index.html" class="continue-shopping-btn">
+          <i class="fa-solid fa-arrow-left"></i> Continue Shopping
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="newstext">
+      <h4>Stay Updated</h4>
+      <p>Subscribe to receive exclusive discounts, new arrivals, and members-only deals.</p>
+    </div>
+    <div class="form">
+      <input type="email" placeholder="Your email address" required>
+      <button class="normal">Sign Up</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    
+    <div class="footer-main">
+      <div class="footer-container">
+        
+        <div class="footer-column footer-about">
+          <a href="index.html" class="footer-logo">LeezWorld<span>.</span></a>
+          <p>Your trusted destination for premium household furniture in Nigeria. Quality pieces, affordable prices, delivered to your doorstep.</p>
+          
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>My Account</h4>
+          <ul>
+            <li><a href="login.html">Sign In</a></li>
+            <li><a href="sign-up.html">Create Account</a></li>
+            <li><a href="orders.html">Order History</a></li>
+            <li><a href="wishlist.html">My Wishlist</a></li>
+            <li><a href="track-order.html">Track Your Order</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column footer-contact">
+          <h4>Contact Us</h4>
+          <ul class="contact-list">
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <span>109 Funsho Williams Avenue, Iponri, Surulere, Lagos, Nigeria</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <span>+234 812 345 6789</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <span>support@leezworld.com</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-clock"></i>
+              <span>Mon - Sat: 9AM - 7PM</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-features">
+      <div class="footer-container">
+        <div class="feature-item">
+          <i class="fa-solid fa-truck-fast"></i>
+          <div>
+            <h5>Free Delivery</h5>
+            <p>On orders above ₦150,000</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <i class="fa-solid fa-shield-halved"></i>
+          <div>
+            <h5>Secure Payment</h5>
+            <p>100% secure transactions</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <i class="fa-solid fa-rotate-left"></i>
+          <div>
+            <h5>Easy Returns</h5>
+            <p>14-day return policy</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <i class="fa-solid fa-headset"></i>
+          <div>
+            <h5>24/7 Support</h5>
+            <p>Dedicated customer care</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-container">
+        <p>&copy; 2026 LeezWorld. All Rights Reserved.</p>
+        <ul class="footer-legal">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Confirmation Modal -->
+  <div class="modal-overlay" id="confirmModal">
+    <div class="modal-box">
+      <div class="modal-icon">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+      </div>
+      <h3>Clear Wishlist?</h3>
+      <p>Are you sure you want to remove all items from your wishlist? This action cannot be undone.</p>
+      <div class="modal-buttons">
+        <button class="modal-btn cancel" id="cancelClear">Cancel</button>
+        <button class="modal-btn confirm" id="confirmClear">Yes, Clear All</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="wishlist.js"></script>
+</body>
+</html>

@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="category.css"/>
   <script src="script.js" defer></script>
   <script src="cart.js" defer></script>
+  <script src="wishlist.js" defer></script>
 </head>
 <body>
 
@@ -21,22 +22,26 @@
         <button><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
 
-         <div class="header-actions">
-        <a href="sign-up.html"><i class="fa-regular fa-user"></i><span>Account</span></a>
-        <a href="#"><i class="fa-regular fa-heart"></i><span>Wishlist</span></a>
-        <a href="cart.html" class="cart-link">
-          <i class="fa-solid fa-cart-shopping"></i>
-          <span class="cart-count" id="cartCount">0</span>
-          <span>Cart</span>
-        </a>
-      </div>
+  <div class="header-actions">
+  <a href="sign-up.html"><i class="fa-regular fa-user"></i><span>Account</span></a>
+  <a href="wishlist.html">
+    <i class="fa-regular fa-heart"></i>
+    <span class="wishlist-count">0</span>
+    <span>Wishlist</span>
+  </a>
+  <a href="cart.html" class="cart-link">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span class="cart-count" id="cartCount">0</span>
+    <span>Cart</span>
+  </a>
+</div>
     </div>
   </header>
 
   <nav class="main-nav">
     <div class="nav-container">
       <ul>
-        <li><a href="flash-deals.html">Flash Deals</a></li>
+        <li><a href="index.html">Flash Deals</a></li>
         <li><a href="sofas.html">Sofas & Living Room</a></li>
         <li><a href="dining.html">Dining Sets</a></li>
         <li><a href="beds.html">Beds & Bedroom</a></li>
@@ -71,477 +76,475 @@
     <div class="products-main">
 
       <!-- Product Grid -->
-      <div class="product-grid" id="flashSalesGrid"">
+  <div class="product-grid" id="flashSalesGrid">
 
-        <!-- Product 1 (ID 53) -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge bestseller">Bestseller</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=53" class="product-link">
-            <div class="product-img-container">
-              <img src="https://s3.amazonaws.com/media.thestowcompany.com/managed_media/filer_public/57/53/575305ee-1f18-4730-836f-80bf14fa1836/ec_703.jpg" alt="Walk-in Closet System">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Signature Design</div>
-              <div class="product-name">Premium Walk-in Closet System – White Organization</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span class="rating-count">(245)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦850,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 2 (ID 54) -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge sale">-25%</span>
-            <span class="badge hot">Hot</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=54" class="product-link">
-            <div class="product-img-container">
-              <img src="https://roomanddecor.com/cdn/shop/files/20230703_1151a31407e74831cdd88a7e6ac111e7.jpg?v=1725018522&width=1946" alt="3-Door Wardrobe">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">LeezWorld Original</div>
-              <div class="product-name">3-Door Hinged Wardrobe with Drawers – Classic White</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half-stroke"></i>
-                </span>
-                <span class="rating-count">(156)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦320,000</span> 
-                <span class="old-price">₦450,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 3 (ID 55) -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge new">New</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=55" class="product-link">
-            <div class="product-img-container">
-              <img src="https://www.thespruce.com/thmb/rmbYdFsfabTrrcHpUUHfbTq6DQc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-14212728751-c8ab1106fd3c45ed92b042e39d38582e.jpg" alt="Open Closet Organizer">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Ashley Furniture</div>
-              <div class="product-name">Industrial Open Closet System with Shelves & Rails</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half-stroke"></i>
-                </span>
-                <span class="rating-count">(98)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦265,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 4 (ID 56) -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge sale">-30%</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=56" class="product-link">
-            <div class="product-img-container">
-              <img src="https://www.oppoliahome.com/wp-content/uploads/2022/12/white-wardrobe-with-mirror-obw23-l03.jpg" alt="Sliding Door Wardrobe">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">LeezWorld Original</div>
-              <div class="product-name">4-Door Sliding Wardrobe with Mirror – Modern White</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                </span>
-                <span class="rating-count">(67)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦385,000</span> 
-                <span class="old-price">₦550,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 5 (ID 57) -->
-        <div class="product-card">
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=57" class="product-link">
-            <div class="product-img-container">
-              <img src="https://www.strachan.co.uk/app/uploads/bedroom-verona-english-oak31.jpg" alt="Built-in Wardrobe">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Homelegance</div>
-              <div class="product-name">Fitted Built-in Wardrobe with Drawers – Oak Finish</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half-stroke"></i>
-                </span>
-                <span class="rating-count">(134)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦520,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 6 (ID 58) -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge sale">-20%</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=58" class="product-link">
-            <div class="product-img-container">
-              <img src="https://www.idfdesign.com/images/walk-in-closets/walk-in-closet-ak-14-walk-in-closet-3.jpg" alt="Walk-in Closet with Shoe Storage">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Coaster</div>
-              <div class="product-name">Walk-in Closet with Shoe Racks & Shelves – Gray</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                </span>
-                <span class="rating-count">(45)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦420,000</span> 
-                <span class="old-price">₦525,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 7 (ID 59) -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge new">New</span>
-            <span class="badge hot">Hot</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=59" class="product-link">
-            <div class="product-img-container">
-              <img src="https://img.interiorcompany.com/interior/webproduct/624638700372367318078.png?aio=w-1200;" alt="Minimalist Wardrobe">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Signature Design</div>
-              <div class="product-name">2-Door Minimalist Sliding Wardrobe – Scandinavian White</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span class="rating-count">(189)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦245,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 8 (ID 60) -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge bestseller">Bestseller</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=60" class="product-link">
-            <div class="product-img-container">
-              <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/3058f48c-15db-4881-bf79-dd11319831f4.__CR0,0,800,600_PT0_SX800_V1___.png" alt="Tall Chest of Drawers">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Ashley Furniture</div>
-              <div class="product-name">6-Drawer Tall Dresser Chest – Natural Wood</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span class="rating-count">(267)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦285,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 9 (ID 61) -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge sale">-35%</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=61" class="product-link">
-            <div class="product-img-container">
-              <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/bd7e7249-212c-4fd6-9c30-ba1af17df594.__CR0,0,970,600_PT0_SX970_V1___.jpg" alt="Compact Wardrobe">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">LeezWorld Original</div>
-              <div class="product-name">Compact 2-Door Wardrobe for Small Spaces – White</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half-stroke"></i>
-                  <i class="fa-regular fa-star"></i>
-                </span>
-                <span class="rating-count">(56)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦125,000</span> 
-                <span class="old-price">₦195,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 10 (ID 62) -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge new">New</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=62" class="product-link">
-            <div class="product-img-container">
-              <img src="https://d1b9sdpix36q7o.cloudfront.net/blog-content/blog/wp-content/uploads/2022/06/Sereno_Canyon_Callum_PCloset_3469.jpg" alt="Modular Closet System">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Signature Design</div>
-              <div class="product-name">Expandable Modular Closet System – Light Oak</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half-stroke"></i>
-                </span>
-                <span class="rating-count">(112)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦680,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 11 (ID 63) -->
-        <div class="product-card">
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=63" class="product-link">
-            <div class="product-img-container">
-              <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/fff71001-107e-49f9-b0eb-b44766ead29e.__CR0,0,970,600_PT0_SX970_V1___.jpg" alt="Tall Chest of Drawers">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Coaster</div>
-              <div class="product-name">5-Drawer Tall Chest of Drawers – Natural Wood</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                </span>
-                <span class="rating-count">(78)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦165,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 12 (ID 64) -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge sale">-15%</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=64" class="product-link">
-            <div class="product-img-container">
-              <img src="https://thumbs.dreamstime.com/b/colorful-children-s-clothing-arranged-wardrobe-shelves-vibrant-kids-outfits-neatly-hung-kids-fashion-concept-colorful-children-331503484.jpg" alt="Kids Wardrobe">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">LeezWorld Original</div>
-              <div class="product-name">Colorful 2-Door Kids Wardrobe with Shelves</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half-stroke"></i>
-                </span>
-                <span class="rating-count">(89)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦118,000</span> 
-                <span class="old-price">₦140,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 13 (ID 65) -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge bestseller">Bestseller</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=65" class="product-link">
-            <div class="product-img-container">
-              <img src="https://www.idfdesign.com/images/luxury-classic-wardrobe-closet/piranesi-ra-0830-worked-wardrobes-4.jpg" alt="Classic Armoire">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Homelegance</div>
-              <div class="product-name">Classic 2-Door Armoire Wardrobe – Cherry Wood</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span class="rating-count">(198)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦345,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 14 (ID 66) -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge sale">-22%</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=66" class="product-link">
-            <div class="product-img-container">
-              <img src="https://m.media-amazon.com/images/I/81Z3OBi8JBL.jpg_BO30,255,255,255_UF750,750_SR1910,1000,0,C_QL100_.jpg" alt="Wardrobe with Glass Doors">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Ashley Furniture</div>
-              <div class="product-name">4-Door Wardrobe with Frosted Glass Doors – Warm Grey</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half-stroke"></i>
-                </span>
-                <span class="rating-count">(145)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦465,000</span> 
-                <span class="old-price">₦595,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 15 (ID 67) -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge hot">Hot</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=67" class="product-link">
-            <div class="product-img-container">
-              <img src="https://d1b9sdpix36q7o.cloudfront.net/blog-content/blog/wp-content/uploads/2022/06/Sereno_Canyon_Callum_PCloset_3469.jpg" alt="Luxury Master Closet">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Signature Design</div>
-              <div class="product-name">Luxury Master Walk-in Closet System – Premium Gray</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span class="rating-count">(234)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦1,250,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
+    <!-- Product 1 (ID 56) - Premium Walk-in Closet System – White Organization -->
+    <div class="product-card">
+      <div class="product-badges">
+        <span class="badge bestseller">Bestseller</span>
       </div>
+      <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+      <a href="product.html?id=56" class="product-link">
+        <div class="product-img-container">
+          <img src="https://s3.amazonaws.com/media.thestowcompany.com/managed_media/filer_public/57/53/575305ee-1f18-4730-836f-80bf14fa1836/ec_703.jpg" alt="Walk-in Closet System">
+        </div>
+        <div class="product-info">
+          <div class="product-brand">Signature Design</div>
+          <div class="product-name">Premium Walk-in Closet System – White Organization</div>
+          <div class="product-rating">
+            <span class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </span>
+            <span class="rating-count">(245)</span>
+          </div>
+          <div class="product-prices">
+            <span class="price">₦850,000</span>
+          </div>
+        </div> 
+      </a>
+      <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+    </div>
 
+    <!-- Product 2 (ID 57) - 3-Door Hinged Wardrobe with Drawers – Classic White -->
+    <div class="product-card">
+      <div class="product-badges">
+        <span class="badge sale">-25%</span>
+        <span class="badge hot">Hot</span>
+      </div>
+      <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+      <a href="product.html?id=57" class="product-link">
+        <div class="product-img-container">
+          <img src="https://roomanddecor.com/cdn/shop/files/20230703_1151a31407e74831cdd88a7e6ac111e7.jpg?v=1725018522&width=1946" alt="3-Door Wardrobe">
+        </div>
+        <div class="product-info">
+          <div class="product-brand">LeezWorld Original</div>
+          <div class="product-name">3-Door Hinged Wardrobe with Drawers – Classic White</div>
+          <div class="product-rating">
+            <span class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </span>
+            <span class="rating-count">(156)</span>
+          </div>
+          <div class="product-prices">
+            <span class="price">₦320,000</span> 
+            <span class="old-price">₦450,000</span>
+          </div>
+        </div> 
+      </a>
+      <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+    </div>
+
+    <!-- Product 3 (ID 58) - Industrial Open Closet System with Shelves & Rails -->
+    <div class="product-card">
+      <div class="product-badges">
+        <span class="badge new">New</span>
+      </div>
+      <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+      <a href="product.html?id=58" class="product-link">
+        <div class="product-img-container">
+          <img src="https://www.thespruce.com/thmb/rmbYdFsfabTrrcHpUUHfbTq6DQc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-14212728751-c8ab1106fd3c45ed92b042e39d38582e.jpg" alt="Open Closet Organizer">
+        </div>
+        <div class="product-info">
+          <div class="product-brand">Ashley Furniture</div>
+          <div class="product-name">Industrial Open Closet System with Shelves & Rails</div>
+          <div class="product-rating">
+            <span class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </span>
+            <span class="rating-count">(98)</span>
+          </div>
+          <div class="product-prices">
+            <span class="price">₦265,000</span>
+          </div>
+        </div> 
+      </a>
+      <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+    </div>
+
+    <!-- Product 4 (ID 59) - 4-Door Sliding Wardrobe with Mirror – Modern White -->
+    <div class="product-card">
+      <div class="product-badges">
+        <span class="badge sale">-30%</span>
+      </div>
+      <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+      <a href="product.html?id=59" class="product-link">
+        <div class="product-img-container">
+          <img src="https://www.oppoliahome.com/wp-content/uploads/2022/12/white-wardrobe-with-mirror-obw23-l03.jpg" alt="Sliding Door Wardrobe">
+        </div>
+        <div class="product-info">
+          <div class="product-brand">LeezWorld Original</div>
+          <div class="product-name">4-Door Sliding Wardrobe with Mirror – Modern White</div>
+          <div class="product-rating">
+            <span class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </span>
+            <span class="rating-count">(67)</span>
+          </div>
+          <div class="product-prices">
+            <span class="price">₦385,000</span> 
+            <span class="old-price">₦550,000</span>
+          </div>
+        </div> 
+      </a>
+      <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+    </div>
+
+    <!-- Product 5 (ID 60) - Fitted Built-in Wardrobe with Drawers – Oak Finish -->
+    <div class="product-card">
+      <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+      <a href="product.html?id=60" class="product-link">
+        <div class="product-img-container">
+          <img src="https://www.strachan.co.uk/app/uploads/bedroom-verona-english-oak31.jpg" alt="Built-in Wardrobe">
+        </div>
+        <div class="product-info">
+          <div class="product-brand">Homelegance</div>
+          <div class="product-name">Fitted Built-in Wardrobe with Drawers – Oak Finish</div>
+          <div class="product-rating">
+            <span class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </span>
+            <span class="rating-count">(134)</span>
+          </div>
+          <div class="product-prices">
+            <span class="price">₦520,000</span>
+          </div>
+        </div> 
+      </a>
+      <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+    </div>
+
+    <!-- Product 6 (ID 61) - Walk-in Closet with Shoe Racks & Shelves – Gray -->
+    <div class="product-card">
+      <div class="product-badges">
+        <span class="badge sale">-20%</span>
+      </div>
+      <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+      <a href="product.html?id=61" class="product-link">
+        <div class="product-img-container">
+          <img src="https://www.idfdesign.com/images/walk-in-closets/walk-in-closet-ak-14-walk-in-closet-3.jpg" alt="Walk-in Closet with Shoe Storage">
+        </div>
+        <div class="product-info">
+          <div class="product-brand">Coaster</div>
+          <div class="product-name">Walk-in Closet with Shoe Racks & Shelves – Gray</div>
+          <div class="product-rating">
+            <span class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </span>
+            <span class="rating-count">(45)</span>
+          </div>
+          <div class="product-prices">
+            <span class="price">₦420,000</span> 
+            <span class="old-price">₦525,000</span>
+          </div>
+        </div> 
+      </a>
+      <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+    </div>
+
+    <!-- Product 7 (ID 62) - 2-Door Minimalist Sliding Wardrobe – Scandinavian White -->
+    <div class="product-card">
+      <div class="product-badges">
+        <span class="badge new">New</span>
+        <span class="badge hot">Hot</span>
+      </div>
+      <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+      <a href="product.html?id=62" class="product-link">
+        <div class="product-img-container">
+          <img src="https://img.interiorcompany.com/interior/webproduct/624638700372367318078.png?aio=w-1200;" alt="Minimalist Wardrobe">
+        </div>
+        <div class="product-info">
+          <div class="product-brand">Signature Design</div>
+          <div class="product-name">2-Door Minimalist Sliding Wardrobe – Scandinavian White</div>
+          <div class="product-rating">
+            <span class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </span>
+            <span class="rating-count">(189)</span>
+          </div>
+          <div class="product-prices">
+            <span class="price">₦245,000</span>
+          </div>
+        </div> 
+      </a>
+      <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+    </div>
+
+    <!-- Product 8 (ID 63) - 6-Drawer Tall Dresser Chest – Natural Wood -->
+    <div class="product-card">
+      <div class="product-badges">
+        <span class="badge bestseller">Bestseller</span>
+      </div>
+      <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+      <a href="product.html?id=63" class="product-link">
+        <div class="product-img-container">
+          <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/3058f48c-15db-4881-bf79-dd11319831f4.__CR0,0,800,600_PT0_SX800_V1___.png" alt="Tall Chest of Drawers">
+        </div>
+        <div class="product-info">
+          <div class="product-brand">Ashley Furniture</div>
+          <div class="product-name">6-Drawer Tall Dresser Chest – Natural Wood</div>
+          <div class="product-rating">
+            <span class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </span>
+            <span class="rating-count">(267)</span>
+          </div>
+          <div class="product-prices">
+            <span class="price">₦285,000</span>
+          </div>
+        </div> 
+      </a>
+      <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+    </div>
+
+    <!-- Product 9 (ID 64) - Compact 2-Door Wardrobe for Small Spaces – White -->
+    <div class="product-card">
+      <div class="product-badges">
+        <span class="badge sale">-35%</span>
+      </div>
+      <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+      <a href="product.html?id=64" class="product-link">
+        <div class="product-img-container">
+          <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/bd7e7249-212c-4fd6-9c30-ba1af17df594.__CR0,0,970,600_PT0_SX970_V1___.jpg" alt="Compact Wardrobe">
+        </div>
+        <div class="product-info">
+          <div class="product-brand">LeezWorld Original</div>
+          <div class="product-name">Compact 2-Door Wardrobe for Small Spaces – White</div>
+          <div class="product-rating">
+            <span class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+              <i class="fa-regular fa-star"></i>
+            </span>
+            <span class="rating-count">(56)</span>
+          </div>
+          <div class="product-prices">
+            <span class="price">₦125,000</span> 
+            <span class="old-price">₦195,000</span>
+          </div>
+        </div> 
+      </a>
+      <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+    </div>
+
+    <!-- Product 10 (ID 65) - Expandable Modular Closet System – Light Oak -->
+    <div class="product-card">
+      <div class="product-badges">
+        <span class="badge new">New</span>
+      </div>
+      <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+      <a href="product.html?id=65" class="product-link">
+        <div class="product-img-container">
+          <img src="https://d1b9sdpix36q7o.cloudfront.net/blog-content/blog/wp-content/uploads/2022/06/Sereno_Canyon_Callum_PCloset_3469.jpg" alt="Modular Closet System">
+        </div>
+        <div class="product-info">
+          <div class="product-brand">Signature Design</div>
+          <div class="product-name">Expandable Modular Closet System – Light Oak</div>
+          <div class="product-rating">
+            <span class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </span>
+            <span class="rating-count">(112)</span>
+          </div>
+          <div class="product-prices">
+            <span class="price">₦680,000</span>
+          </div>
+        </div> 
+      </a>
+      <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+    </div>
+
+    <!-- Product 11 (ID 66) - 5-Drawer Tall Chest of Drawers – Natural Wood -->
+    <div class="product-card">
+      <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+      <a href="product.html?id=66" class="product-link">
+        <div class="product-img-container">
+          <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/fff71001-107e-49f9-b0eb-b44766ead29e.__CR0,0,970,600_PT0_SX970_V1___.jpg" alt="Tall Chest of Drawers">
+        </div>
+        <div class="product-info">
+          <div class="product-brand">Coaster</div>
+          <div class="product-name">5-Drawer Tall Chest of Drawers – Natural Wood</div>
+          <div class="product-rating">
+            <span class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </span>
+            <span class="rating-count">(78)</span>
+          </div>
+          <div class="product-prices">
+            <span class="price">₦165,000</span>
+          </div>
+        </div> 
+      </a>
+      <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+    </div>
+
+    <!-- Product 12 (ID 67) - Colorful 2-Door Kids Wardrobe with Shelves -->
+    <div class="product-card">
+      <div class="product-badges">
+        <span class="badge sale">-15%</span>
+      </div>
+      <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+      <a href="product.html?id=67" class="product-link">
+        <div class="product-img-container">
+          <img src="https://thumbs.dreamstime.com/b/colorful-children-s-clothing-arranged-wardrobe-shelves-vibrant-kids-outfits-neatly-hung-kids-fashion-concept-colorful-children-331503484.jpg" alt="Kids Wardrobe">
+        </div>
+        <div class="product-info">
+          <div class="product-brand">LeezWorld Original</div>
+          <div class="product-name">Colorful 2-Door Kids Wardrobe with Shelves</div>
+          <div class="product-rating">
+            <span class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </span>
+            <span class="rating-count">(89)</span>
+          </div>
+          <div class="product-prices">
+            <span class="price">₦118,000</span> 
+            <span class="old-price">₦140,000</span>
+          </div>
+        </div> 
+      </a>
+      <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+    </div>
+
+    <!-- Product 13 (ID 68) - Classic 2-Door Armoire Wardrobe – Cherry Wood -->
+    <div class="product-card">
+      <div class="product-badges">
+        <span class="badge bestseller">Bestseller</span>
+      </div>
+      <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+      <a href="product.html?id=68" class="product-link">
+        <div class="product-img-container">
+          <img src="https://www.idfdesign.com/images/luxury-classic-wardrobe-closet/piranesi-ra-0830-worked-wardrobes-4.jpg" alt="Classic Armoire">
+        </div>
+        <div class="product-info">
+          <div class="product-brand">Homelegance</div>
+          <div class="product-name">Classic 2-Door Armoire Wardrobe – Cherry Wood</div>
+          <div class="product-rating">
+            <span class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </span>
+            <span class="rating-count">(198)</span>
+          </div>
+          <div class="product-prices">
+            <span class="price">₦345,000</span>
+          </div>
+        </div> 
+      </a>
+      <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+    </div>
+
+    <!-- Product 14 (ID 69) - 4-Door Wardrobe with Frosted Glass Doors – Warm Grey -->
+    <div class="product-card">
+      <div class="product-badges">
+        <span class="badge sale">-22%</span>
+      </div>
+      <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+      <a href="product.html?id=69" class="product-link">
+        <div class="product-img-container">
+          <img src="https://m.media-amazon.com/images/I/81Z3OBi8JBL.jpg_BO30,255,255,255_UF750,750_SR1910,1000,0,C_QL100_.jpg" alt="Wardrobe with Glass Doors">
+        </div>
+        <div class="product-info">
+          <div class="product-brand">Ashley Furniture</div>
+          <div class="product-name">4-Door Wardrobe with Frosted Glass Doors – Warm Grey</div>
+          <div class="product-rating">
+            <span class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </span>
+            <span class="rating-count">(145)</span>
+          </div>
+          <div class="product-prices">
+            <span class="price">₦465,000</span> 
+            <span class="old-price">₦595,000</span>
+          </div>
+        </div> 
+      </a>
+      <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+    </div>
+
+    <!-- Product 15 (ID 70) - Luxury Master Walk-in Closet System – Premium Gray -->
+    <div class="product-card">
+      <div class="product-badges">
+        <span class="badge hot">Hot</span>
+      </div>
+      <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+      <a href="product.html?id=70" class="product-link">
+        <div class="product-img-container">
+          <img src="https://d1b9sdpix36q7o.cloudfront.net/blog-content/blog/wp-content/uploads/2022/06/Sereno_Canyon_Callum_PCloset_3469.jpg" alt="Luxury Master Closet">
+        </div>
+        <div class="product-info">
+          <div class="product-brand">Signature Design</div>
+          <div class="product-name">Luxury Master Walk-in Closet System – Premium Gray</div>
+          <div class="product-rating">
+            <span class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </span>
+            <span class="rating-count">(234)</span>
+          </div>
+          <div class="product-prices">
+            <span class="price">₦1,250,000</span>
+          </div>
+        </div> 
+      </a>
+      <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+    </div>
+
+  </div>
       <!-- Pagination -->
       <div class="pagination">
         <button class="page-btn prev" disabled><i class="fa-solid fa-chevron-left"></i> Previous</button>
@@ -598,7 +601,7 @@
         <div class="footer-column footer-contact">
           <h4>Contact Us</h4>
           <ul class="contact-list">
-            <li><i class="fa-solid fa-location-dot"></i><span>15 Admiralty Way, Lekki, Lagos</span></li>
+            <li><i class="fa-solid fa-location-dot"></i><span>109 Funsho Williams Avenue, Iponri, Surulere, Lagos, Nigeria</span></li>
             <li><i class="fa-solid fa-phone"></i><span>+234 812 345 6789</span></li>
             <li><i class="fa-solid fa-envelope"></i><span>support@leezworld.com</span></li>
             <li><i class="fa-solid fa-clock"></i><span>Mon - Sat: 9AM - 7PM</span></li>

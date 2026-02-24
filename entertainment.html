@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="category.css"/>
   <script src="script.js" defer></script>
   <script src="cart.js" defer></script>
+  <script src="wishlist.js" defer></script>
 </head>
 <body>
 
@@ -21,22 +22,26 @@
         <button><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
 
-     <div class="header-actions">
-        <a href="sign-up.html"><i class="fa-regular fa-user"></i><span>Account</span></a>
-        <a href="#"><i class="fa-regular fa-heart"></i><span>Wishlist</span></a>
-        <a href="cart.html" class="cart-link">
-          <i class="fa-solid fa-cart-shopping"></i>
-          <span class="cart-count" id="cartCount">0</span>
-          <span>Cart</span>
-        </a>
-      </div>
+    <div class="header-actions">
+      <a href="sign-up.html"><i class="fa-regular fa-user"></i><span>Account</span></a>
+      <a href="wishlist.html">
+        <i class="fa-regular fa-heart"></i>
+        <span class="wishlist-count">0</span>
+        <span>Wishlist</span>
+      </a>
+      <a href="cart.html" class="cart-link">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-count" id="cartCount">0</span>
+        <span>Cart</span>
+      </a>
+    </div>
     </div>
   </header>
 
   <nav class="main-nav">
     <div class="nav-container">
       <ul>
-        <li><a href="flash-deals.html">Flash Deals</a></li>
+        <li><a href="index.html">Flash Deals</a></li>
         <li><a href="sofas.html">Sofas & Living Room</a></li>
         <li><a href="dining.html">Dining Sets</a></li>
         <li><a href="beds.html">Beds & Bedroom</a></li>
@@ -71,479 +76,479 @@
     <div class="products-main">
 
       <!-- Product Grid -->
-      <div class="product-grid" id="flashSalesGrid"">
+    <div class="product-grid" id="flashSalesGrid">
 
-        <!-- Product 1 (ID 83) -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge bestseller">Bestseller</span>
-            <span class="badge hot">Hot</span>
+      <!-- Product 1 (ID 86) - Floating TV Stand with RGB LED Lights – 65-85 inch Matte Black -->
+      <div class="product-card">
+        <div class="product-badges">
+          <span class="badge bestseller">Bestseller</span>
+          <span class="badge hot">Hot</span>
+        </div>
+        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+        <a href="product.html?id=86" class="product-link">
+          <div class="product-img-container">
+            <img src="https://m.media-amazon.com/images/I/71AcFMWw9SL._AC_UF894,1000_QL80_.jpg" alt="Floating TV Stand with LED">
           </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=83" class="product-link">
-            <div class="product-img-container">
-              <img src="https://m.media-amazon.com/images/I/71AcFMWw9SL._AC_UF894,1000_QL80_.jpg" alt="Floating TV Stand with LED">
+          <div class="product-info">
+            <div class="product-brand">LeezWorld Original</div>
+            <div class="product-name">Floating TV Stand with RGB LED Lights – 65-85 inch Matte Black</div>
+            <div class="product-rating">
+              <span class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </span>
+              <span class="rating-count">(312)</span>
             </div>
-            <div class="product-info">
-              <div class="product-brand">LeezWorld Original</div>
-              <div class="product-name">Floating TV Stand with RGB LED Lights – 65-85 inch Matte Black</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span class="rating-count">(312)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦185,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 2 (ID 84) -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge sale">-25%</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=84" class="product-link">
-            <div class="product-img-container">
-              <img src="https://dutchcraftfurniture.com/cdn/shop/files/Custom_Solid_Oak_Entertainment_Center.jpg?v=1749808267&width=2000" alt="Full Wall Entertainment Center">
+            <div class="product-prices">
+              <span class="price">₦185,000</span>
             </div>
-            <div class="product-info">
-              <div class="product-brand">Signature Design</div>
-              <div class="product-name">Full Wall Entertainment Center with Storage – Solid Walnut</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half-stroke"></i>
-                </span>
-                <span class="rating-count">(187)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦420,000</span> 
-                <span class="old-price">₦560,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 3 (ID 85) -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge new">New</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=85" class="product-link">
-            <div class="product-img-container">
-              <img src="https://m.media-amazon.com/images/I/71Fjp7EpazL._AC_UF894,1000_QL80_.jpg" alt="Modern TV Console">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Ashley Furniture</div>
-              <div class="product-name">Modern TV Console with Sliding Barn Doors – White Oak 58 inch</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half-stroke"></i>
-                </span>
-                <span class="rating-count">(98)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦145,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 4 (ID 86) -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge sale">-30%</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=86" class="product-link">
-            <div class="product-img-container">
-              <img src="https://www.furniturecart.com/media/catalog/product/W/2/W283-67-tv-stand-1.jpg" alt="Corner TV Stand">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">LeezWorld Original</div>
-              <div class="product-name">Corner TV Stand with Open Shelves – Dark Industrial Wood</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                </span>
-                <span class="rating-count">(76)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦95,000</span> 
-                <span class="old-price">₦135,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 5 (ID 87) -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge hot">Hot</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=87" class="product-link">
-            <div class="product-img-container">
-              <img src="https://www.dorelhome.com/cdn/shop/files/2000_2000_13622_4_sourceimage_2048x2048.jpg?v=1751455928" alt="TV Stand with Electric Fireplace">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Homelegance</div>
-              <div class="product-name">TV Console with Built-in Electric Fireplace – Espresso 50-65 inch</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span class="rating-count">(234)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦385,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 6 (ID 88) -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge sale">-20%</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=88" class="product-link">
-            <div class="product-img-container">
-              <img src="https://wwmake.com/cdn/shop/products/Two_Shelf_Media_Console_800x.jpg?v=1623732137" alt="Industrial TV Unit">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Coaster</div>
-              <div class="product-name">Industrial Media Console – Reclaimed Wood & Metal Frame 60 inch</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half-stroke"></i>
-                </span>
-                <span class="rating-count">(145)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦128,000</span> 
-                <span class="old-price">₦160,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 7 (ID 89) -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge new">New</span>
-            <span class="badge hot">Hot</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=89" class="product-link">
-            <div class="product-img-container">
-              <img src="https://m.media-amazon.com/images/I/81sE2NqZq-L._AC_UF894,1000_QL80_.jpg" alt="Gaming Desk">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Signature Design</div>
-              <div class="product-name">L-Shaped Gaming Desk with RGB LED Lights – Carbon Fiber Black</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span class="rating-count">(267)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦175,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 8 (ID 90) -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge bestseller">Bestseller</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=90" class="product-link">
-            <div class="product-img-container">
-              <img src="https://hekman.com/cdn/shop/files/yvx0rburugwmrvc1e5jd.jpg?v=1761904725&width=2000" alt="Media Cabinet with Glass Doors">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Ashley Furniture</div>
-              <div class="product-name">Modern Media Console with Glass Doors – Gray 60 inch</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span class="rating-count">(189)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦165,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 9 (ID 91) -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge sale">-35%</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=91" class="product-link">
-            <div class="product-img-container">
-              <img src="https://www.maatkastenonline.be/storage/app/resized/550/e91/771/maatkasten-online-meuble-dangle-meuble-tv-sur-mesure-front-white-05b_resized_550e917714d0ecb5d1fa12096a3cebd3e96859fd.jpg" alt="Minimalist TV Stand">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">LeezWorld Original</div>
-              <div class="product-name">Minimalist Floating TV Console – Scandinavian White 55-65 inch</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half-stroke"></i>
-                  <i class="fa-regular fa-star"></i>
-                </span>
-                <span class="rating-count">(67)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦85,000</span> 
-                <span class="old-price">₦130,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 10 (ID 92) -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge bestseller">Bestseller</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=92" class="product-link">
-            <div class="product-img-container">
-              <img src="https://m.media-amazon.com/images/I/71y4d-Nt0pL.jpg_BO30,255,255,255_UF750,750_SR1910,1000,0,C_QL100_.jpg" alt="Gaming Chair">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Homelegance</div>
-              <div class="product-name">Ergonomic Racing Gaming Chair – Black & Red with Lumbar Support</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span class="rating-count">(345)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦125,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 11 (ID 93) -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge new">New</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=93" class="product-link">
-            <div class="product-img-container">
-              <img src="https://www.gingkofurniture.com/cdn/shop/products/OsloTV_1600x.jpg?v=1454709502" alt="Wall-Mounted TV Panel">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Signature Design</div>
-              <div class="product-name">Wall-Mounted Floating TV Shelf Panel – High Gloss White</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half-stroke"></i>
-                </span>
-                <span class="rating-count">(112)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦195,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 12 (ID 94) -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge sale">-15%</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=94" class="product-link">
-            <div class="product-img-container">
-              <img src="https://www.modernmiami.com/media/catalog/product/cache/6d4faa98f2b48c05dae02148ead85f2f/8/1/81626_662n_jefferson_wall_tv_stand_walnut_grey_1_.jpg" alt="TV Stand with Drawers">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Coaster</div>
-              <div class="product-name">Mid-Century TV Stand with Drawers – Natural Wood 60 inch</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                </span>
-                <span class="rating-count">(89)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦138,000</span> 
-                <span class="old-price">₦162,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 13 (ID 95) -->
-        <div class="product-card">
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=95" class="product-link">
-            <div class="product-img-container">
-              <img src="https://www.countrysideamishfurniture.com/media/made/uploads/ridgecrest_3_piece_entertainment_center_-_28de80_-_74aad5d6e3cbd9f279a5c80496e33864583a9f9f.jpg" alt="Media Bookshelf Combo">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">LeezWorld Original</div>
-              <div class="product-name">Entertainment Center with Bookshelves – Oak Wall Unit</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half-stroke"></i>
-                </span>
-                <span class="rating-count">(78)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦285,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 14 (ID 96) -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge sale">-22%</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=96" class="product-link">
-            <div class="product-img-container">
-              <img src="https://m.media-amazon.com/images/I/51BCC0042mL.jpg" alt="Soundbar Shelf Mount">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Ashley Furniture</div>
-              <div class="product-name">Floating Soundbar Shelf with Cable Management – Black Glass</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half-stroke"></i>
-                </span>
-                <span class="rating-count">(134)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦35,000</span> 
-                <span class="old-price">₦45,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 15 (ID 97) -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge hot">Hot</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=97" class="product-link">
-            <div class="product-img-container">
-              <img src="https://www.countrysideamishfurniture.com/media/made/uploads/newcastle_wall_entertainment_center_-_28de80_-_cad1e64866d25f914f52e15bb9229f71aa1ca25d.jpg" alt="Luxury Entertainment Center">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Signature Design</div>
-              <div class="product-name">Luxury Full Wall Entertainment Center – Premium Walnut Finish</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span class="rating-count">(198)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦650,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
+          </div> 
+        </a>
+        <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
       </div>
+
+      <!-- Product 2 (ID 87) - Full Wall Entertainment Center with Storage – Solid Walnut -->
+      <div class="product-card">
+        <div class="product-badges">
+          <span class="badge sale">-25%</span>
+        </div>
+        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+        <a href="product.html?id=87" class="product-link">
+          <div class="product-img-container">
+            <img src="https://dutchcraftfurniture.com/cdn/shop/files/Custom_Solid_Oak_Entertainment_Center.jpg?v=1749808267&width=2000" alt="Full Wall Entertainment Center">
+          </div>
+          <div class="product-info">
+            <div class="product-brand">Signature Design</div>
+            <div class="product-name">Full Wall Entertainment Center with Storage – Solid Walnut</div>
+            <div class="product-rating">
+              <span class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </span>
+              <span class="rating-count">(187)</span>
+            </div>
+            <div class="product-prices">
+              <span class="price">₦420,000</span> 
+              <span class="old-price">₦560,000</span>
+            </div>
+          </div> 
+        </a>
+        <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+      </div>
+
+      <!-- Product 3 (ID 88) - Modern TV Console with Sliding Barn Doors – White Oak 58 inch -->
+      <div class="product-card">
+        <div class="product-badges">
+          <span class="badge new">New</span>
+        </div>
+        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+        <a href="product.html?id=88" class="product-link">
+          <div class="product-img-container">
+            <img src="https://m.media-amazon.com/images/I/71Fjp7EpazL._AC_UF894,1000_QL80_.jpg" alt="Modern TV Console">
+          </div>
+          <div class="product-info">
+            <div class="product-brand">Ashley Furniture</div>
+            <div class="product-name">Modern TV Console with Sliding Barn Doors – White Oak 58 inch</div>
+            <div class="product-rating">
+              <span class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </span>
+              <span class="rating-count">(98)</span>
+            </div>
+            <div class="product-prices">
+              <span class="price">₦145,000</span>
+            </div>
+          </div> 
+        </a>
+        <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+      </div>
+
+      <!-- Product 4 (ID 89) - Corner TV Stand with Open Shelves – Dark Industrial Wood -->
+      <div class="product-card">
+        <div class="product-badges">
+          <span class="badge sale">-30%</span>
+        </div>
+        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+        <a href="product.html?id=89" class="product-link">
+          <div class="product-img-container">
+            <img src="https://www.furniturecart.com/media/catalog/product/W/2/W283-67-tv-stand-1.jpg" alt="Corner TV Stand">
+          </div>
+          <div class="product-info">
+            <div class="product-brand">LeezWorld Original</div>
+            <div class="product-name">Corner TV Stand with Open Shelves – Dark Industrial Wood</div>
+            <div class="product-rating">
+              <span class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </span>
+              <span class="rating-count">(76)</span>
+            </div>
+            <div class="product-prices">
+              <span class="price">₦95,000</span> 
+              <span class="old-price">₦135,000</span>
+            </div>
+          </div> 
+        </a>
+        <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+      </div>
+
+      <!-- Product 5 (ID 90) - TV Console with Built-in Electric Fireplace – Espresso 50-65 inch -->
+      <div class="product-card">
+        <div class="product-badges">
+          <span class="badge hot">Hot</span>
+        </div>
+        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+        <a href="product.html?id=90" class="product-link">
+          <div class="product-img-container">
+            <img src="https://www.dorelhome.com/cdn/shop/files/2000_2000_13622_4_sourceimage_2048x2048.jpg?v=1751455928" alt="TV Stand with Electric Fireplace">
+          </div>
+          <div class="product-info">
+            <div class="product-brand">Homelegance</div>
+            <div class="product-name">TV Console with Built-in Electric Fireplace – Espresso 50-65 inch</div>
+            <div class="product-rating">
+              <span class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </span>
+              <span class="rating-count">(234)</span>
+            </div>
+            <div class="product-prices">
+              <span class="price">₦385,000</span>
+            </div>
+          </div> 
+        </a>
+        <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+      </div>
+
+      <!-- Product 6 (ID 91) - Industrial Media Console – Reclaimed Wood & Metal Frame 60 inch -->
+      <div class="product-card">
+        <div class="product-badges">
+          <span class="badge sale">-20%</span>
+        </div>
+        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+        <a href="product.html?id=91" class="product-link">
+          <div class="product-img-container">
+            <img src="https://wwmake.com/cdn/shop/products/Two_Shelf_Media_Console_800x.jpg?v=1623732137" alt="Industrial TV Unit">
+          </div>
+          <div class="product-info">
+            <div class="product-brand">Coaster</div>
+            <div class="product-name">Industrial Media Console – Reclaimed Wood & Metal Frame 60 inch</div>
+            <div class="product-rating">
+              <span class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </span>
+              <span class="rating-count">(145)</span>
+            </div>
+            <div class="product-prices">
+              <span class="price">₦128,000</span> 
+              <span class="old-price">₦160,000</span>
+            </div>
+          </div> 
+        </a>
+        <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+      </div>
+
+      <!-- Product 7 (ID 92) - L-Shaped Gaming Desk with RGB LED Lights – Carbon Fiber Black -->
+      <div class="product-card">
+        <div class="product-badges">
+          <span class="badge new">New</span>
+          <span class="badge hot">Hot</span>
+        </div>
+        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+        <a href="product.html?id=92" class="product-link">
+          <div class="product-img-container">
+            <img src="https://m.media-amazon.com/images/I/81sE2NqZq-L._AC_UF894,1000_QL80_.jpg" alt="Gaming Desk">
+          </div>
+          <div class="product-info">
+            <div class="product-brand">Signature Design</div>
+            <div class="product-name">L-Shaped Gaming Desk with RGB LED Lights – Carbon Fiber Black</div>
+            <div class="product-rating">
+              <span class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </span>
+              <span class="rating-count">(267)</span>
+            </div>
+            <div class="product-prices">
+              <span class="price">₦175,000</span>
+            </div>
+          </div> 
+        </a>
+        <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+      </div>
+
+      <!-- Product 8 (ID 93) - Modern Media Console with Glass Doors – Gray 60 inch -->
+      <div class="product-card">
+        <div class="product-badges">
+          <span class="badge bestseller">Bestseller</span>
+        </div>
+        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+        <a href="product.html?id=93" class="product-link">
+          <div class="product-img-container">
+            <img src="https://hekman.com/cdn/shop/files/yvx0rburugwmrvc1e5jd.jpg?v=1761904725&width=2000" alt="Media Cabinet with Glass Doors">
+          </div>
+          <div class="product-info">
+            <div class="product-brand">Ashley Furniture</div>
+            <div class="product-name">Modern Media Console with Glass Doors – Gray 60 inch</div>
+            <div class="product-rating">
+              <span class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </span>
+              <span class="rating-count">(189)</span>
+            </div>
+            <div class="product-prices">
+              <span class="price">₦165,000</span>
+            </div>
+          </div> 
+        </a>
+        <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+      </div>
+
+      <!-- Product 9 (ID 94) - Minimalist Floating TV Console – Scandinavian White 55-65 inch -->
+      <div class="product-card">
+        <div class="product-badges">
+          <span class="badge sale">-35%</span>
+        </div>
+        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+        <a href="product.html?id=94" class="product-link">
+          <div class="product-img-container">
+            <img src="https://www.maatkastenonline.be/storage/app/resized/550/e91/771/maatkasten-online-meuble-dangle-meuble-tv-sur-mesure-front-white-05b_resized_550e917714d0ecb5d1fa12096a3cebd3e96859fd.jpg" alt="Minimalist TV Stand">
+          </div>
+          <div class="product-info">
+            <div class="product-brand">LeezWorld Original</div>
+            <div class="product-name">Minimalist Floating TV Console – Scandinavian White 55-65 inch</div>
+            <div class="product-rating">
+              <span class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+                <i class="fa-regular fa-star"></i>
+              </span>
+              <span class="rating-count">(67)</span>
+            </div>
+            <div class="product-prices">
+              <span class="price">₦85,000</span> 
+              <span class="old-price">₦130,000</span>
+            </div>
+          </div> 
+        </a>
+        <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+      </div>
+
+      <!-- Product 10 (ID 95) - Ergonomic Racing Gaming Chair – Black & Red with Lumbar Support -->
+      <div class="product-card">
+        <div class="product-badges">
+          <span class="badge bestseller">Bestseller</span>
+        </div>
+        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+        <a href="product.html?id=95" class="product-link">
+          <div class="product-img-container">
+            <img src="https://m.media-amazon.com/images/I/71y4d-Nt0pL.jpg_BO30,255,255,255_UF750,750_SR1910,1000,0,C_QL100_.jpg" alt="Gaming Chair">
+          </div>
+          <div class="product-info">
+            <div class="product-brand">Homelegance</div>
+            <div class="product-name">Ergonomic Racing Gaming Chair – Black & Red with Lumbar Support</div>
+            <div class="product-rating">
+              <span class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </span>
+              <span class="rating-count">(345)</span>
+            </div>
+            <div class="product-prices">
+              <span class="price">₦125,000</span>
+            </div>
+          </div> 
+        </a>
+        <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+      </div>
+
+      <!-- Product 11 (ID 96) - Wall-Mounted Floating TV Shelf Panel – High Gloss White -->
+      <div class="product-card">
+        <div class="product-badges">
+          <span class="badge new">New</span>
+        </div>
+        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+        <a href="product.html?id=96" class="product-link">
+          <div class="product-img-container">
+            <img src="https://www.gingkofurniture.com/cdn/shop/products/OsloTV_1600x.jpg?v=1454709502" alt="Wall-Mounted TV Panel">
+          </div>
+          <div class="product-info">
+            <div class="product-brand">Signature Design</div>
+            <div class="product-name">Wall-Mounted Floating TV Shelf Panel – High Gloss White</div>
+            <div class="product-rating">
+              <span class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </span>
+              <span class="rating-count">(112)</span>
+            </div>
+            <div class="product-prices">
+              <span class="price">₦195,000</span>
+            </div>
+          </div> 
+        </a>
+        <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+      </div>
+
+      <!-- Product 12 (ID 97) - Mid-Century TV Stand with Drawers – Natural Wood 60 inch -->
+      <div class="product-card">
+        <div class="product-badges">
+          <span class="badge sale">-15%</span>
+        </div>
+        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+        <a href="product.html?id=97" class="product-link">
+          <div class="product-img-container">
+            <img src="https://www.modernmiami.com/media/catalog/product/cache/6d4faa98f2b48c05dae02148ead85f2f/8/1/81626_662n_jefferson_wall_tv_stand_walnut_grey_1_.jpg" alt="TV Stand with Drawers">
+          </div>
+          <div class="product-info">
+            <div class="product-brand">Coaster</div>
+            <div class="product-name">Mid-Century TV Stand with Drawers – Natural Wood 60 inch</div>
+            <div class="product-rating">
+              <span class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </span>
+              <span class="rating-count">(89)</span>
+            </div>
+            <div class="product-prices">
+              <span class="price">₦138,000</span> 
+              <span class="old-price">₦162,000</span>
+            </div>
+          </div> 
+        </a>
+        <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+      </div>
+
+      <!-- Product 13 (ID 98) - Entertainment Center with Bookshelves – Oak Wall Unit -->
+      <div class="product-card">
+        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+        <a href="product.html?id=98" class="product-link">
+          <div class="product-img-container">
+            <img src="https://www.countrysideamishfurniture.com/media/made/uploads/ridgecrest_3_piece_entertainment_center_-_28de80_-_74aad5d6e3cbd9f279a5c80496e33864583a9f9f.jpg" alt="Media Bookshelf Combo">
+          </div>
+          <div class="product-info">
+            <div class="product-brand">LeezWorld Original</div>
+            <div class="product-name">Entertainment Center with Bookshelves – Oak Wall Unit</div>
+            <div class="product-rating">
+              <span class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </span>
+              <span class="rating-count">(78)</span>
+            </div>
+            <div class="product-prices">
+              <span class="price">₦285,000</span>
+            </div>
+          </div> 
+        </a>
+        <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+      </div>
+
+      <!-- Product 14 (ID 99) - Floating Soundbar Shelf with Cable Management – Black Glass -->
+      <div class="product-card">
+        <div class="product-badges">
+          <span class="badge sale">-22%</span>
+        </div>
+        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+        <a href="product.html?id=99" class="product-link">
+          <div class="product-img-container">
+            <img src="https://m.media-amazon.com/images/I/51BCC0042mL.jpg" alt="Soundbar Shelf Mount">
+          </div>
+          <div class="product-info">
+            <div class="product-brand">Ashley Furniture</div>
+            <div class="product-name">Floating Soundbar Shelf with Cable Management – Black Glass</div>
+            <div class="product-rating">
+              <span class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </span>
+              <span class="rating-count">(134)</span>
+            </div>
+            <div class="product-prices">
+              <span class="price">₦35,000</span> 
+              <span class="old-price">₦45,000</span>
+            </div>
+          </div> 
+        </a>
+        <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+      </div>
+
+      <!-- Product 15 (ID 100) - Luxury Full Wall Entertainment Center – Premium Walnut Finish -->
+      <div class="product-card">
+        <div class="product-badges">
+          <span class="badge hot">Hot</span>
+        </div>
+        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+        <a href="product.html?id=100" class="product-link">
+          <div class="product-img-container">
+            <img src="https://www.countrysideamishfurniture.com/media/made/uploads/newcastle_wall_entertainment_center_-_28de80_-_cad1e64866d25f914f52e15bb9229f71aa1ca25d.jpg" alt="Luxury Entertainment Center">
+          </div>
+          <div class="product-info">
+            <div class="product-brand">Signature Design</div>
+            <div class="product-name">Luxury Full Wall Entertainment Center – Premium Walnut Finish</div>
+            <div class="product-rating">
+              <span class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </span>
+              <span class="rating-count">(198)</span>
+            </div>
+            <div class="product-prices">
+              <span class="price">₦650,000</span>
+            </div>
+          </div> 
+        </a>
+        <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+      </div>
+
+    </div>
+    </div>
 
       <!-- Pagination -->
       <div class="pagination">
@@ -601,7 +606,7 @@
         <div class="footer-column footer-contact">
           <h4>Contact Us</h4>
           <ul class="contact-list">
-            <li><i class="fa-solid fa-location-dot"></i><span>15 Admiralty Way, Lekki, Lagos</span></li>
+            <li><i class="fa-solid fa-location-dot"></i><span>109 Funsho Williams Avenue, Iponri, Surulere, Lagos, Nigeria</span></li>
             <li><i class="fa-solid fa-phone"></i><span>+234 812 345 6789</span></li>
             <li><i class="fa-solid fa-envelope"></i><span>support@leezworld.com</span></li>
             <li><i class="fa-solid fa-clock"></i><span>Mon - Sat: 9AM - 7PM</span></li>

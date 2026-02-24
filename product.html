@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Product Details - Nexlify</title>
+  <title>Product Details - leezWorld</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link rel="stylesheet" href="main.css"/> <!-- your existing styles -->
- 
   <script src="cart.js" defer></script>
-  <script src="script.js" defer></script>
+  <script src="wishlist.js" defer></script>
   <style>
     .product-detail-container {
       max-width: 1200px;
@@ -120,15 +119,19 @@
         <button type="button" class="clear-search" style="display:none;">×</button>
         <button><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
-      <div class="header-actions">
-        <a href="sign-up.html"><i class="fa-regular fa-user"></i><span>Account</span></a>
-        <a href="#"><i class="fa-regular fa-heart"></i><span>Wishlist</span></a>
-        <a href="cart.html" class="cart-link">
-          <i class="fa-solid fa-cart-shopping"></i>
-          <span class="cart-count" id="cartCount">0</span>
-          <span>Cart</span>
-        </a>
-      </div>
+  <div class="header-actions">
+    <a href="sign-up.html"><i class="fa-regular fa-user"></i><span>Account</span></a>
+    <a href="wishlist.html">
+      <i class="fa-regular fa-heart"></i>
+      <span class="wishlist-count">0</span>
+      <span>Wishlist</span>
+    </a>
+    <a href="cart.html" class="cart-link">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span class="cart-count" id="cartCount">0</span>
+      <span>Cart</span>
+    </a>
+  </div>
     </div>
   </header>
 
@@ -136,7 +139,7 @@
   <nav class="main-nav">
     <div class="nav-container">
       <ul>
-        <li><a href="#">Flash Deals</a></li>
+        <li><a href="index.html">FlashDeals</a></li>
         <li><a href="sofas.html">Sofas & Living Room</a></li>
         <li><a href="dining.html">Dining Sets</a></li>
         <li><a href="beds.html">Beds & Bedroom</a></li>
@@ -210,7 +213,7 @@
         <ul class="contact-list">
           <li>
             <i class="fa-solid fa-location-dot"></i>
-            <span>15 Admiralty Way, Lekki Phase 1, Lagos, Nigeria</span>
+            <span>109 Funsho Williams Avenue, Iponri, Surulere, Lagos, Nigeria</span>
           </li>
           <li>
             <i class="fa-solid fa-phone"></i>
@@ -276,45 +279,66 @@
   </div>
 
 </footer>
-<script src="product.js" ></script>
+<script src="product.js"></script>
 
-  <script>
-    
-     
+<script>
+  // DEBUG: Check if products array loaded
+  console.log('=== DEBUG START ===');
+  console.log('1. products array exists?', typeof products !== 'undefined');
+  
+  if (typeof products !== 'undefined') {
+    console.log('2. Total products in array:', products.length);
+    console.log('3. All IDs in array:', products.map(p => p.id).sort((a,b) => a-b));
+  } else {
+    console.error('ERROR: products array is undefined!');
+  }
 
-    // Get product ID from URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const productId = parseInt(urlParams.get('id'));
+  // Get product ID from URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const productId = parseInt(urlParams.get('id'));
+  
+  console.log('4. URL parameter id:', urlParams.get('id'));
+  console.log('5. Parsed productId:', productId);
+  console.log('6. productId type:', typeof productId);
 
-    // Find the product (now coming from products.js)
-    const product = products.find(p => p.id === productId);
+  // Find the product
+  const product = products.find(p => p.id === productId);
+  
+  console.log('7. Product found?', product !== undefined);
+  console.log('8. Product:', product);
+  console.log('=== DEBUG END ===');
 
-    if (product) {
-      document.getElementById('productName').textContent = product.name;
-      document.getElementById('productImage').src = product.image;
-      document.getElementById('productImage').alt = product.name;
-      document.getElementById('productPrice').textContent = '₦' + product.price.toLocaleString();
+  if (product) {
+    document.getElementById('productName').textContent = product.name;
+    document.getElementById('productImage').src = product.image;
+    document.getElementById('productImage').alt = product.name;
+    document.getElementById('productPrice').textContent = '₦' + product.price.toLocaleString();
 
-      if (product.oldPrice) {
-        document.getElementById('productOldPrice').textContent = '₦' + product.oldPrice.toLocaleString();
-        document.getElementById('productOldPrice').style.display = 'inline';
-      } else {
-        document.getElementById('productOldPrice').style.display = 'none';
-      }
-
-      document.getElementById('productStock').textContent = `In Stock (${product.stock} units)`;
-      document.getElementById('productDescription').innerHTML = `<p>${product.description}</p>`;
+    if (product.oldPrice) {
+      document.getElementById('productOldPrice').textContent = '₦' + product.oldPrice.toLocaleString();
+      document.getElementById('productOldPrice').style.display = 'inline';
     } else {
-      document.querySelector('.product-info').innerHTML = '<h1>Product Not Found</h1><p>Sorry, this product does not exist or has been removed.</p>';
+      document.getElementById('productOldPrice').style.display = 'none';
     }
 
-    function changeQty(delta) {
-      const input = document.getElementById('qty');
-      let val = parseInt(input.value) + delta;
-      if (val < 1) val = 1;
-      input.value = val;
-    }
-  </script>
+    document.getElementById('productStock').textContent = `In Stock (${product.stock} units)`;
+    document.getElementById('productDescription').innerHTML = `<p>${product.description}</p>`;
+  } else {
+    document.querySelector('.product-info').innerHTML = `
+      <h1>Product Not Found</h1>
+      <p>Sorry, this product does not exist or has been removed.</p>
+      <p style="color: #888; font-size: 14px;">Looking for ID: ${productId}</p>
+      <p style="color: #888; font-size: 14px;">Available IDs: ${typeof products !== 'undefined' ? products.map(p => p.id).join(', ') : 'products not loaded'}</p>
+    `;
+  }
+
+  function changeQty(delta) {
+    const input = document.getElementById('qty');
+    let val = parseInt(input.value) + delta;
+    if (val < 1) val = 1;
+    input.value = val;
+  }
+</script>
 
 </body>
 </html>

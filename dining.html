@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="category.css"/>
   <script src="script.js" defer></script>
   <script src="cart.js" defer></script>
+  <script src="wishlist.js" defer></script>
 </head>
 <body>
 
@@ -21,22 +22,26 @@
         <button><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
 
-     <div class="header-actions">
-        <a href="sign-up.html"><i class="fa-regular fa-user"></i><span>Account</span></a>
-        <a href="#"><i class="fa-regular fa-heart"></i><span>Wishlist</span></a>
-        <a href="cart.html" class="cart-link">
-          <i class="fa-solid fa-cart-shopping"></i>
-          <span class="cart-count" id="cartCount">0</span>
-          <span>Cart</span>
-        </a>
-      </div>
+  <div class="header-actions">
+    <a href="sign-up.html"><i class="fa-regular fa-user"></i><span>Account</span></a>
+    <a href="wishlist.html">
+      <i class="fa-regular fa-heart"></i>
+      <span class="wishlist-count">0</span>
+      <span>Wishlist</span>
+    </a>
+    <a href="cart.html" class="cart-link">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span class="cart-count" id="cartCount">0</span>
+      <span>Cart</span>
+    </a>
+  </div>
     </div>
   </header>
 
   <nav class="main-nav">
     <div class="nav-container">
       <ul>
-        <li><a href="flash-deals.html">Flash Deals</a></li>
+        <li><a href="index.html">Flash Deals</a></li>
         <li><a href="sofas.html">Sofas & Living Room</a></li>
         <li><a href="dining.html" class="active">Dining Sets</a></li>
         <li><a href="beds.html">Beds & Bedroom</a></li>
@@ -71,472 +76,472 @@
     <div class="products-main">
 
       <!-- Product Grid -->
-      <div class="product-grid" id="flashSalesGrid"">
+<div class="product-grid" id="flashSalesGrid">
 
-        <!-- Product 1 (ID 23) - 8-Seater Solid Wood Dining Table – Natural Brown -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge sale">-28%</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=23" class="product-link">
-            <div class="product-img-container">
-              <img src="https://m.media-amazon.com/images/I/51cSjmsCEKL._AC_UF894,1000_QL80_.jpg" alt="8-Seater Solid Wood Dining Table">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">LeezWorld Original</div>
-              <div class="product-name">8-Seater Solid Wood Dining Table – Natural Brown</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half-stroke"></i>
-                </span>
-                <span class="rating-count">(94)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦480,000</span> 
-                <span class="old-price">₦650,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 2 (ID 24) - 6-Seater Modern Dining Set – White with Wood Accents -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge new">New</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=24" class="product-link">
-            <div class="product-img-container">
-              <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80" alt="6-Seater Modern Dining Set">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Coaster</div>
-              <div class="product-name">6-Seater Modern Dining Set – White with Wood Accents</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span class="rating-count">(112)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦420,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 3 (ID 25) - 4-Seater Round Wooden Dining Set – Light Oak -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge sale">-18%</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=25" class="product-link">
-            <div class="product-img-container">
-              <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=800&q=80" alt="4-Seater Round Wooden Dining Set">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Ashley Furniture</div>
-              <div class="product-name">4-Seater Round Wooden Dining Set – Light Oak</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half-stroke"></i>
-                </span>
-                <span class="rating-count">(76)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦320,000</span> 
-                <span class="old-price">₦390,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 4 (ID 26) - 6-Seater Rustic Farmhouse Table – Reclaimed Wood -->
-        <div class="product-card">
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=26" class="product-link">
-            <div class="product-img-container">
-              <img src="https://i.etsystatic.com/7407610/r/il/58f2df/4039016457/il_fullxfull.4039016457_kgws.jpg" alt="Rustic Farmhouse Dining Table">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Signature Design</div>
-              <div class="product-name">6-Seater Rustic Farmhouse Table – Reclaimed Wood</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                </span>
-                <span class="rating-count">(65)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦520,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 5 (ID 27) - 4-Seater Minimalist Dining Set – Scandinavian White -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge sale">-22%</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=27" class="product-link">
-            <div class="product-img-container">
-              <img src="https://cdn.decorilla.com/online-decorating/wp-content/uploads/2023/06/Scandinavian-dining-room-with-light-wood-tones.jpg?width=900" alt="Minimalist Scandinavian Dining Set">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">LeezWorld Original</div>
-              <div class="product-name">4-Seater Minimalist Dining Set – Scandinavian White</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half-stroke"></i>
-                  <i class="fa-regular fa-star"></i>
-                </span>
-                <span class="rating-count">(48)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦280,000</span> 
-                <span class="old-price">₦360,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 6 (ID 28) - 8-Seater Elegant Formal Dining Set – Dark Walnut -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge bestseller">Bestseller</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=28" class="product-link">
-            <div class="product-img-container">
-              <img src="https://m.media-amazon.com/images/I/818vNipOGKL.jpg" alt="Elegant Formal Dining Set">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Homelegance</div>
-              <div class="product-name">8-Seater Elegant Formal Dining Set – Dark Walnut</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span class="rating-count">(189)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦780,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 7 (ID 29) - 6-Seater Glass Top Dining Table – Chrome Base -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge sale">-35%</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=29" class="product-link">
-            <div class="product-img-container">
-              <img src="https://cdn11.bigcommerce.com/s-3uyyclsi/images/stencil/original/products/509/8156/CR110401-S5_21-1__75716.1724256294.jpg?c=2" alt="Glass Top Modern Dining Set">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">LeezWorld Original</div>
-              <div class="product-name">6-Seater Glass Top Dining Table – Chrome Base</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                </span>
-                <span class="rating-count">(67)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦290,000</span> 
-                <span class="old-price">₦450,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 8 (ID 30) - 6-Seater Industrial Dining Set – Metal & Wood -->
-        <div class="product-card">
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=30" class="product-link">
-            <div class="product-img-container">
-              <img src="https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?w=800&q=80" alt="Industrial Dining Set">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Coaster</div>
-              <div class="product-name">6-Seater Industrial Dining Set – Metal & Wood</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half-stroke"></i>
-                  <i class="fa-regular fa-star"></i>
-                </span>
-                <span class="rating-count">(53)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦380,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 9 (ID 31) - 4-Seater Round Marble Top Dining Set – Gold Base -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge new">New</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=31" class="product-link">
-            <div class="product-img-container">
-              <img src="https://www.lunafurn.com/cdn/shop/files/Vida-6-Piece-White-Marble-Dining-Set-Table-4-Side-Chairs-Luna-Furniture-27076204429366.jpg?v=1768306987&width=1645" alt="Marble Top Round Dining Set">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Signature Design</div>
-              <div class="product-name">4-Seater Round Marble Top Dining Set – Gold Base</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half-stroke"></i>
-                </span>
-                <span class="rating-count">(88)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦460,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 10 (ID 32) - 6-8 Seater Extendable Dining Table – Modern White -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge sale">-40%</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=32" class="product-link">
-            <div class="product-img-container">
-              <img src="https://images.unsplash.com/photo-1615066390971-03e4e3400c09?w=800&q=80" alt="Extendable Dining Table">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Ashley Furniture</div>
-              <div class="product-name">6-8 Seater Extendable Dining Table – Modern White</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                </span>
-                <span class="rating-count">(102)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦380,000</span> 
-                <span class="old-price">₦620,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 11 (ID 33) - 4-Seater Kitchen Breakfast Nook Set – Natural Wood -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge bestseller">Bestseller</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=33" class="product-link">
-            <div class="product-img-container">
-              <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80" alt="Kitchen Dining Nook">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">LeezWorld Original</div>
-              <div class="product-name">4-Seater Kitchen Breakfast Nook Set – Natural Wood</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half-stroke"></i>
-                </span>
-                <span class="rating-count">(145)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦310,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 12 (ID 34) - 6-Seater Contemporary Dining Set – Warm Walnut -->
-        <div class="product-card">
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=34" class="product-link">
-            <div class="product-img-container">
-              <img src="https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?w=800&q=80" alt="Contemporary Wooden Dining">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Coaster</div>
-              <div class="product-name">6-Seater Contemporary Dining Set – Warm Walnut</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                  <i class="fa-regular fa-star"></i>
-                </span>
-                <span class="rating-count">(59)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦350,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 13 (ID 35) - 6-Seater Mid-Century Dining Set – Teak Wood -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge new">New</span>
-            <span class="badge hot">Hot</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=35" class="product-link">
-            <div class="product-img-container">
-              <img src="https://images.unsplash.com/photo-1597072689227-8882273e8f6a?w=800&q=80" alt="Mid-Century Dining Set">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Ashley Furniture</div>
-              <div class="product-name">6-Seater Mid-Century Dining Set – Teak Wood</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span class="rating-count">(178)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦720,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 14 (ID 36) - 6-Seater Outdoor Patio Dining Set – Weather Resistant -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge sale">-30%</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=36" class="product-link">
-            <div class="product-img-container">
-              <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=800&q=80" alt="Patio Dining Set">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Signature Design</div>
-              <div class="product-name">6-Seater Outdoor Patio Dining Set – Weather Resistant</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star-half-stroke"></i>
-                </span>
-                <span class="rating-count">(134)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦420,000</span> 
-                <span class="old-price">₦600,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
-        <!-- Product 15 (ID 37) - 8-Seater Luxury Dining Set – Velvet Upholstered Chairs -->
-        <div class="product-card">
-          <div class="product-badges">
-            <span class="badge bestseller">Bestseller</span>
-          </div>
-          <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
-          <a href="product.html?id=37" class="product-link">
-            <div class="product-img-container">
-              <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80" alt="Luxury Dining Set">
-            </div>
-            <div class="product-info">
-              <div class="product-brand">Homelegance</div>
-              <div class="product-name">8-Seater Luxury Dining Set – Velvet Upholstered Chairs</div>
-              <div class="product-rating">
-                <span class="stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </span>
-                <span class="rating-count">(98)</span>
-              </div>
-              <div class="product-prices">
-                <span class="price">₦1,250,000</span>
-              </div>
-            </div> 
-          </a>
-          <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
-        </div>
-
+  <!-- Product 1 (ID 26) - 8-Seater Solid Wood Dining Table – Natural Brown -->
+  <div class="product-card">
+    <div class="product-badges">
+      <span class="badge sale">-28%</span>
+    </div>
+    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+    <a href="product.html?id=26" class="product-link">
+      <div class="product-img-container">
+        <img src="https://m.media-amazon.com/images/I/51cSjmsCEKL._AC_UF894,1000_QL80_.jpg" alt="8-Seater Solid Wood Dining Table">
       </div>
+      <div class="product-info">
+        <div class="product-brand">LeezWorld Original</div>
+        <div class="product-name">8-Seater Solid Wood Dining Table – Natural Brown</div>
+        <div class="product-rating">
+          <span class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+          </span>
+          <span class="rating-count">(94)</span>
+        </div>
+        <div class="product-prices">
+          <span class="price">₦480,000</span> 
+          <span class="old-price">₦650,000</span>
+        </div>
+      </div> 
+    </a>
+    <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+  </div>
+
+  <!-- Product 2 (ID 27) - 6-Seater Modern Dining Set – White with Wood Accents -->
+  <div class="product-card">
+    <div class="product-badges">
+      <span class="badge new">New</span>
+    </div>
+    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+    <a href="product.html?id=27" class="product-link">
+      <div class="product-img-container">
+        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80" alt="6-Seater Modern Dining Set">
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Coaster</div>
+        <div class="product-name">6-Seater Modern Dining Set – White with Wood Accents</div>
+        <div class="product-rating">
+          <span class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </span>
+          <span class="rating-count">(112)</span>
+        </div>
+        <div class="product-prices">
+          <span class="price">₦420,000</span>
+        </div>
+      </div> 
+    </a>
+    <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+  </div>
+
+  <!-- Product 3 (ID 28) - 4-Seater Round Wooden Dining Set – Light Oak -->
+  <div class="product-card">
+    <div class="product-badges">
+      <span class="badge sale">-18%</span>
+    </div>
+    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+    <a href="product.html?id=28" class="product-link">
+      <div class="product-img-container">
+        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=800&q=80" alt="4-Seater Round Wooden Dining Set">
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Ashley Furniture</div>
+        <div class="product-name">4-Seater Round Wooden Dining Set – Light Oak</div>
+        <div class="product-rating">
+          <span class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+          </span>
+          <span class="rating-count">(76)</span>
+        </div>
+        <div class="product-prices">
+          <span class="price">₦320,000</span> 
+          <span class="old-price">₦390,000</span>
+        </div>
+      </div> 
+    </a>
+    <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+  </div>
+
+  <!-- Product 4 (ID 29) - 6-Seater Rustic Farmhouse Table – Reclaimed Wood -->
+  <div class="product-card">
+    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+    <a href="product.html?id=29" class="product-link">
+      <div class="product-img-container">
+        <img src="https://i.etsystatic.com/7407610/r/il/58f2df/4039016457/il_fullxfull.4039016457_kgws.jpg" alt="Rustic Farmhouse Dining Table">
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Signature Design</div>
+        <div class="product-name">6-Seater Rustic Farmhouse Table – Reclaimed Wood</div>
+        <div class="product-rating">
+          <span class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </span>
+          <span class="rating-count">(65)</span>
+        </div>
+        <div class="product-prices">
+          <span class="price">₦520,000</span>
+        </div>
+      </div> 
+    </a>
+    <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+  </div>
+
+  <!-- Product 5 (ID 30) - 4-Seater Minimalist Dining Set – Scandinavian White -->
+  <div class="product-card">
+    <div class="product-badges">
+      <span class="badge sale">-22%</span>
+    </div>
+    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+    <a href="product.html?id=30" class="product-link">
+      <div class="product-img-container">
+        <img src="https://cdn.decorilla.com/online-decorating/wp-content/uploads/2023/06/Scandinavian-dining-room-with-light-wood-tones.jpg?width=900" alt="Minimalist Scandinavian Dining Set">
+      </div>
+      <div class="product-info">
+        <div class="product-brand">LeezWorld Original</div>
+        <div class="product-name">4-Seater Minimalist Dining Set – Scandinavian White</div>
+        <div class="product-rating">
+          <span class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+            <i class="fa-regular fa-star"></i>
+          </span>
+          <span class="rating-count">(48)</span>
+        </div>
+        <div class="product-prices">
+          <span class="price">₦280,000</span> 
+          <span class="old-price">₦360,000</span>
+        </div>
+      </div> 
+    </a>
+    <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+  </div>
+
+  <!-- Product 6 (ID 31) - 8-Seater Elegant Formal Dining Set – Dark Walnut -->
+  <div class="product-card">
+    <div class="product-badges">
+      <span class="badge bestseller">Bestseller</span>
+    </div>
+    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+    <a href="product.html?id=31" class="product-link">
+      <div class="product-img-container">
+        <img src="https://m.media-amazon.com/images/I/818vNipOGKL.jpg" alt="Elegant Formal Dining Set">
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Homelegance</div>
+        <div class="product-name">8-Seater Elegant Formal Dining Set – Dark Walnut</div>
+        <div class="product-rating">
+          <span class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </span>
+          <span class="rating-count">(189)</span>
+        </div>
+        <div class="product-prices">
+          <span class="price">₦780,000</span>
+        </div>
+      </div> 
+    </a>
+    <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+  </div>
+
+  <!-- Product 7 (ID 32) - 6-Seater Glass Top Dining Table – Chrome Base -->
+  <div class="product-card">
+    <div class="product-badges">
+      <span class="badge sale">-35%</span>
+    </div>
+    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+    <a href="product.html?id=32" class="product-link">
+      <div class="product-img-container">
+        <img src="https://cdn11.bigcommerce.com/s-3uyyclsi/images/stencil/original/products/509/8156/CR110401-S5_21-1__75716.1724256294.jpg?c=2" alt="Glass Top Modern Dining Set">
+      </div>
+      <div class="product-info">
+        <div class="product-brand">LeezWorld Original</div>
+        <div class="product-name">6-Seater Glass Top Dining Table – Chrome Base</div>
+        <div class="product-rating">
+          <span class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </span>
+          <span class="rating-count">(67)</span>
+        </div>
+        <div class="product-prices">
+          <span class="price">₦290,000</span> 
+          <span class="old-price">₦450,000</span>
+        </div>
+      </div> 
+    </a>
+    <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+  </div>
+
+  <!-- Product 8 (ID 33) - 6-Seater Industrial Dining Set – Metal & Wood -->
+  <div class="product-card">
+    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+    <a href="product.html?id=33" class="product-link">
+      <div class="product-img-container">
+        <img src="https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?w=800&q=80" alt="Industrial Dining Set">
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Coaster</div>
+        <div class="product-name">6-Seater Industrial Dining Set – Metal & Wood</div>
+        <div class="product-rating">
+          <span class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+            <i class="fa-regular fa-star"></i>
+          </span>
+          <span class="rating-count">(53)</span>
+        </div>
+        <div class="product-prices">
+          <span class="price">₦380,000</span>
+        </div>
+      </div> 
+    </a>
+    <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+  </div>
+
+  <!-- Product 9 (ID 34) - 4-Seater Round Marble Top Dining Set – Gold Base -->
+  <div class="product-card">
+    <div class="product-badges">
+      <span class="badge new">New</span>
+    </div>
+    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+    <a href="product.html?id=34" class="product-link">
+      <div class="product-img-container">
+        <img src="https://www.lunafurn.com/cdn/shop/files/Vida-6-Piece-White-Marble-Dining-Set-Table-4-Side-Chairs-Luna-Furniture-27076204429366.jpg?v=1768306987&width=1645" alt="Marble Top Round Dining Set">
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Signature Design</div>
+        <div class="product-name">4-Seater Round Marble Top Dining Set – Gold Base</div>
+        <div class="product-rating">
+          <span class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+          </span>
+          <span class="rating-count">(88)</span>
+        </div>
+        <div class="product-prices">
+          <span class="price">₦460,000</span>
+        </div>
+      </div> 
+    </a>
+    <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+  </div>
+
+  <!-- Product 10 (ID 35) - 6-8 Seater Extendable Dining Table – Modern White -->
+  <div class="product-card">
+    <div class="product-badges">
+      <span class="badge sale">-40%</span>
+    </div>
+    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+    <a href="product.html?id=35" class="product-link">
+      <div class="product-img-container">
+        <img src="https://images.unsplash.com/photo-1615066390971-03e4e3400c09?w=800&q=80" alt="Extendable Dining Table">
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Ashley Furniture</div>
+        <div class="product-name">6-8 Seater Extendable Dining Table – Modern White</div>
+        <div class="product-rating">
+          <span class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </span>
+          <span class="rating-count">(102)</span>
+        </div>
+        <div class="product-prices">
+          <span class="price">₦380,000</span> 
+          <span class="old-price">₦620,000</span>
+        </div>
+      </div> 
+    </a>
+    <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+  </div>
+
+  <!-- Product 11 (ID 36) - 4-Seater Kitchen Breakfast Nook Set – Natural Wood -->
+  <div class="product-card">
+    <div class="product-badges">
+      <span class="badge bestseller">Bestseller</span>
+    </div>
+    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+    <a href="product.html?id=36" class="product-link">
+      <div class="product-img-container">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80" alt="Kitchen Dining Nook">
+      </div>
+      <div class="product-info">
+        <div class="product-brand">LeezWorld Original</div>
+        <div class="product-name">4-Seater Kitchen Breakfast Nook Set – Natural Wood</div>
+        <div class="product-rating">
+          <span class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+          </span>
+          <span class="rating-count">(145)</span>
+        </div>
+        <div class="product-prices">
+          <span class="price">₦310,000</span>
+        </div>
+      </div> 
+    </a>
+    <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+  </div>
+
+  <!-- Product 12 (ID 37) - 6-Seater Contemporary Dining Set – Warm Walnut -->
+  <div class="product-card">
+    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+    <a href="product.html?id=37" class="product-link">
+      <div class="product-img-container">
+        <img src="https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?w=800&q=80" alt="Contemporary Wooden Dining">
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Coaster</div>
+        <div class="product-name">6-Seater Contemporary Dining Set – Warm Walnut</div>
+        <div class="product-rating">
+          <span class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </span>
+          <span class="rating-count">(59)</span>
+        </div>
+        <div class="product-prices">
+          <span class="price">₦350,000</span>
+        </div>
+      </div> 
+    </a>
+    <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+  </div>
+
+  <!-- Product 13 (ID 38) - 6-Seater Mid-Century Dining Set – Teak Wood -->
+  <div class="product-card">
+    <div class="product-badges">
+      <span class="badge new">New</span>
+      <span class="badge hot">Hot</span>
+    </div>
+    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+    <a href="product.html?id=38" class="product-link">
+      <div class="product-img-container">
+        <img src="https://images.unsplash.com/photo-1597072689227-8882273e8f6a?w=800&q=80" alt="Mid-Century Dining Set">
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Ashley Furniture</div>
+        <div class="product-name">6-Seater Mid-Century Dining Set – Teak Wood</div>
+        <div class="product-rating">
+          <span class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </span>
+          <span class="rating-count">(178)</span>
+        </div>
+        <div class="product-prices">
+          <span class="price">₦720,000</span>
+        </div>
+      </div> 
+    </a>
+    <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+  </div>
+
+  <!-- Product 14 (ID 39) - 6-Seater Outdoor Patio Dining Set – Weather Resistant -->
+  <div class="product-card">
+    <div class="product-badges">
+      <span class="badge sale">-30%</span>
+    </div>
+    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+    <a href="product.html?id=39" class="product-link">
+      <div class="product-img-container">
+        <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=800&q=80" alt="Patio Dining Set">
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Signature Design</div>
+        <div class="product-name">6-Seater Outdoor Patio Dining Set – Weather Resistant</div>
+        <div class="product-rating">
+          <span class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+          </span>
+          <span class="rating-count">(134)</span>
+        </div>
+        <div class="product-prices">
+          <span class="price">₦420,000</span> 
+          <span class="old-price">₦600,000</span>
+        </div>
+      </div> 
+    </a>
+    <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+  </div>
+
+  <!-- Product 15 (ID 40) - 8-Seater Luxury Dining Set – Velvet Upholstered Chairs -->
+  <div class="product-card">
+    <div class="product-badges">
+      <span class="badge bestseller">Bestseller</span>
+    </div>
+    <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+    <a href="product.html?id=40" class="product-link">
+      <div class="product-img-container">
+        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80" alt="Luxury Dining Set">
+      </div>
+      <div class="product-info">
+        <div class="product-brand">Homelegance</div>
+        <div class="product-name">8-Seater Luxury Dining Set – Velvet Upholstered Chairs</div>
+        <div class="product-rating">
+          <span class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </span>
+          <span class="rating-count">(98)</span>
+        </div>
+        <div class="product-prices">
+          <span class="price">₦1,250,000</span>
+        </div>
+      </div> 
+    </a>
+    <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+  </div>
+
+</div>
 
       <!-- Pagination -->
       <div class="pagination">
@@ -605,7 +610,7 @@
         <ul class="contact-list">
           <li>
             <i class="fa-solid fa-location-dot"></i>
-            <span>15 Admiralty Way, Lekki Phase 1, Lagos, Nigeria</span>
+            <span>109 Funsho Williams Avenue, Iponri, Surulere, Lagos, Nigeria</span>
           </li>
           <li>
             <i class="fa-solid fa-phone"></i>
