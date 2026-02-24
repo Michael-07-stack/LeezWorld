@@ -14,90 +14,154 @@
 </head>
 <body>
 
+  <!-- Header -->
   <header>
     <div class="header-container">
       <a href="index.html" class="logo">LeezWorld<span>.</span></a>
 
-      <div class="search-bar">
-        <input type="text" placeholder="Search sofas, beds, dining sets, wardrobes..."/>
-        <button type="button" class="clear-search" style="display:none;">×</button>
-        <button><i class="fa-solid fa-magnifying-glass"></i></button>
-        
+      <div class="header-actions">
+        <a href="sign-up.html"><i class="fa-regular fa-user"></i><span>Account</span></a>
+        <a href="wishlist.html">
+          <i class="fa-regular fa-heart"></i>
+          <span class="wishlist-count">0</span>
+          <span>Wishlist</span>
+        </a>
+        <a href="cart.html" class="cart-link">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+          <span>Cart</span>
+        </a>
       </div>
-
-    <div class="header-actions">
-      <a href="sign-up.html"><i class="fa-regular fa-user"></i><span>Account</span></a>
-      <a href="wishlist.html">
-        <i class="fa-regular fa-heart"></i>
-        <span class="wishlist-count">0</span>
-        <span>Wishlist</span>
-      </a>
-      <a href="cart.html" class="cart-link">
-        <i class="fa-solid fa-cart-shopping"></i>
-        <span class="cart-count" id="cartCount">0</span>
-        <span>Cart</span>
-      </a>
-  </div>
     </div>
   </header>
 
+  <!-- Navigation -->
   <nav class="main-nav">
     <div class="nav-container">
       <ul>
-        <li><a href="index.html">FlashDeals</a></li>
+        <li><a href="index.html" class="active">FlashDeals</a></li>
         <li><a href="sofas.html">Sofas & Living Room</a></li>
         <li><a href="dining.html">Dining Sets</a></li>
         <li><a href="beds.html">Beds & Bedroom</a></li>
         <li><a href="wardrobe.html">Wardrobes</a></li>
         <li><a href="decor.html">Interior Decor</a></li>
         <li><a href="entertainment.html">Home Entertainment</a></li>
-        <li><a href="#">Office Furniture</a></li>
+        <li><a href=" office.html">Office Furniture</a></li>
       </ul>
     </div>
   </nav>
 
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
+      
+      <!-- Search Bar First -->
+      <div class="hero-search">
+        <input type="text" placeholder="Search sofas, beds, dining sets, wardrobes..." id="heroSearchInput"/>
+        <button id="heroSearchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+      
       <h1>Upgrade Your Home – Up to 60% OFF Furniture!</h1>
       <p>Premium sofas, beds, dining sets, wardrobes & more. Quality pieces delivered to your door in Lagos & beyond.</p>
-      <button class="hero-btn"  onclick="redirect()">Shop Furniture Now <span>→</span></button>
+      <button class="hero-btn" onclick="window.location.href='sofas.html'">Shop Furniture Now <span>→</span></button>
+      
     </div>
   </section>
 
-  <section class="categories">
-    <div class="category-card">
-      <img src="https://www.coasterfurniture.com/wp-content/uploads/apperson-cushioned-back-arm-chair.png" alt="Sofas">
-      <p>Sofas</p>
-    </div>
-    <div class="category-card">
-      <img src="https://cdn11.bigcommerce.com/s-3uyyclsi/images/stencil/original/products/1746/2583/HE2615dc_96__78105.1569432597.jpg?c=2" alt="Dining">
-      <p>Dining Sets</p>
-    </div>
-    <div class="category-card">
-      <img src="https://m.media-amazon.com/images/I/81imf690CRL._AC_UF894,1000_QL80_.jpg" alt="Beds">
-      <p>Beds</p>
-    </div>
-    <div class="category-card">
-      <img src="https://www.palaceimportsinc.com/cdn/shop/files/27a309_a9c5b11741c54b59805fa1e94cf46e5f_mv2_f1f49d49-0121-4af4-967c-60325c211472.jpg?v=1735319137&width=900" alt="Wardrobes">
-      <p>Wardrobes</p>
-    </div>
-    <div class="category-card">
-      <img src="https://images.prismic.io/luxdeco-dev/MGQ1NGZiNzgtMjBiYS00MzEwLWJkZTQtZmY3Y2QyZTUzOWQ3_how_to_style_a_coffee_table_coffee_table_styling_ideas_shop_in_luxdeco_ba4250f0-d4b7-4885-ac86-55abd1f6d578.jpg?auto=compress,format&w=1200&q=100" alt="Interior Decor">
-      <p>Interior Decor</p>
-    </div>
-    <div class="category-card">
-      <img src="https://www.woodwaves.com/cdn/shop/files/Curved-Floating-TV-Stand-Modern-Gray-Wall-Mount-Entertainment-Center-Arc-Greystone-Woodwaves_2000x1310.jpg?v=1769815914" alt="Home Entertainment">
-      <p>Home Entertainment</p>
+  <!-- Trust Badges -->
+  <section class="trust-badges">
+    <div class="trust-container">
+      <div class="trust-item">
+        <i class="fa-solid fa-truck-fast"></i>
+        <div>
+          <h5>Free Delivery</h5>
+          <p>On orders above ₦150,000</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <i class="fa-solid fa-shield-halved"></i>
+        <div>
+          <h5>Secure Payment</h5>
+          <p>100% protected</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <i class="fa-solid fa-rotate-left"></i>
+        <div>
+          <h5>Easy Returns</h5>
+          <p>14-day policy</p>
+        </div>
+      </div>
+      <div class="trust-item">
+        <i class="fa-solid fa-award"></i>
+        <div>
+          <h5>Quality Guaranteed</h5>
+          <p>1-year warranty</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="products-section">
-    <h2 class="section-title">Flash Sales – Limited Stock!</h2>
+  <!-- Shop by Category -->
+  <section class="categories-section">
+    <div class="section-header">
+      <h2 class="section-title">Shop by Category</h2>
+      <a href="#" class="view-all">View All Categories <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    
+    <div class="categories">
+      <a href="sofas.html" class="category-card">
+        <img src="https://www.coasterfurniture.com/wp-content/uploads/apperson-cushioned-back-arm-chair.png" alt="Sofas">
+        <p>Sofas & Living Room</p>
+      </a>
+      <a href="dining.html" class="category-card">
+        <img src="https://cdn11.bigcommerce.com/s-3uyyclsi/images/stencil/original/products/1746/2583/HE2615dc_96__78105.1569432597.jpg?c=2" alt="Dining">
+        <p>Dining Sets</p>
+      </a>
+      <a href="beds.html" class="category-card">
+        <img src="https://m.media-amazon.com/images/I/81imf690CRL._AC_UF894,1000_QL80_.jpg" alt="Beds">
+        <p>Beds & Bedroom</p>
+      </a>
+      <a href="wardrobe.html" class="category-card">
+        <img src="https://www.palaceimportsinc.com/cdn/shop/files/27a309_a9c5b11741c54b59805fa1e94cf46e5f_mv2_f1f49d49-0121-4af4-967c-60325c211472.jpg?v=1735319137&width=900" alt="Wardrobes">
+        <p>Wardrobes</p>
+      </a>
+      <a href="decor.html" class="category-card">
+        <img src="https://images.prismic.io/luxdeco-dev/MGQ1NGZiNzgtMjBiYS00MzEwLWJkZTQtZmY3Y2QyZTUzOWQ3_how_to_style_a_coffee_table_coffee_table_styling_ideas_shop_in_luxdeco_ba4250f0-d4b7-4885-ac86-55abd1f6d578.jpg?auto=compress,format&w=1200&q=100" alt="Interior Decor">
+        <p>Interior Decor</p>
+      </a>
+      <a href="entertainment.html" class="category-card">
+        <img src="https://www.woodwaves.com/cdn/shop/files/Curved-Floating-TV-Stand-Modern-Gray-Wall-Mount-Entertainment-Center-Arc-Greystone-Woodwaves_2000x1310.jpg?v=1769815914" alt="Home Entertainment">
+        <p>Home Entertainment</p>
+      </a>
+    </div>
+  </section>
 
-    <div class="product-grid" id="flashSalesGrid">
+  <!-- Flash Sales Section -->
+  <section class="products-section flash-sales">
+    <div class="section-header">
+      <div class="section-title-wrapper">
+        <h2 class="section-title">⚡ Flash Sales – Limited Stock!</h2>
+        <div class="countdown-timer">
+          <span>Ends in:</span>
+          <div class="timer-boxes">
+            <div class="timer-box"><span id="hours">08</span><small>Hrs</small></div>
+            <div class="timer-box"><span id="minutes">45</span><small>Min</small></div>
+            <div class="timer-box"><span id="seconds">30</span><small>Sec</small></div>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="view-all">View All Deals <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <div class="product-grid">
       
       <!-- Product 1 -->
       <div class="product-card">
+        <div class="product-badges">
+          <span class="badge sale">-32%</span>
+        </div>
+        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
         <a href="product.html?id=1" class="product-link">
           <div class="product-img-container">
             <img src="https://m.media-amazon.com/images/I/8108kcQAkaL._AC_UF894,1000_QL80_.jpg" alt="Chesterfield Sofa">
@@ -120,11 +184,15 @@
             </div>
           </div> 
         </a>
-        <button><i class="fa-solid fa-cart-shopping cart"></i></button>
+        <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
       </div>
       
       <!-- Product 2 -->
       <div class="product-card">
+        <div class="product-badges">
+          <span class="badge hot">Hot</span>
+        </div>
+        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
         <a href="product.html?id=2" class="product-link">
           <div class="product-img-container">
             <img src="https://www.coasterfurniture.com/wp-content/uploads/gano-living-room-set.png" alt="Living Room Set">
@@ -144,11 +212,15 @@
             <div><span class="price">₦395,000</span></div>
           </div>
         </a>
-        <button><i class="fa-solid fa-cart-shopping cart"></i></button>
+        <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
       </div>
       
       <!-- Product 3 -->
       <div class="product-card">
+        <div class="product-badges">
+          <span class="badge sale">-26%</span>
+        </div>
+        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
         <a href="product.html?id=3" class="product-link">
           <div class="product-img-container">
             <img src="https://m.media-amazon.com/images/I/818vNipOGKL.jpg" alt="Dining Set">
@@ -171,11 +243,15 @@
             </div>
           </div>
         </a>
-        <button><i class="fa-solid fa-cart-shopping cart"></i></button>
+        <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
       </div>
       
       <!-- Product 4 -->
       <div class="product-card">
+        <div class="product-badges">
+          <span class="badge new">New</span>
+        </div>
+        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
         <a href="product.html?id=4" class="product-link">
           <div class="product-img-container">
             <img src="https://m.media-amazon.com/images/I/81imf690CRL._AC_UF894,1000_QL80_.jpg" alt="Queen Bed">
@@ -195,11 +271,15 @@
             <div><span class="price">₦195,000</span></div>
           </div>
         </a>
-        <button><i class="fa-solid fa-cart-shopping cart"></i></button>
+        <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
       </div>
       
       <!-- Product 5 -->
       <div class="product-card">
+        <div class="product-badges">
+          <span class="badge sale">-29%</span>
+        </div>
+        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
         <a href="product.html?id=5" class="product-link">
           <div class="product-img-container">
             <img src="https://futonland.com/common/images/products2/large/PI-8206M-WRD-MC.jpg" alt="Wardrobe">
@@ -222,17 +302,67 @@
             </div>
           </div>
         </a>
-        <button><i class="fa-solid fa-cart-shopping cart"></i></button>
+        <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
       </div>
+
+    </div>
+  </section>
+
+  <!-- Promotional Banners -->
+  <section class="promo-banners">
+    <div class="promo-container">
+      <a href="sofas.html" class="promo-card promo-large">
+        <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80" alt="Living Room Sale">
+        <div class="promo-content">
+          <span class="promo-tag">Limited Time</span>
+          <h3>Living Room Collection</h3>
+          <p>Up to 40% Off on Premium Sofas</p>
+          <span class="promo-btn">Shop Now <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </a>
+      <a href="beds.html" class="promo-card">
+        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80" alt="Bedroom Sale">
+        <div class="promo-content">
+          <span class="promo-tag">New Arrivals</span>
+          <h3>Bedroom Furniture</h3>
+          <p>From ₦195,000</p>
+          <span class="promo-btn">Explore <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </a>
+      <a href=" office.html" class="promo-card">
+        <img src="https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=800&q=80" alt="Office Sale">
+        <div class="promo-content">
+          <span class="promo-tag">Work From Home</span>
+          <h3>Office Essentials</h3>
+          <p>Starting at ₦68,900</p>
+          <span class="promo-btn">Shop Now <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Best Sellers Section -->
+  <section class="products-section bestsellers">
+    <div class="section-header">
+      <h2 class="section-title">🏆 Best Sellers</h2>
+      <a href="#" class="view-all">View All <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <div class="product-grid">
       
-      <!-- Product 6 -->
+      <!-- Best Seller 1 -->
       <div class="product-card">
-        <a href="product.html?id=6" class="product-link">
+        <div class="product-badges">
+          <span class="badge bestseller">Bestseller</span>
+        </div>
+        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+        <a href="product.html?id=16" class="product-link">
           <div class="product-img-container">
-            <img src="https://www.expressfurniture.net/wp-content/uploads/2021/06/426449_791x633_01.jpg" alt="Coffee Table">
+            <img src="https://images.unsplash.com/photo-1550254478-ead40cc54513?w=800&q=80" alt="Mid-Century Sofa">
           </div>
           <div class="product-info">
-            <div class="product-name">Modern Glass Top Coffee Table with Storage</div>
+            <div class="product-brand">Signature Design</div>
+            <div class="product-name">Mid-Century Modern 3-Seater Sofa – Mustard Yellow</div>
             <div class="product-rating">
               <span class="stars">
                 <i class="fa-solid fa-star"></i>
@@ -241,22 +371,246 @@
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
               </span>
-              <span class="rating-count">(145)</span>
+              <span class="rating-count">(312)</span>
             </div>
-            <div><span class="price">₦85,000</span></div>
+            <div><span class="price">₦320,000</span></div>
           </div>
         </a>
-        <button><i class="fa-solid fa-cart-shopping cart"></i></button>
+        <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
       </div>
       
-      <!-- Product 7 -->
+      <!-- Best Seller 2 -->
       <div class="product-card">
-        <a href="product.html?id=7" class="product-link">
+        <div class="product-badges">
+          <span class="badge bestseller">Bestseller</span>
+        </div>
+        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+        <a href="product.html?id=31" class="product-link">
           <div class="product-img-container">
-            <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/805c58fd-4f3f-40be-9979-e7be40caf4cd.__CR0,188,1500,1125_PT0_SX800_V1___.jpg" alt="TV Stand">
+            <img src="https://m.media-amazon.com/images/I/818vNipOGKL.jpg" alt="Formal Dining Set">
           </div>
           <div class="product-info">
-            <div class="product-name">Floating TV Stand – 55-65 inch – Oak Finish</div>
+            <div class="product-brand">Homelegance</div>
+            <div class="product-name">8-Seater Elegant Formal Dining Set – Dark Walnut</div>
+            <div class="product-rating">
+              <span class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </span>
+              <span class="rating-count">(287)</span>
+            </div>
+            <div><span class="price">₦780,000</span></div>
+          </div>
+        </a>
+        <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+      </div>
+      
+      <!-- Best Seller 3 -->
+      <div class="product-card">
+        <div class="product-badges">
+          <span class="badge bestseller">Bestseller</span>
+        </div>
+        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+        <a href="product.html?id=47" class="product-link">
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&q=80" alt="Luxury Bedroom Set">
+          </div>
+          <div class="product-info">
+            <div class="product-brand">Ashley Furniture</div>
+            <div class="product-name">Luxury 5-Piece Bedroom Set – King Bed + Dresser + Mirror</div>
+            <div class="product-rating">
+              <span class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </span>
+              <span class="rating-count">(312)</span>
+            </div>
+            <div><span class="price">₦1,450,000</span></div>
+          </div>
+        </a>
+        <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+      </div>
+      
+      <!-- Best Seller 4 -->
+      <div class="product-card">
+        <div class="product-badges">
+          <span class="badge bestseller">Bestseller</span>
+        </div>
+        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+        <a href="product.html?id=72" class="product-link">
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1580480055273-228ff5388ef8?w=800&q=80" alt="Office Chair">
+          </div>
+          <div class="product-info">
+            <div class="product-brand">Herman Miller Style</div>
+            <div class="product-name">Ergonomic Mesh Office Chair – Lumbar Support Black</div>
+            <div class="product-rating">
+              <span class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </span>
+              <span class="rating-count">(312)</span>
+            </div>
+            <div><span class="price">₦125,000</span></div>
+          </div>
+        </a>
+        <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+      </div>
+      
+      <!-- Best Seller 5 -->
+      <div class="product-card">
+        <div class="product-badges">
+          <span class="badge bestseller">Bestseller</span>
+        </div>
+        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+        <a href="product.html?id=59" class="product-link">
+          <div class="product-img-container">
+            <img src="https://www.oppoliahome.com/wp-content/uploads/2022/12/white-wardrobe-with-mirror-obw23-l03.jpg" alt="Sliding Wardrobe">
+          </div>
+          <div class="product-info">
+            <div class="product-brand">LeezWorld Original</div>
+            <div class="product-name">4-Door Sliding Wardrobe with Mirror – Modern White</div>
+            <div class="product-rating">
+              <span class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </span>
+              <span class="rating-count">(245)</span>
+            </div>
+            <div>
+              <span class="price">₦385,000</span>
+              <span class="old-price">₦550,000</span>
+            </div>
+          </div>
+        </a>
+        <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- New Arrivals Section -->
+  <section class="products-section new-arrivals">
+    <div class="section-header">
+      <h2 class="section-title">✨ New Arrivals</h2>
+      <a href="#" class="view-all">View All <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <div class="product-grid">
+      
+      <!-- New Arrival 1 -->
+      <div class="product-card">
+        <div class="product-badges">
+          <span class="badge new">New</span>
+        </div>
+        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+        <a href="product.html?id=73" class="product-link">
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1593062096033-9a26b09da705?w=800&q=80" alt="Standing Desk">
+          </div>
+          <div class="product-info">
+            <div class="product-brand">FlexiDesk</div>
+            <div class="product-name">Electric Height Adjustable Standing Desk – White</div>
+            <div class="product-rating">
+              <span class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </span>
+              <span class="rating-count">(189)</span>
+            </div>
+            <div><span class="price">₦295,000</span></div>
+          </div>
+        </a>
+        <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+      </div>
+      
+      <!-- New Arrival 2 -->
+      <div class="product-card">
+        <div class="product-badges">
+          <span class="badge new">New</span>
+          <span class="badge hot">Hot</span>
+        </div>
+        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+        <a href="product.html?id=53" class="product-link">
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=800&q=80" alt="LED Platform Bed">
+          </div>
+          <div class="product-info">
+            <div class="product-brand">Signature Design</div>
+            <div class="product-name">King Modern Platform Bed with LED Lights – White Gloss</div>
+            <div class="product-rating">
+              <span class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </span>
+              <span class="rating-count">(87)</span>
+            </div>
+            <div><span class="price">₦650,000</span></div>
+          </div>
+        </a>
+        <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+      </div>
+      
+      <!-- New Arrival 3 -->
+      <div class="product-card">
+        <div class="product-badges">
+          <span class="badge new">New</span>
+        </div>
+        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+        <a href="product.html?id=81" class="product-link">
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=800&q=80" alt="Gaming Desk">
+          </div>
+          <div class="product-info">
+            <div class="product-brand">FlexiDesk</div>
+            <div class="product-name">RGB Gaming Desk with Cable Management – Carbon</div>
+            <div class="product-rating">
+              <span class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </span>
+              <span class="rating-count">(178)</span>
+            </div>
+            <div><span class="price">₦225,000</span></div>
+          </div>
+        </a>
+        <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+      </div>
+      
+      <!-- New Arrival 4 -->
+      <div class="product-card">
+        <div class="product-badges">
+          <span class="badge new">New</span>
+        </div>
+        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+        <a href="product.html?id=23" class="product-link">
+          <div class="product-img-container">
+            <img src="https://images.unsplash.com/photo-1540574163026-643ea20ade25?w=800&q=80" alt="Modular Sofa">
+          </div>
+          <div class="product-info">
+            <div class="product-brand">LeezWorld Original</div>
+            <div class="product-name">Modular Corner Sofa – Light Beige Fabric</div>
             <div class="product-rating">
               <span class="stars">
                 <i class="fa-solid fa-star"></i>
@@ -267,210 +621,216 @@
               </span>
               <span class="rating-count">(89)</span>
             </div>
-            <div>
-              <span class="price">₦145,000</span>
-              <span class="old-price">₦210,000</span>
-            </div>
+            <div><span class="price">₦620,000</span></div>
           </div>
         </a>
-        <button><i class="fa-solid fa-cart-shopping cart"></i></button>
+        <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
       </div>
       
-      <!-- Product 8 -->
+      <!-- New Arrival 5 -->
       <div class="product-card">
-        <a href="product.html?id=8" class="product-link">
+        <div class="product-badges">
+          <span class="badge new">New</span>
+        </div>
+        <button class="wishlist-btn"><i class="fa-regular fa-heart"></i></button>
+        <a href="product.html?id=56" class="product-link">
           <div class="product-img-container">
-            <img src="https://www.content.upliftdesk.com/content/img/product/RAY344/blk.jpg?compression=lossy" alt="Office Chair">
+            <img src="https://s3.amazonaws.com/media.thestowcompany.com/managed_media/filer_public/57/53/575305ee-1f18-4730-836f-80bf14fa1836/ec_703.jpg" alt="Walk-in Closet">
           </div>
           <div class="product-info">
-            <div class="product-name">Ergonomic Home Office Chair – Mesh Back</div>
+            <div class="product-brand">Signature Design</div>
+            <div class="product-name">Premium Walk-in Closet System – White Organization</div>
             <div class="product-rating">
               <span class="stars">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
-                <i class="fa-regular fa-star"></i>
+                <i class="fa-solid fa-star"></i>
               </span>
-              <span class="rating-count">(53)</span>
+              <span class="rating-count">(156)</span>
             </div>
-            <div><span class="price">₦68,900</span></div>
+            <div><span class="price">₦850,000</span></div>
           </div>
         </a>
-        <button><i class="fa-solid fa-cart-shopping cart"></i></button>
-      </div>
-      
-      <!-- Product 9 -->
-      <div class="product-card">
-        <a href="product.html?id=9" class="product-link">
-          <div class="product-img-container">
-            <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/969f5713-23c1-4057-81fc-033a8cd71c68.__CR0,0,2910,1800_PT0_SX970_V1___.jpg" alt="5-Tier Modern Bookshelf">
-          </div>
-          <div class="product-info">
-            <div class="product-name">5-Tier Modern Bookshelf – Oak</div>
-            <div class="product-rating">
-              <span class="stars">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star-half-stroke"></i>
-              </span>
-              <span class="rating-count">(78)</span>
-            </div>
-            <div>
-              <span class="price">₦112,000</span>
-              <span class="old-price">₦158,000</span>
-            </div>
-          </div>
-        </a>
-        <button><i class="fa-solid fa-cart-shopping cart"></i></button>
-      </div>
-      
-      <!-- Product 10 -->
-      <div class="product-card">
-        <a href="product.html?id=10" class="product-link">
-          <div class="product-img-container">
-            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80" alt="Single Recliner Armchair">
-          </div>
-          <div class="product-info">
-            <div class="product-name">Single Recliner Armchair – Leather Finish</div>
-            <div class="product-rating">
-              <span class="stars">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star-half-stroke"></i>
-              </span>
-              <span class="rating-count">(78)</span>
-            </div>
-            <div><span class="price">₦165,000</span></div>
-          </div>
-        </a>
-        <button><i class="fa-solid fa-cart-shopping cart"></i></button>
+        <button class="add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
       </div>
 
     </div>
   </section>
 
-<section class="newsletter">
-  <div class="newstext">
-    <h4>Stay Updated</h4>
-    <p>Subscribe to receive exclusive discounts, new arrivals, and members-only deals.</p>
-  </div>
-
-  <div class="form">
-    <input type="email" placeholder="Your email address" required>
-    <button class="normal">Sign Up</button>
-  </div>
-</section>
-
-<!-- Footer -->
-    <!-- Footer -->
-<footer class="site-footer">
-  
-  <!-- Main Footer Content -->
-  <div class="footer-main">
-    <div class="footer-container">
+  <!-- Customer Reviews Section -->
+  <section class="reviews-section">
+    <h2 class="section-title">What Our Customers Say</h2>
+    
+    <div class="reviews-container">
+      <div class="review-card">
+        <div class="review-stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <p class="review-text">"Amazing quality furniture! The sofa I ordered exceeded my expectations. Delivery was quick and the customer service was excellent."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">AO</div>
+          <div class="reviewer-info">
+            <h5>Adebayo Okonkwo</h5>
+            <span>Lagos, Nigeria</span>
+          </div>
+        </div>
+      </div>
       
-      <!-- Column 1: About & Logo -->
-      <div class="footer-column footer-about">
-        <a href="home.html" class="footer-logo">LeezWorld<span>.</span></a>
-        <p>Your trusted destination for premium household furniture in Nigeria. Quality pieces, affordable prices, delivered to your doorstep.</p>
+      <div class="review-card">
+        <div class="review-stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <p class="review-text">"Best furniture store in Nigeria! I furnished my entire apartment with LeezWorld products. Great prices and premium quality."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">CN</div>
+          <div class="reviewer-info">
+            <h5>Chioma Nwosu</h5>
+            <span>Abuja, Nigeria</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="review-card">
+        <div class="review-stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star-half-stroke"></i>
+        </div>
+        <p class="review-text">"The bedroom set I bought is absolutely stunning! Assembly was easy and the quality is top-notch. Highly recommend LeezWorld."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">IE</div>
+          <div class="reviewer-info">
+            <h5>Ibrahim Eze</h5>
+            <span>Port Harcourt, Nigeria</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="newstext">
+      <h4>Stay Updated</h4>
+      <p>Subscribe to receive exclusive discounts, new arrivals, and members-only deals.</p>
+    </div>
+
+    <div class="form">
+      <input type="email" placeholder="Your email address" required>
+      <button class="normal">Sign Up</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    
+    <div class="footer-main">
+      <div class="footer-container">
         
-        <div class="footer-social">
-          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-          <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <div class="footer-column footer-about">
+          <a href="index.html" class="footer-logo">LeezWorld<span>.</span></a>
+          <p>Your trusted destination for premium household furniture in Nigeria. Quality pieces, affordable prices, delivered to your doorstep.</p>
+          
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>My Account</h4>
+          <ul>
+            <li><a href="login.html">Sign In</a></li>
+            <li><a href="sign-up.html">Create Account</a></li>
+            <li><a href="orders.html">Order History</a></li>
+            <li><a href="wishlist.html">My Wishlist</a></li>
+            <li><a href="track-order.html">Track Your Order</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column footer-contact">
+          <h4>Contact Us</h4>
+          <ul class="contact-list">
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <span>109 Funsho Williams Avenue, Iponri, Surulere, Lagos, Nigeria</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <span>+234 812 345 6789</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <span>support@leezworld.com</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-clock"></i>
+              <span>Mon - Sat: 9AM - 7PM</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-features">
+      <div class="footer-container">
+        <div class="feature-item">
+          <i class="fa-solid fa-truck-fast"></i>
+          <div>
+            <h5>Free Delivery</h5>
+            <p>On orders above ₦150,000</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <i class="fa-solid fa-shield-halved"></i>
+          <div>
+            <h5>Secure Payment</h5>
+            <p>100% secure transactions</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <i class="fa-solid fa-rotate-left"></i>
+          <div>
+            <h5>Easy Returns</h5>
+            <p>14-day return policy</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <i class="fa-solid fa-headset"></i>
+          <div>
+            <h5>24/7 Support</h5>
+            <p>Dedicated customer care</p>
+          </div>
         </div>
       </div>
+    </div>
 
-      <!-- Column 2: My Account -->
-      <div class="footer-column">
-        <h4>My Account</h4>
-        <ul>
-          <li><a href="login.html">Sign In</a></li>
-          <li><a href="sign-up.html">Create Account</a></li>
-          <li><a href="orders.html">Order History</a></li>
-          <li><a href="wishlist.html">My Wishlist</a></li>
-          <li><a href="track-order.html">Track Your Order</a></li>
+    <div class="footer-bottom">
+      <div class="footer-container">
+        <p>&copy; 2026 LeezWorld. All Rights Reserved.</p>
+        <ul class="footer-legal">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
         </ul>
       </div>
-
-      <!-- Column 3: Contact Info -->
-      <div class="footer-column footer-contact">
-        <h4>Contact Us</h4>
-        <ul class="contact-list">
-          <li>
-            <i class="fa-solid fa-location-dot"></i>
-            <span>109 Funsho Williams Avenue, Iponri, Surulere, Lagos, Nigeria</span>
-          </li>
-          <li>
-            <i class="fa-solid fa-phone"></i>
-            <span>+234 812 345 6789</span>
-          </li>
-          <li>
-            <i class="fa-solid fa-envelope"></i>
-            <span>support@leezworld.com</span>
-          </li>
-          <li>
-            <i class="fa-solid fa-clock"></i>
-            <span>Mon - Sat: 9AM - 7PM</span>
-          </li>
-        </ul>
-      </div>
-
     </div>
-  </div>
 
-  <!-- Footer Features Bar -->
-  <div class="footer-features">
-    <div class="footer-container">
-      <div class="feature-item">
-        <i class="fa-solid fa-truck-fast"></i>
-        <div>
-          <h5>Free Delivery</h5>
-          <p>On orders above ₦150,000</p>
-        </div>
-      </div>
-      <div class="feature-item">
-        <i class="fa-solid fa-shield-halved"></i>
-        <div>
-          <h5>Secure Payment</h5>
-          <p>100% secure transactions</p>
-        </div>
-      </div>
-      <div class="feature-item">
-        <i class="fa-solid fa-rotate-left"></i>
-        <div>
-          <h5>Easy Returns</h5>
-          <p>14-day return policy</p>
-        </div>
-      </div>
-      <div class="feature-item">
-        <i class="fa-solid fa-headset"></i>
-        <div>
-          <h5>24/7 Support</h5>
-          <p>Dedicated customer care</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Bottom Footer -->
-  <div class="footer-bottom">
-    <div class="footer-container">
-      <p>&copy; 2026 LeezWorld. All Rights Reserved.</p>
-      <ul class="footer-legal">
-        <li><a href="privacy.html">Privacy Policy</a></li>
-        <li><a href="terms.html">Terms & Conditions</a></li>
-      </ul>
-    </div>
-  </div>
-
-</footer>
+  </footer>
 
 </body>
 </html>

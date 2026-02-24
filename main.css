@@ -51,7 +51,7 @@ text-decoration: none;
 color: #222;
 }
 
-.search-bar {
+/* .search-bar {
 flex: 1;
 max-width: 620px;
 position: relative;
@@ -77,7 +77,7 @@ border: none;
 border-radius: 50px;
 cursor: pointer;
 font-size: 18px;
-}
+} */
 
 .header-actions {
 display: flex;
@@ -313,59 +313,115 @@ width: 100%;
 }
 
 /* Hero section with background image */
+/* ============================================
+   HERO SECTION - Search Bar First (Same Style)
+   ============================================ */
 .hero {
-background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000');
-background-size: cover;
-background-position: center;
-position: relative;
-padding: 100px 20px;
-text-align: center;
-color: white;
+  background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 80px 20px 100px;
+  text-align: center;
+  color: white;
 }
 
 .hero::before {
-content: '';
-position: absolute;
-top: 0; left: 0; right: 0; bottom: 0;
-background: rgba(0, 0, 0, 0.65); /* darker overlay instead of blur */
-z-index: 1;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 1;
 }
 
 .hero-content {
-position: relative;
-z-index: 2;
-max-width: 900px;
-margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
+/* Hero Search Bar - Same Style as Original Header Search */
+.hero-search {
+  max-width: 620px;
+  margin: 0 auto 40px;
+  position: relative;
+}
+
+.hero-search input {
+  width: 100%;
+  padding: 14px 70px 14px 24px;
+  border: 2px solid #ff6600;
+  border-radius: 50px;
+  font-size: 16px;
+  outline: none;
+  background: white;
+}
+
+.hero-search input::placeholder {
+  color: #888;
+}
+
+.hero-search input:focus {
+  box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.2);
+}
+
+.hero-search button {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  bottom: 6px;
+  width: 52px;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background 0.3s ease;
+}
+
+.hero-search button:hover {
+  background-color: #e65c00;
+}
+
+/* Hero Text */
 .hero h1 {
-font-size: 48px;
-margin-bottom: 16px;
+  font-size: 48px;
+  margin-bottom: 16px;
+  line-height: 1.2;
 }
 
 .hero p {
-font-size: 22px;
-margin-bottom: 32px;
+  font-size: 22px;
+  margin-bottom: 32px;
 }
 
+/* Hero Button */
 .hero-btn {
-background-color: #ff6600;
-color: white;
-padding: 16px 48px;
-font-size: 20px;
-border: none;
-border-radius: 50px;
-cursor: pointer;
+  background-color: #ff6600;
+  color: white;
+  padding: 16px 48px;
+  font-size: 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
+
 .hero-btn:hover {
-background-color: #e65c00;
+  background-color: #e65c00;
 }
+
 .hero-btn span {
-/* display: inline-block; */
-transition: 0.3s ease;
+  transition: 0.3s ease;
 }
+
 .hero-btn:hover span {
-padding-left: 8px;
+  padding-left: 8px;
 }
 
 /* Categories */
@@ -513,6 +569,436 @@ font-size: 15px;
 margin-left: 8px;
 }
 
+
+/* ============================================
+   TRUST BADGES SECTION
+   ============================================ */
+.trust-badges {
+  background: white;
+  padding: 25px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.trust-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  justify-content: center;
+}
+
+.trust-item i {
+  font-size: 28px;
+  color: #ff6600;
+}
+
+.trust-item h5 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 2px;
+}
+
+.trust-item p {
+  font-size: 12px;
+  color: #666;
+}
+
+/* ============================================
+   SECTION HEADER WITH VIEW ALL
+   ============================================ */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.section-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.view-all {
+  color: #ff6600;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.3s ease;
+}
+
+.view-all:hover {
+  gap: 10px;
+}
+
+/* ============================================
+   COUNTDOWN TIMER
+   ============================================ */
+.countdown-timer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.countdown-timer > span {
+  font-size: 14px;
+  color: #666;
+}
+
+.timer-boxes {
+  display: flex;
+  gap: 8px;
+}
+
+.timer-box {
+  background: #ff6600;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-align: center;
+  min-width: 50px;
+}
+
+.timer-box span {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.timer-box small {
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+/* ============================================
+   CATEGORIES SECTION
+   ============================================ */
+.categories-section {
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.category-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  display: block;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.category-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.category-card p {
+  padding: 14px;
+  font-weight: bold;
+  color: #222;
+}
+
+/* ============================================
+   PROMOTIONAL BANNERS
+   ============================================ */
+.promo-banners {
+  background: #f5f5f5;
+  padding: 50px 0;
+}
+
+.promo-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.promo-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 280px;
+  display: block;
+  text-decoration: none;
+}
+
+.promo-card.promo-large {
+  grid-row: span 1;
+}
+
+.promo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.promo-card:hover img {
+  transform: scale(1.05);
+}
+
+.promo-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0) 100%);
+  z-index: 1;
+}
+
+.promo-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 25px;
+  z-index: 2;
+  color: white;
+}
+
+.promo-tag {
+  background: #ff6600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.promo-content h3 {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.promo-content p {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-bottom: 12px;
+}
+
+.promo-btn {
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.3s ease;
+}
+
+.promo-card:hover .promo-btn {
+  gap: 10px;
+}
+
+/* ============================================
+   CUSTOMER REVIEWS SECTION
+   ============================================ */
+.reviews-section {
+  max-width: 1400px;
+  margin: 60px auto;
+  padding: 0 16px;
+  text-align: center;
+}
+
+.reviews-section .section-title {
+  margin-bottom: 40px;
+  display: inline-block;
+}
+
+.reviews-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.review-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+  text-align: left;
+}
+
+.review-stars {
+  margin-bottom: 15px;
+}
+
+.review-stars i {
+  color: #ffc107;
+  font-size: 16px;
+}
+
+.review-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.reviewer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reviewer-avatar {
+  width: 45px;
+  height: 45px;
+  background: #ff6600;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.reviewer-info h5 {
+  font-size: 14px;
+  color: #222;
+  margin-bottom: 2px;
+}
+
+.reviewer-info span {
+  font-size: 12px;
+  color: #888;
+}
+
+/* ============================================
+   RESPONSIVE STYLES FOR NEW SECTIONS
+   ============================================ */
+@media (max-width: 992px) {
+  .trust-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .promo-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .promo-card.promo-large {
+    grid-column: span 2;
+  }
+
+  .reviews-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reviews-container .review-card:last-child {
+    grid-column: span 2;
+    max-width: 50%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .trust-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .trust-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .section-title-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .countdown-timer {
+    flex-wrap: wrap;
+  }
+
+  .promo-container {
+    grid-template-columns: 1fr;
+  }
+
+  .promo-card.promo-large {
+    grid-column: span 1;
+  }
+
+  .promo-card {
+    height: 220px;
+  }
+
+  .reviews-container {
+    grid-template-columns: 1fr;
+  }
+
+  .reviews-container .review-card:last-child {
+    grid-column: span 1;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .trust-container {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-item {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .timer-box {
+    padding: 6px 10px;
+    min-width: 45px;
+  }
+
+  .timer-box span {
+    font-size: 16px;
+  }
+
+  .promo-content h3 {
+    font-size: 18px;
+  }
+}
 /* Newsletter section */
 .newsletter {
 display: flex;
