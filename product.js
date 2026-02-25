@@ -1373,12 +1373,3 @@ const products = [
   }
 ];
 
-// Function to get product by ID
-// function getProductById(id) {
-//   return products.find(product => product.id === parseInt(id));
-// }
-
-// // Function to format price in Naira
-// function formatPrice(price) {
-//   return "₦" + price.toLocaleString();
-// }

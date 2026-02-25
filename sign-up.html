@@ -9,23 +9,102 @@
   <link rel="stylesheet" href="main.css"> 
 
   <style>
+    body {
+      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
+                  url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1920&q=85') center/cover no-repeat fixed;
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
     /* Minimal styles for validation only */
     .error-message {
-      color: #e74c3c;
+      color: #ff6b6b;
       font-size: 13px;
       margin-top: 6px;
       display: none;
     }
     .success-message {
-      color: #27ae60;
+      color: #2ecc71;
       text-align: center;
       margin: 20px 0;
       font-weight: 500;
       display: none;
+      background: rgba(255,255,255,0.9);
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .signup-container {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(8px);
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+      max-width: 480px;
+      margin: 60px auto;
+      padding: 40px 35px;
+    }
+
+    .signup-btn {
+      background: #ff6600;
+      color: white;
+      border: none;
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .signup-btn:hover {
+      background: #34495e;
+      transform: translateY(-2px);
+    }
+
+    .social-btn {
+      margin: 10px 0;
+      width: 100%;
+      padding: 12px;
+      font-size: 15px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .google-btn {
+      background: #4285F4;
+      color: white;
+      border: none;
+    }
+
+    .facebook-btn {
+      background: #1877F2;
+      color: white;
+      border: none;
     }
   </style>
 </head>
 <body>
+
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">LeezWorld<span>.</span></a>
+
+      <div class="header-actions">
+        <a href="sign-up.html"><i class="fa-regular fa-user"></i><span>Account</span></a>
+        <a href="wishlist.html">
+          <i class="fa-regular fa-heart"></i>
+          <span class="wishlist-count">0</span>
+          <span>Wishlist</span>
+        </a>
+        <a href="cart.html" class="cart-link">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+          <span>Cart</span>
+        </a>
+      </div>
+    </div>
+  </header>
 
   <div class="signup-container">
     <div class="signup-header">
@@ -66,7 +145,7 @@
     </div>
 
     <div class="terms">
-      By signing up, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+      By signing up, you agree to our <a href="#">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a>.
     </div>
 
     <div class="login-link">

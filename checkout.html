@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout - LeezWorld</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="main.css"/>
+  <link rel="stylesheet" href="category.css"/>
+  <style>
+    /* Checkout Styles */
+    .checkout-section {
+      padding: 40px 20px 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .checkout-title {
+      font-size: 2rem;
+      color: #222;
+      margin-bottom: 30px;
+    }
+
+    .checkout-content {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 40px;
+    }
+
+    /* Form Styles */
+    .checkout-form {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .form-section {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 25px;
+    }
+
+    .form-section h2 {
+      font-size: 1.3rem;
+      color: #222;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #f0f0f0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .form-section h2 i {
+      color:  #ff6600;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .form-row.full {
+      grid-template-columns: 1fr;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .form-group label span {
+      color: #e74c3c;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color:  #ff6600;
+      box-shadow: 0 0 0 3px rgba(8, 129, 120, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    /* Delivery Options */
+    .delivery-options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .delivery-option {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 15px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .delivery-option:hover {
+      border-color:  #ff6600;
+    }
+
+    .delivery-option.selected {
+      border-color:  #ff6600;
+      background: rgba(8, 129, 120, 0.05);
+    }
+
+    .delivery-option input[type="radio"] {
+      width: 20px;
+      height: 20px;
+      accent-color:  #ff6600;
+    }
+
+    .delivery-option-info {
+      flex: 1;
+    }
+
+    .delivery-option-info h4 {
+      font-size: 1rem;
+      color: #222;
+      margin-bottom: 3px;
+    }
+
+    .delivery-option-info p {
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .delivery-option-price {
+      font-weight: 700;
+      color:  #ff6600;
+      font-size: 1rem;
+    }
+
+    /* Payment Methods */
+    .payment-methods {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .payment-method {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 15px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .payment-method:hover {
+      border-color:  #ff6600;
+    }
+
+    .payment-method.selected {
+      border-color:  #ff6600;
+      background: rgba(8, 129, 120, 0.05);
+    }
+
+    .payment-method input[type="radio"] {
+      width: 20px;
+      height: 20px;
+      accent-color:  #ff6600;
+    }
+
+    .payment-method-icon {
+      font-size: 1.5rem;
+      color: #333;
+      width: 40px;
+      text-align: center;
+    }
+
+    .payment-method-info h4 {
+      font-size: 1rem;
+      color: #222;
+      margin-bottom: 3px;
+    }
+
+    .payment-method-info p {
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    /* Card Details */
+    .card-details {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #e0e0e0;
+    }
+
+    /* Order Summary */
+    .order-summary {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 25px;
+      height: fit-content;
+      position: sticky;
+      top: 20px;
+    }
+
+    .order-summary h2 {
+      font-size: 1.3rem;
+      color: #222;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #f0f0f0;
+    }
+
+    .order-items {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 20px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .order-item {
+      display: flex;
+      gap: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .order-item:last-child {
+      border-bottom: none;
+    }
+
+    .order-item-img {
+      width: 70px;
+      height: 70px;
+      border-radius: 6px;
+      object-fit: cover;
+      border: 1px solid #e0e0e0;
+    }
+
+    .order-item-details {
+      flex: 1;
+    }
+
+    .order-item-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #222;
+      margin-bottom: 5px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .order-item-qty {
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .order-item-price {
+      font-weight: 700;
+      color:  #ff6600;
+      font-size: 0.95rem;
+    }
+
+    .summary-divider {
+      border: none;
+      border-top: 1px solid #e0e0e0;
+      margin: 20px 0;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .summary-row.total {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #222;
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 2px solid  #ff6600;
+    }
+
+    .summary-row.total span:last-child {
+      color:  #ff6600;
+    }
+
+    .place-order-btn {
+      width: 100%;
+      padding: 16px;
+      background:  #ff6600;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .place-order-btn:hover {
+      background: #066a62;
+    }
+
+    .secure-note {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 15px;
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .secure-note i {
+      color:  #ff6600;
+    }
+
+    .terms-note {
+      font-size: 0.8rem;
+      color: #888;
+      text-align: center;
+      margin-top: 15px;
+      line-height: 1.5;
+    }
+
+    .terms-note a {
+      color:  #ff6600;
+      text-decoration: none;
+    }
+
+    .terms-note a:hover {
+      text-decoration: underline;
+    }
+
+    /* Edit Cart Link */
+    .edit-cart-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.9rem;
+      color:  #ff6600;
+      text-decoration: none;
+      margin-bottom: 15px;
+    }
+
+    .edit-cart-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .checkout-content {
+        grid-template-columns: 1fr;
+      }
+
+      .order-summary {
+        position: static;
+        order: -1;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .checkout-title {
+        font-size: 1.5rem;
+      }
+
+      .form-section {
+        padding: 20px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">LeezWorld<span>.</span></a>
+
+      <div class="header-actions">
+        <a href="sign-up.html"><i class="fa-regular fa-user"></i><span>Account</span></a>
+        <a href="wishlist.html"><i class="fa-regular fa-heart"></i><span>Wishlist</span></a>
+        <a href="cart.html" class="cart-link">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-count" id="cartCount">2</span>
+          <span>Cart</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <ul>
+        <li><a href="index.html">Flash Deals</a></li>
+        <li><a href="sofas.html">Sofas & Living Room</a></li>
+        <li><a href="dining.html">Dining Sets</a></li>
+        <li><a href="beds.html">Beds & Bedroom</a></li>
+        <li><a href="wardrobe.html">Wardrobes</a></li>
+        <li><a href="decor.html">Interior Decor</a></li>
+        <li><a href="entertainment.html">Home Entertainment</a></li>
+        <li><a href="office.html">Office Furniture</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <div class="breadcrumb-container">
+      <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+      <span><i class="fa-solid fa-chevron-right"></i></span>
+      <a href="cart.html">Cart</a>
+      <span><i class="fa-solid fa-chevron-right"></i></span>
+      <span class="current">Checkout</span>
+    </div>
+  </div>
+
+  <!-- Checkout Section -->
+  <section class="checkout-section">
+    <h1 class="checkout-title">Checkout</h1>
+
+    <div class="checkout-content">
+
+      <!-- Checkout Form -->
+      <div class="checkout-form">
+
+        <!-- Contact Information -->
+        <div class="form-section">
+          <h2><i class="fa-solid fa-user"></i> Contact Information</h2>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name <span>*</span></label>
+              <input type="text" placeholder="Enter your first name" required>
+            </div>
+            <div class="form-group">
+              <label>Last Name <span>*</span></label>
+              <input type="text" placeholder="Enter your last name" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Email Address <span>*</span></label>
+              <input type="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+              <label>Phone Number <span>*</span></label>
+              <input type="tel" placeholder="+234 800 000 0000" required>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shipping Address -->
+        <div class="form-section">
+          <h2><i class="fa-solid fa-location-dot"></i> Shipping Address</h2>
+          
+          <div class="form-row full">
+            <div class="form-group">
+              <label>Street Address <span>*</span></label>
+              <input type="text" placeholder="Enter your street address" required>
+            </div>
+          </div>
+
+          <div class="form-row full">
+            <div class="form-group">
+              <label>Apartment, Suite, etc. (Optional)</label>
+              <input type="text" placeholder="Apartment, suite, unit, etc.">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>City <span>*</span></label>
+              <input type="text" placeholder="Enter your city" required>
+            </div>
+            <div class="form-group">
+              <label>State <span>*</span></label>
+              <select required>
+                <option value="">Select State</option>
+                <option value="lagos">Lagos</option>
+                <option value="abuja">Abuja (FCT)</option>
+                <option value="rivers">Rivers</option>
+                <option value="oyo">Oyo</option>
+                <option value="kano">Kano</option>
+                <option value="ogun">Ogun</option>
+                <option value="enugu">Enugu</option>
+                <option value="delta">Delta</option>
+                <option value="kaduna">Kaduna</option>
+                <option value="anambra">Anambra</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row full">
+            <div class="form-group">
+              <label>Delivery Instructions (Optional)</label>
+              <textarea placeholder="Any special instructions for delivery..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Delivery Method -->
+        <div class="form-section">
+          <h2><i class="fa-solid fa-truck"></i> Delivery Method</h2>
+          
+          <div class="delivery-options">
+            <label class="delivery-option selected">
+              <input type="radio" name="delivery" value="standard" checked>
+              <div class="delivery-option-info">
+                <h4>Standard Delivery</h4>
+                <p>5-7 business days</p>
+              </div>
+              <span class="delivery-option-price">₦5,000</span>
+            </label>
+
+            <label class="delivery-option">
+              <input type="radio" name="delivery" value="express">
+              <div class="delivery-option-info">
+                <h4>Express Delivery</h4>
+                <p>2-3 business days</p>
+              </div>
+              <span class="delivery-option-price">₦12,000</span>
+            </label>
+
+            <label class="delivery-option">
+              <input type="radio" name="delivery" value="pickup">
+              <div class="delivery-option-info">
+                <h4>Store Pickup</h4>
+                <p>Pick up from our Lagos store</p>
+              </div>
+              <span class="delivery-option-price">FREE</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Payment Method -->
+        <div class="form-section">
+          <h2><i class="fa-solid fa-credit-card"></i> Payment Method</h2>
+          
+          <div class="payment-methods">
+            <label class="payment-method selected">
+              <input type="radio" name="payment" value="card" checked>
+              <div class="payment-method-icon">
+                <i class="fa-solid fa-credit-card"></i>
+              </div>
+              <div class="payment-method-info">
+                <h4>Credit / Debit Card</h4>
+                <p>Visa, Mastercard, Verve</p>
+              </div>
+            </label>
+
+            <label class="payment-method">
+              <input type="radio" name="payment" value="transfer">
+              <div class="payment-method-icon">
+                <i class="fa-solid fa-building-columns"></i>
+              </div>
+              <div class="payment-method-info">
+                <h4>Bank Transfer</h4>
+                <p>Pay directly to our bank account</p>
+              </div>
+            </label>
+
+            <label class="payment-method">
+              <input type="radio" name="payment" value="paystack">
+              <div class="payment-method-icon">
+                <i class="fa-solid fa-wallet"></i>
+              </div>
+              <div class="payment-method-info">
+                <h4>Paystack</h4>
+                <p>Secure online payment</p>
+              </div>
+            </label>
+
+            <label class="payment-method">
+              <input type="radio" name="payment" value="pod">
+              <div class="payment-method-icon">
+                <i class="fa-solid fa-money-bill-wave"></i>
+              </div>
+              <div class="payment-method-info">
+                <h4>Pay on Delivery</h4>
+                <p>Cash or POS on delivery (Lagos only)</p>
+              </div>
+            </label>
+          </div>
+
+          <!-- Card Details (shown when card is selected) -->
+          <div class="card-details">
+            <div class="form-row full">
+              <div class="form-group">
+                <label>Card Number <span>*</span></label>
+                <input type="text" placeholder="1234 5678 9012 3456">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Expiry Date <span>*</span></label>
+                <input type="text" placeholder="MM/YY">
+              </div>
+              <div class="form-group">
+                <label>CVV <span>*</span></label>
+                <input type="text" placeholder="123">
+              </div>
+            </div>
+            <div class="form-row full">
+              <div class="form-group">
+                <label>Name on Card <span>*</span></label>
+                <input type="text" placeholder="Enter name as shown on card">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Order Summary -->
+      <div class="order-summary">
+        <h2>Order Summary</h2>
+        
+        <a href="cart.html" class="edit-cart-link">
+          <i class="fa-solid fa-pen"></i> Edit Cart
+        </a>
+
+        <div class="order-items">
+          <!-- Sample Item 1 -->
+          <div class="order-item">
+            <img src="https://m.media-amazon.com/images/I/8108kcQAkaL._AC_UF894,1000_QL80_.jpg" alt="Sofa" class="order-item-img">
+            <div class="order-item-details">
+              <div class="order-item-name">Modern Chesterfield 3-Seater Sofa – Faux Leather</div>
+              <div class="order-item-qty">Qty: 1</div>
+            </div>
+            <div class="order-item-price">₦285,000</div>
+          </div>
+
+          <!-- Sample Item 2 -->
+          <div class="order-item">
+            <img src="https://m.media-amazon.com/images/I/81imf690CRL._AC_UF894,1000_QL80_.jpg" alt="Bed" class="order-item-img">
+            <div class="order-item-details">
+              <div class="order-item-name">Queen Size Upholstered Platform Bed – Beige</div>
+              <div class="order-item-qty">Qty: 1</div>
+            </div>
+            <div class="order-item-price">₦195,000</div>
+          </div>
+        </div>
+
+        <hr class="summary-divider">
+
+        <div class="summary-row">
+          <span>Subtotal (2 items)</span>
+          <span>₦480,000</span>
+        </div>
+
+        <div class="summary-row">
+          <span>Delivery</span>
+          <span>₦5,000</span>
+        </div>
+
+        <div class="summary-row">
+          <span>Discount</span>
+          <span style="color:  #ff6600;">-₦0</span>
+        </div>
+
+        <div class="summary-row total">
+          <span>Total</span>
+          <span>₦485,000</span>
+        </div>
+
+        <button class="place-order-btn">
+          <i class="fa-solid fa-lock"></i> Place Order
+        </button>
+
+        <div class="secure-note">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>Your payment is secure and encrypted</span>
+        </div>
+
+        <p class="terms-note">
+          By placing your order, you agree to our 
+          <a href="terms.html">Terms & Conditions</a> and 
+          <a href="privacy.html">Privacy Policy</a>.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-container">
+        <div class="footer-column footer-about">
+          <a href="index.html" class="footer-logo">LeezWorld<span>.</span></a>
+          <p>Your trusted destination for premium household furniture in Nigeria.</p>
+          <div class="footer-social">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>My Account</h4>
+          <ul>
+            <li><a href="sign-in.html">Sign In</a></li>
+            <li><a href="sign-up.html">Create Account</a></li>
+            <li><a href="wishlist.html">My Wishlist</a></li>
+            <li><a href="track-order.html">Track Your Order</a></li>
+          </ul>
+        </div>
+        <div class="footer-column footer-contact">
+          <h4>Contact Us</h4>
+          <ul class="contact-list">
+            <li><i class="fa-solid fa-location-dot"></i><span>109 Funsho Williams Avenue, Iponri, Surulere, Lagos, Nigeria</span></li>
+            <li><i class="fa-solid fa-phone"></i><span>+234 812 345 6789</span></li>
+            <li><i class="fa-solid fa-envelope"></i><span>support@leezworld.com</span></li>
+            <li><i class="fa-solid fa-clock"></i><span>Mon - Sat: 9AM - 7PM</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-features">
+      <div class="footer-container">
+        <div class="feature-item"><i class="fa-solid fa-truck-fast"></i><div><h5>Free Delivery</h5><p>On orders above ₦150,000</p></div></div>
+        <div class="feature-item"><i class="fa-solid fa-shield-halved"></i><div><h5>Secure Payment</h5><p>100% secure transactions</p></div></div>
+        <div class="feature-item"><i class="fa-solid fa-rotate-left"></i><div><h5>Easy Returns</h5><p>14-day return policy</p></div></div>
+        <div class="feature-item"><i class="fa-solid fa-headset"></i><div><h5>24/7 Support</h5><p>Dedicated customer care</p></div></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-container">
+        <p>&copy; 2026 LeezWorld. All Rights Reserved.</p>
+        <ul class="footer-legal">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple interaction for delivery and payment options
+    document.querySelectorAll('.delivery-option').forEach(option => {
+      option.addEventListener('click', function() {
+        document.querySelectorAll('.delivery-option').forEach(o => o.classList.remove('selected'));
+        this.classList.add('selected');
+      });
+    });
+
+    document.querySelectorAll('.payment-method').forEach(method => {
+      method.addEventListener('click', function() {
+        document.querySelectorAll('.payment-method').forEach(m => m.classList.remove('selected'));
+        this.classList.add('selected');
+      });
+    });
+  </script>
+
+</body>
+</html>

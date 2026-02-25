@@ -7,7 +7,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link rel="stylesheet" href="main.css"/>
   <style>
-    /* Quick inline styles for login page – move to main.css later if you want */
+        body {
+      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
+                  url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1920&q=85') center/cover no-repeat fixed;
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
     .auth-container {
       max-width: 420px;
       margin: 60px auto;
@@ -139,6 +146,27 @@
   </style>
 </head>
 <body>
+
+    <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">LeezWorld<span>.</span></a>
+
+ 
+  <div class="header-actions">
+  <a href="sign-up.html"><i class="fa-regular fa-user"></i><span>Account</span></a>
+  <a href="wishlist.html">
+    <i class="fa-regular fa-heart"></i>
+    <span class="wishlist-count">0</span>
+    <span>Wishlist</span>
+  </a>
+  <a href="cart.html" class="cart-link">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span class="cart-count" id="cartCount">0</span>
+    <span>Cart</span>
+  </a>
+</div>
+    </div>
+  </header>
 
 
   <!-- Login Form -->
