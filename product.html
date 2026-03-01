@@ -48,6 +48,7 @@
       margin: 16px 0;
     }
 
+    /* Quantity Controls - Improved */
     .quantity {
       display: flex;
       align-items: center;
@@ -55,12 +56,64 @@
       margin: 24px 0;
     }
 
+    .quantity label {
+      font-weight: 600;
+      color: #333;
+    }
+
+    .qty-controls {
+      display: flex;
+      align-items: center;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .qty-btn {
+      width: 44px;
+      height: 44px;
+      background: #f5f5f5;
+      border: none;
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .qty-btn:hover {
+      background: #ff6600;
+      color: white;
+    }
+
+    .qty-btn:active {
+      transform: scale(0.95);
+    }
+
     .quantity input {
       width: 60px;
       padding: 10px;
       text-align: center;
-      border: 1px solid #ddd;
-      border-radius: 4px;
+      border: none;
+      border-left: 2px solid #ddd;
+      border-right: 2px solid #ddd;
+      font-size: 16px;
+      font-weight: 600;
+      -moz-appearance: textfield;
+    }
+
+    .quantity input::-webkit-outer-spin-button,
+    .quantity input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Buttons Container */
+    .product-buttons {
+      display: flex;
+      gap: 16px;
+      margin-top: 24px;
+      flex-wrap: wrap;
     }
 
     .add-to-cart {
@@ -71,11 +124,22 @@
       font-size: 18px;
       border-radius: 6px;
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
     }
 
     .add-to-cart:hover {
       background: #e65c00;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
     }
+
+    .add-to-cart:active {
+      transform: translateY(0);
+    }
+
     .add-to-wishlist {
       background: white;
       color: #ff6600;
@@ -84,17 +148,29 @@
       font-size: 18px;
       border-radius: 6px;
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
     }
 
     .add-to-wishlist:hover {
-      background: #ff6600;   
-      color: #fff;      
+      background: #ff6600;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
     }
 
-    .add-to-wishlist i {
-      font-size: 20px;
+    .add-to-wishlist:active {
+      transform: translateY(0);
     }
 
+    /* Success feedback */
+    .btn-success {
+      background: #28a745 !important;
+      border-color: #28a745 !important;
+      color: white !important;
+    }
     .description {
       margin-top: 32px;
       line-height: 1.6;
@@ -114,11 +190,6 @@
   <header>
     <div class="header-container">
       <a href="index.html" class="logo">LeezWorld<span>.</span></a>
-      <div class="search-bar">
-        <input type="text" placeholder="Search sofas, beds, dining sets, wardrobes..."/>
-        <button type="button" class="clear-search" style="display:none;">×</button>
-        <button><i class="fa-solid fa-magnifying-glass"></i></button>
-      </div>
   <div class="header-actions">
     <a href="sign-up.html"><i class="fa-regular fa-user"></i><span>Account</span></a>
     <a href="wishlist.html">
@@ -145,8 +216,8 @@
         <li><a href="beds.html">Beds & Bedroom</a></li>
         <li><a href="wardrobe.html">Wardrobes</a></li>
         <li><a href="decor.html">Interior Decor</a></li>
-        <li><a href="entertainment.html">Home Entertainment</a></li>
-        <li><a href="#">Office Furniture</a></li>
+        <li><a href="doors.html">Doors & Windows</a></li>
+        <li><a href="office.html">Office Furniture</a></li>
       </ul>
     </div>
   </nav>
@@ -163,14 +234,25 @@
         <span class="price-old" id="productOldPrice"></span>
       </div>
       <div class="stock" id="productStock"></div>
+      
       <div class="quantity">
         <label>Quantity:</label>
-        <button onclick="changeQty(-1)">-</button>
-        <input type="number" id="qty" value="1" min="1">
-        <button onclick="changeQty(1)">+</button>
+        <div class="qty-controls">
+          <button class="qty-btn" onclick="changeQty(-1)">−</button>
+          <input type="number" id="qty" value="1" min="1">
+          <button class="qty-btn" onclick="changeQty(1)">+</button>
+        </div>
       </div>
-      <button class="add-to-cart">Add to Cart</button>
-      <button class="add-to-wishlist">Add to Wishlist</button>
+      
+      <div class="product-buttons">
+        <button class="add-to-cart" id="addToCartBtn">
+          <i class="fa-solid fa-cart-plus"></i> Add to Cart
+        </button>
+        <button class="add-to-wishlist" id="addToWishlistBtn">
+          <i class="fa-regular fa-heart"></i> Add to Wishlist
+        </button>
+      </div>
+      
       <div class="description" id="productDescription"></div>
     </div>
   </div>
@@ -281,64 +363,121 @@
 </footer>
 <script src="product.js"></script>
 
-<script>
-  // DEBUG: Check if products array loaded
-  console.log('=== DEBUG START ===');
-  console.log('1. products array exists?', typeof products !== 'undefined');
-  
-  if (typeof products !== 'undefined') {
-    console.log('2. Total products in array:', products.length);
-    console.log('3. All IDs in array:', products.map(p => p.id).sort((a,b) => a-b));
-  } else {
-    console.error('ERROR: products array is undefined!');
-  }
+  <script>
+    // Get product ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = parseInt(urlParams.get('id'));
 
-  // Get product ID from URL
-  const urlParams = new URLSearchParams(window.location.search);
-  const productId = parseInt(urlParams.get('id'));
-  
-  console.log('4. URL parameter id:', urlParams.get('id'));
-  console.log('5. Parsed productId:', productId);
-  console.log('6. productId type:', typeof productId);
+    // Find the product
+    const product = products.find(p => p.id === productId);
 
-  // Find the product
-  const product = products.find(p => p.id === productId);
-  
-  console.log('7. Product found?', product !== undefined);
-  console.log('8. Product:', product);
-  console.log('=== DEBUG END ===');
+    if (product) {
+      // Populate product details
+      document.getElementById('productName').textContent = product.name;
+      document.getElementById('productImage').src = product.image;
+      document.getElementById('productImage').alt = product.name;
+      document.getElementById('productPrice').textContent = '₦' + product.price.toLocaleString();
 
-  if (product) {
-    document.getElementById('productName').textContent = product.name;
-    document.getElementById('productImage').src = product.image;
-    document.getElementById('productImage').alt = product.name;
-    document.getElementById('productPrice').textContent = '₦' + product.price.toLocaleString();
+      if (product.oldPrice) {
+        document.getElementById('productOldPrice').textContent = '₦' + product.oldPrice.toLocaleString();
+        document.getElementById('productOldPrice').style.display = 'inline';
+      } else {
+        document.getElementById('productOldPrice').style.display = 'none';
+      }
 
-    if (product.oldPrice) {
-      document.getElementById('productOldPrice').textContent = '₦' + product.oldPrice.toLocaleString();
-      document.getElementById('productOldPrice').style.display = 'inline';
+      document.getElementById('productStock').textContent = `In Stock (${product.stock} units)`;
+      document.getElementById('productDescription').innerHTML = `<p>${product.description}</p>`;
+
+      // ========== ADD TO CART BUTTON ==========
+      document.getElementById('addToCartBtn').addEventListener('click', function() {
+        const quantity = parseInt(document.getElementById('qty').value) || 1;
+        
+        // Use cart array from cart.js (it's already loaded)
+        const existingItem = cart.find(item => item.id === product.id);
+
+        if (existingItem) {
+          existingItem.quantity += quantity;
+        } else {
+          cart.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            image: product.image,
+            quantity: quantity
+          });
+        }
+
+        // Use functions from cart.js
+        localStorage.setItem('leezworld_cart', JSON.stringify(cart));
+        updateCartCount();
+        showMessage('Added to cart!', 'success');
+
+        // Button feedback
+        const btn = this;
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-solid fa-check"></i> Added!';
+        btn.classList.add('btn-success');
+
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+          btn.classList.remove('btn-success');
+        }, 2000);
+      });
+
+      // ========== ADD TO WISHLIST BUTTON ==========
+      document.getElementById('addToWishlistBtn').addEventListener('click', function() {
+        // Check if already in wishlist (wishlist array is from wishlist.js)
+        if (isInWishlist(product.id)) {
+          showNotification('Already in your wishlist!', 'remove');
+          return;
+        }
+
+        // Add to wishlist array (from wishlist.js)
+        wishlist.push({
+          id: product.id,
+          name: product.name,
+          brand: product.brand || '',
+          price: product.price,
+          oldPrice: product.oldPrice || null,
+          image: product.image,
+          link: 'product.html?id=' + product.id
+        });
+
+        // Use functions from wishlist.js
+        saveWishlist();
+        updateWishlistCount();
+        showNotification('Added to wishlist!', 'add');
+
+        // Button feedback
+        const btn = this;
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-solid fa-heart"></i> Added!';
+        btn.classList.add('btn-success');
+
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+          btn.classList.remove('btn-success');
+        }, 2000);
+      });
+
     } else {
-      document.getElementById('productOldPrice').style.display = 'none';
+      // Product not found
+      document.querySelector('.product-info').innerHTML = `
+        <h1>Product Not Found</h1>
+        <p>Sorry, this product does not exist or has been removed.</p>
+        <a href="index.html" style="color: #ff6600; text-decoration: underline;">← Back to Home</a>
+      `;
     }
 
-    document.getElementById('productStock').textContent = `In Stock (${product.stock} units)`;
-    document.getElementById('productDescription').innerHTML = `<p>${product.description}</p>`;
-  } else {
-    document.querySelector('.product-info').innerHTML = `
-      <h1>Product Not Found</h1>
-      <p>Sorry, this product does not exist or has been removed.</p>
-      <p style="color: #888; font-size: 14px;">Looking for ID: ${productId}</p>
-      <p style="color: #888; font-size: 14px;">Available IDs: ${typeof products !== 'undefined' ? products.map(p => p.id).join(', ') : 'products not loaded'}</p>
-    `;
-  }
-
-  function changeQty(delta) {
-    const input = document.getElementById('qty');
-    let val = parseInt(input.value) + delta;
-    if (val < 1) val = 1;
-    input.value = val;
-  }
-</script>
+    // Quantity change function
+    function changeQty(delta) {
+      const input = document.getElementById('qty');
+      let val = parseInt(input.value) + delta;
+      if (val < 1) val = 1;
+      if (product && val > product.stock) val = product.stock;
+      input.value = val;
+    }
+  </script>
 
 </body>
 </html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Track Your Order - LeezWorld</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="main.css"/>
+  <link rel="stylesheet" href="category.css"/>
+  <style>
+    /* Track Order Page Styles */
+    .track-order-section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    .track-order-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .track-order-header h1 {
+      font-size: 2.2rem;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    .track-order-header h1 i {
+      color: #ff6600;
+    }
+
+    .track-order-header p {
+      color: #666;
+      font-size: 1rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* Track Form */
+    .track-form-card {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 35px;
+      margin-bottom: 30px;
+    }
+
+    .track-form-card h2 {
+      font-size: 1.3rem;
+      color: #222;
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .track-form-card h2 i {
+      color: #ff6600;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 8px;
+    }
+
+    .form-group label span {
+      color: #e74c3c;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: #ff6600;
+      box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.1);
+    }
+
+    .form-group input::placeholder {
+      color: #aaa;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .track-btn {
+      width: 100%;
+      padding: 16px;
+      background: #ff6600;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .track-btn:hover {
+      background: #e55a00;
+      transform: translateY(-2px);
+    }
+
+
+    /* Help Section */
+    .help-section {
+      background: #fff5eb;
+      border: 1px solid #ffe0c2;
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .help-section h3 {
+      font-size: 1.2rem;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    .help-section p {
+      color: #666;
+      margin-bottom: 25px;
+    }
+
+    .help-options {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .help-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 24px;
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #333;
+      transition: all 0.3s;
+    }
+
+    .help-option:hover {
+      border-color: #ff6600;
+      color: #ff6600;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .help-option i {
+      font-size: 1.2rem;
+      color: #ff6600;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .track-order-header h1 {
+        font-size: 1.8rem;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .track-form-card {
+        padding: 25px 20px;
+      }
+
+      .order-info-grid {
+        grid-template-columns: 1fr 1fr;
+        padding: 20px;
+      }
+
+      .order-timeline,
+      .order-items-section {
+        padding: 20px;
+      }
+
+      .help-options {
+        flex-direction: column;
+      }
+
+      .help-option {
+        justify-content: center;
+      }
+
+      .order-item {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .order-item-img {
+        margin: 0 auto;
+      }
+
+      .order-item-price {
+        text-align: center;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">LeezWorld<span>.</span></a>
+
+      <div class="header-actions">
+        <a href="sign-up.html"><i class="fa-regular fa-user"></i><span>Account</span></a>
+        <a href="wishlist.html">
+          <i class="fa-regular fa-heart"></i>
+          <span class="wishlist-count">0</span>
+          <span>Wishlist</span>
+        </a>
+        <a href="cart.html" class="cart-link">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+          <span>Cart</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <ul>
+        <li><a href="index.html">FlashDeals</a></li>
+        <li><a href="sofas.html">Sofas & Living Room</a></li>
+        <li><a href="dining.html">Dining Sets</a></li>
+        <li><a href="beds.html">Beds & Bedroom</a></li>
+        <li><a href="wardrobe.html">Wardrobes</a></li>
+        <li><a href="decor.html">Interior Decor</a></li>
+        <li><a href="doors.html">Doors & Windows</a></li>
+        <li><a href="office.html">Office Furniture</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    <div class="breadcrumb-container">
+      <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+      <span><i class="fa-solid fa-chevron-right"></i></span>
+      <span class="current">Track Your Order</span>
+    </div>
+  </div>
+
+  <!-- Track Order Section -->
+  <section class="track-order-section">
+
+    <div class="track-order-header">
+      <h1><i class="fa-solid fa-truck-fast"></i> Track Your Order</h1>
+      <p>Enter your order details below to check the current status and delivery progress of your furniture.</p>
+    </div>
+
+    <!-- Track Form -->
+    <div class="track-form-card">
+      <h2><i class="fa-solid fa-magnifying-glass"></i> Enter Order Details</h2>
+
+      <form>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Order Number <span>*</span></label>
+            <input type="text" placeholder="e.g., LW-2025-78542" required>
+          </div>
+          <div class="form-group">
+            <label>Email Address <span>*</span></label>
+            <input type="email" placeholder="Enter your email" required>
+          </div>
+        </div>
+
+        <button type="submit" class="track-btn">
+          <i class="fa-solid fa-magnifying-glass"></i> Track Order
+        </button>
+      </form>
+    </div>
+
+
+    <!-- Help Section -->
+    <div class="help-section">
+      <h3>Need Help With Your Order?</h3>
+      <p>Our customer support team is here to assist you with any questions or concerns.</p>
+
+      <div class="help-options">
+        <a href="tel:+2348123456789" class="help-option">
+          <i class="fa-solid fa-phone"></i>
+          <span>+234 812 345 6789</span>
+        </a>
+        <a href="mailto:support@leezworld.com" class="help-option">
+          <i class="fa-solid fa-envelope"></i>
+          <span>support@leezworld.com</span>
+        </a>
+        <a href="https://wa.me/2348123456789" class="help-option">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>Chat on WhatsApp</span>
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="newstext">
+      <h4>Stay Updated</h4>
+      <p>Subscribe to receive exclusive discounts, new arrivals, and members-only deals.</p>
+    </div>
+    <div class="form">
+      <input type="email" placeholder="Your email address" required>
+      <button class="normal">Sign Up</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-container">
+        <div class="footer-column footer-about">
+          <a href="index.html" class="footer-logo">LeezWorld<span>.</span></a>
+          <p>Your trusted destination for premium household furniture in Nigeria.</p>
+          <div class="footer-social">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>My Account</h4>
+          <ul>
+            <li><a href="login.html">Sign In</a></li>
+            <li><a href="sign-up.html">Create Account</a></li>
+            <li><a href="wishlist.html">My Wishlist</a></li>
+            <li><a href="track-order.html">Track Your Order</a></li>
+          </ul>
+        </div>
+        <div class="footer-column footer-contact">
+          <h4>Contact Us</h4>
+          <ul class="contact-list">
+            <li><i class="fa-solid fa-location-dot"></i><span>109 Funsho Williams Avenue, Iponri, Surulere, Lagos, Nigeria</span></li>
+            <li><i class="fa-solid fa-phone"></i><span>+234 812 345 6789</span></li>
+            <li><i class="fa-solid fa-envelope"></i><span>support@leezworld.com</span></li>
+            <li><i class="fa-solid fa-clock"></i><span>Mon - Sat: 9AM - 7PM</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-features">
+      <div class="footer-container">
+        <div class="feature-item"><i class="fa-solid fa-truck-fast"></i><div><h5>Free Delivery</h5><p>On orders above ₦150,000</p></div></div>
+        <div class="feature-item"><i class="fa-solid fa-shield-halved"></i><div><h5>Secure Payment</h5><p>100% secure transactions</p></div></div>
+        <div class="feature-item"><i class="fa-solid fa-rotate-left"></i><div><h5>Easy Returns</h5><p>14-day return policy</p></div></div>
+        <div class="feature-item"><i class="fa-solid fa-headset"></i><div><h5>24/7 Support</h5><p>Dedicated customer care</p></div></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-container">
+        <p>&copy; 2026 LeezWorld. All Rights Reserved.</p>
+        <ul class="footer-legal">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

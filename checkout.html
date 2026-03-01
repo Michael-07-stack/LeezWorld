@@ -442,7 +442,7 @@
         <li><a href="beds.html">Beds & Bedroom</a></li>
         <li><a href="wardrobe.html">Wardrobes</a></li>
         <li><a href="decor.html">Interior Decor</a></li>
-        <li><a href="entertainment.html">Home Entertainment</a></li>
+        <li><a href="doors.html">Doors & Windows</a></li>
         <li><a href="office.html">Office Furniture</a></li>
       </ul>
     </div>
@@ -667,47 +667,29 @@
         </a>
 
         <div class="order-items">
-          <!-- Sample Item 1 -->
-          <div class="order-item">
-            <img src="https://m.media-amazon.com/images/I/8108kcQAkaL._AC_UF894,1000_QL80_.jpg" alt="Sofa" class="order-item-img">
-            <div class="order-item-details">
-              <div class="order-item-name">Modern Chesterfield 3-Seater Sofa – Faux Leather</div>
-              <div class="order-item-qty">Qty: 1</div>
-            </div>
-            <div class="order-item-price">₦285,000</div>
-          </div>
-
-          <!-- Sample Item 2 -->
-          <div class="order-item">
-            <img src="https://m.media-amazon.com/images/I/81imf690CRL._AC_UF894,1000_QL80_.jpg" alt="Bed" class="order-item-img">
-            <div class="order-item-details">
-              <div class="order-item-name">Queen Size Upholstered Platform Bed – Beige</div>
-              <div class="order-item-qty">Qty: 1</div>
-            </div>
-            <div class="order-item-price">₦195,000</div>
-          </div>
+          <!-- Items loaded by JavaScript -->
         </div>
 
         <hr class="summary-divider">
 
         <div class="summary-row">
-          <span>Subtotal (2 items)</span>
-          <span>₦480,000</span>
+          <span id="summaryItemCount">Subtotal (0 items)</span>
+          <span id="summarySubtotal">₦0</span>
         </div>
 
         <div class="summary-row">
           <span>Delivery</span>
-          <span>₦5,000</span>
+          <span id="summaryDelivery">₦5,000</span>
         </div>
 
         <div class="summary-row">
           <span>Discount</span>
-          <span style="color:  #ff6600;">-₦0</span>
+          <span style="color: #ff6600;">-₦0</span>
         </div>
 
         <div class="summary-row total">
           <span>Total</span>
-          <span>₦485,000</span>
+          <span id="summaryTotal">₦0</span>
         </div>
 
         <button class="place-order-btn">
@@ -782,8 +764,50 @@
     </div>
   </footer>
 
-  <script>
-    // Simple interaction for delivery and payment options
+<script src="cart.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    // Get cart from localStorage
+    const cart = JSON.parse(localStorage.getItem('leezworld_cart')) || [];
+    
+    const orderItemsContainer = document.querySelector('.order-items');
+    
+    if (cart.length === 0) {
+      orderItemsContainer.innerHTML = '<p style="color: #666; text-align: center;">Your cart is empty</p>';
+      return;
+    }
+    
+    let itemsHTML = '';
+    
+    cart.forEach(function(item) {
+      const itemTotal = item.price * item.quantity;
+      
+      itemsHTML += `
+        <div class="order-item">
+          <img src="${item.image}" alt="${item.name}" class="order-item-img">
+          <div class="order-item-details">
+            <div class="order-item-name">${item.name}</div>
+            <div class="order-item-qty">Qty: ${item.quantity}</div>
+          </div>
+          <div class="order-item-price">₦${itemTotal.toLocaleString()}</div>
+        </div>
+      `;
+    });
+    
+    orderItemsContainer.innerHTML = itemsHTML;
+    
+    // Update totals
+    const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const delivery = 5000;
+    const total = subtotal + delivery;
+
+    document.getElementById('summaryItemCount').textContent = `Subtotal (${totalItems} item${totalItems === 1 ? '' : 's'})`;
+    document.getElementById('summarySubtotal').textContent = `₦${subtotal.toLocaleString()}`;
+    document.getElementById('summaryTotal').textContent = `₦${total.toLocaleString()}`;
+    
+    // Delivery option selection
     document.querySelectorAll('.delivery-option').forEach(option => {
       option.addEventListener('click', function() {
         document.querySelectorAll('.delivery-option').forEach(o => o.classList.remove('selected'));
@@ -791,13 +815,49 @@
       });
     });
 
+    // Payment method selection
     document.querySelectorAll('.payment-method').forEach(method => {
       method.addEventListener('click', function() {
         document.querySelectorAll('.payment-method').forEach(m => m.classList.remove('selected'));
         this.classList.add('selected');
+        
+        // Show/hide card details
+        const radioInput = this.querySelector('input[type="radio"]');
+        const cardDetails = document.querySelector('.card-details');
+        cardDetails.style.display = radioInput.value === 'card' ? 'block' : 'none';
       });
     });
-  </script>
+    
+    // Place Order Button
+    document.querySelector('.place-order-btn').addEventListener('click', function() {
+      
+      // Get email from form
+      const emailInput = document.querySelector('input[type="email"]');
+      const email = emailInput ? emailInput.value.trim() : '';
+      
+      if (!email) {
+        alert('Please enter your email address');
+        emailInput.focus();
+        return;
+      }
+      
+      // Generate 6-digit OTP
+      const otp = Math.floor(100000 + Math.random() * 900000).toString();
+      
+      // Store OTP and email in sessionStorage
+      sessionStorage.setItem('leezworld_otp', otp);
+      sessionStorage.setItem('leezworld_email', email);
+      
+      // For demo: Show OTP in alert (In real app, this would be sent via email)
+      alert('Your OTP code is: ' + otp);
+      
+      // Redirect to OTP verification page
+      window.location.href = 'verify-otp.html';
+    });
+  });
+</script>
+
+
 
 </body>
 </html>

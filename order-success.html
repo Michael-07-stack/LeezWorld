@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order Successful - LeezWorld</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="main.css"/>
+  <style>
+    .success-container {
+      max-width: 550px;
+      margin: 80px auto;
+      padding: 50px 30px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .success-icon {
+      width: 100px;
+      height: 100px;
+      background: #d4edda;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px;
+    }
+
+    .success-icon i {
+      font-size: 50px;
+      color: #28a745;
+    }
+
+    .success-container h1 {
+      font-size: 1.8rem;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    .success-container > p {
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .tracking-box {
+      background: #f8f9fa;
+      border: 2px dashed #ff6600;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    .tracking-box p {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 8px;
+    }
+
+    .tracking-id {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ff6600;
+      letter-spacing: 2px;
+    }
+
+    .copy-btn {
+      margin-top: 12px;
+      padding: 8px 16px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .copy-btn:hover {
+      border-color: #ff6600;
+      color: #ff6600;
+    }
+
+    .info-text {
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .info-text strong {
+      color: #333;
+    }
+
+    .action-btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+      background: #ff6600;
+      color: white;
+      border: 2px solid #ff6600;
+    }
+
+    .action-btn:hover {
+      background: #e55c00;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">LeezWorld<span>.</span></a>
+      <div class="header-actions">
+        <a href="sign-up.html"><i class="fa-regular fa-user"></i><span>Account</span></a>
+        <a href="wishlist.html"><i class="fa-regular fa-heart"></i><span>Wishlist</span></a>
+        <a href="cart.html" class="cart-link">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+          <span>Cart</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Success Message -->
+  <div class="success-container">
+    <div class="success-icon">
+      <i class="fa-solid fa-check"></i>
+    </div>
+    
+    <h1>Order Placed Successfully!</h1>
+    <p>Thank you for shopping with LeezWorld</p>
+    
+    <div class="tracking-box">
+      <p>Your Tracking ID</p>
+      <div class="tracking-id" id="trackingId">LW00000000</div>
+      <button class="copy-btn" id="copyBtn">
+        <i class="fa-regular fa-copy"></i> Copy
+      </button>
+    </div>
+    
+    <p class="info-text">
+      A confirmation email has been sent to <strong id="confirmEmail">your email</strong>.<br>
+      Use your tracking ID to monitor your delivery status.
+    </p>
+    
+    <a href="index.html" class="action-btn">
+      <i class="fa-solid fa-bag-shopping"></i> Continue Shopping
+    </a>
+  </div>
+
+  <script>
+    // Display tracking ID
+    const trackingId = sessionStorage.getItem('leezworld_tracking') || 'LW00000000';
+    document.getElementById('trackingId').textContent = trackingId;
+    
+    // Display email
+    const email = sessionStorage.getItem('leezworld_email') || 'your email';
+    document.getElementById('confirmEmail').textContent = email;
+    
+    // Copy tracking ID
+    document.getElementById('copyBtn').addEventListener('click', function() {
+      navigator.clipboard.writeText(trackingId);
+      this.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+      
+      setTimeout(() => {
+        this.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
+      }, 2000);
+    });
+    
+    // Clear session data
+    sessionStorage.removeItem('leezworld_tracking');
+    sessionStorage.removeItem('leezworld_email');
+  </script>
+
+</body>
+</html>
