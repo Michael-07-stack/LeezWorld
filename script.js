@@ -30,9 +30,7 @@ function countdown(){
 const countdownInterval = setInterval(countdown, 1000);
 
 
-// ==========================================
 // NEWSLETTER SIGNUP - SIMPLE VERSION
-// ==========================================
 
 document.addEventListener('DOMContentLoaded', function() {
   
