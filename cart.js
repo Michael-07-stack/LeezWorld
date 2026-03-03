@@ -1,16 +1,19 @@
-// ============================================
-// SIMPLE CART FUNCTIONALITY
-// ============================================
+  
+// SIMPLE CART FUNCTIONALITY - FIXED VERSION
+  
 
-// Initialize cart from localStorage or empty array
-let cart = JSON.parse(localStorage.getItem('leezworld_cart')) || [];
+// DON'T initialize cart here - do it in DOMContentLoaded
+let cart = [];
 
-// ============================================
+  
 // UPDATE CART COUNT IN HEADER
-// ============================================
+  
 function updateCartCount() {
+  // ALWAYS get fresh data from localStorage
+  const freshCart = JSON.parse(localStorage.getItem('leezworld_cart')) || [];
+  
   const cartCountElements = document.querySelectorAll('#cartCount, .cart-count');
-  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const totalItems = freshCart.reduce((sum, item) => sum + item.quantity, 0);
   
   cartCountElements.forEach(function(element) {
     element.textContent = totalItems;
@@ -18,22 +21,23 @@ function updateCartCount() {
     if (totalItems === 0) {
       element.style.display = 'none';
     } else {
-      element.style.display = 'flex';
+      element.style.display = 'inline-flex';
     }
   });
+  
+  // Also update the global variable
+  cart = freshCart;
 }
 
-// ============================================
+  
 // SHOW MESSAGE
-// ============================================
+  
 function showMessage(message, type) {
-  // Remove existing message
   const existingMessage = document.querySelector('.cart-message');
   if (existingMessage) {
     existingMessage.remove();
   }
 
-  // Create message element
   const messageDiv = document.createElement('div');
   messageDiv.className = 'cart-message';
   
@@ -49,12 +53,10 @@ function showMessage(message, type) {
 
   document.body.appendChild(messageDiv);
 
-  // Show the message
   setTimeout(() => {
     messageDiv.classList.add('show');
   }, 10);
 
-  // Remove after 3 seconds
   setTimeout(function() {
     messageDiv.classList.remove('show');
     setTimeout(function() {
@@ -63,11 +65,13 @@ function showMessage(message, type) {
   }, 3000);
 }
 
-// ============================================
+  
 // ADD TO CART
-// ============================================
+  
 function addToCart(productId, productName, productPrice, productImage) {
-  // Check if item already in cart
+  // Get fresh cart data
+  cart = JSON.parse(localStorage.getItem('leezworld_cart')) || [];
+  
   const existingItem = cart.find(function(item) {
     return item.id === productId;
   });
@@ -76,7 +80,6 @@ function addToCart(productId, productName, productPrice, productImage) {
     existingItem.quantity += 1;
     showMessage('Item quantity updated in cart!', 'success');
   } else {
-    // Add new item
     cart.push({
       id: productId,
       name: productName,
@@ -87,17 +90,16 @@ function addToCart(productId, productName, productPrice, productImage) {
     showMessage('Added to cart!', 'success');
   }
 
-  // Save to localStorage
   localStorage.setItem('leezworld_cart', JSON.stringify(cart));
-
-  // Update cart count
   updateCartCount();
 }
 
-// ============================================
+  
 // REMOVE FROM CART
-// ============================================
+  
 function removeFromCart(productId) {
+  cart = JSON.parse(localStorage.getItem('leezworld_cart')) || [];
+  
   cart = cart.filter(function(item) {
     return item.id !== productId;
   });
@@ -112,14 +114,16 @@ function removeFromCart(productId) {
   showMessage('Item removed from cart', 'success');
 }
 
-// ============================================
+  
 // UPDATE QUANTITY
-// ============================================
+  
 function updateQuantity(productId, newQuantity) {
   if (newQuantity < 1) {
     removeFromCart(productId);
     return;
   }
+
+  cart = JSON.parse(localStorage.getItem('leezworld_cart')) || [];
 
   const item = cart.find(function(item) {
     return item.id === productId;
@@ -136,10 +140,11 @@ function updateQuantity(productId, newQuantity) {
   }
 }
 
-// ============================================
+  
 // GET CART TOTAL
-// ============================================
+  
 function getCartTotal() {
+  cart = JSON.parse(localStorage.getItem('leezworld_cart')) || [];
   let total = 0;
   cart.forEach(function(item) {
     total += item.price * item.quantity;
@@ -147,9 +152,9 @@ function getCartTotal() {
   return total;
 }
 
-// ============================================
+  
 // CLEAR CART
-// ============================================
+  
 function clearCart() {
   cart = [];
   localStorage.setItem('leezworld_cart', JSON.stringify(cart));
@@ -162,10 +167,11 @@ function clearCart() {
   showMessage('Cart cleared', 'success');
 }
 
-// ============================================
+  
 // RENDER CART PAGE
-// ============================================
 function renderCartPage() {
+  cart = JSON.parse(localStorage.getItem('leezworld_cart')) || [];
+  
   const cartItemsContainer = document.getElementById('cartItems');
   const cartSummary = document.getElementById('cartSummary');
   const emptyCart = document.getElementById('emptyCart');
@@ -233,21 +239,17 @@ function renderCartPage() {
   if (totalElement) totalElement.textContent = '₦' + total.toLocaleString();
 }
 
-// ============================================
-// HANDLE ADD TO CART CLICK - Using Event Delegation
-// ============================================
+  
+// HANDLE ADD TO CART CLICK
+  
 function handleAddToCartClick(e) {
-  // Check if clicked element is add to cart button or inside one
   const button = e.target.closest('.add-to-cart-btn');
   
-  if (!button) return; // Not an add to cart button
+  if (!button) return;
   
   e.preventDefault();
   e.stopPropagation();
 
-  console.log('Add to cart clicked!');
-
-  // Get product info from the product card
   const productCard = button.closest('.product-card');
   
   if (!productCard) {
@@ -260,8 +262,7 @@ function handleAddToCartClick(e) {
   const productName = productCard.querySelector('.product-name');
   const productPrice = productCard.querySelector('.price');
 
-  // Extract product ID from link
-  let productId = Date.now(); // Default to timestamp
+  let productId = Date.now();
   if (productLink) {
     const href = productLink.getAttribute('href');
     const match = href.match(/id=(\d+)/);
@@ -270,23 +271,17 @@ function handleAddToCartClick(e) {
     }
   }
 
-  // Extract price number
   let price = 0;
   if (productPrice) {
     const priceText = productPrice.textContent;
     price = parseInt(priceText.replace(/[₦,]/g, ''));
   }
 
-  // Get other info
   const name = productName ? productName.textContent.trim() : 'Product';
   const image = productImage ? productImage.getAttribute('src') : '';
 
-  console.log('Adding to cart:', { productId, name, price, image });
-
-  // Add to cart
   addToCart(productId, name, price, image);
 
-  // Button animation
   const originalHTML = button.innerHTML;
   button.innerHTML = '<i class="fa-solid fa-check"></i> Added!';
   button.style.background = '#28a745';
@@ -297,27 +292,54 @@ function handleAddToCartClick(e) {
   }, 2000);
 }
 
-// ============================================
-// INITIALIZE ON PAGE LOAD
-// ============================================
-document.addEventListener('DOMContentLoaded', function() {
-  console.log('Cart.js loaded!');
   
-  // Update cart count on all pages
+// INITIALIZE
+  
+function initCart() {
+  // Get cart from localStorage
+  cart = JSON.parse(localStorage.getItem('leezworld_cart')) || [];
+  
+  // Update the count display
   updateCartCount();
-
-  // Use event delegation - attach listener to document
-  // This works even if buttons are added later
+  
+  // Add click handler
   document.addEventListener('click', handleAddToCartClick);
-
+  
   // Render cart page if on cart page
   if (document.getElementById('cartItems')) {
     renderCartPage();
   }
-  
-  console.log('Cart setup complete!');
+}
+
+// Run on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', initCart);
+
+// Run on pageshow (back/forward navigation)
+window.addEventListener('pageshow', function() {
+  updateCartCount();
+  if (document.getElementById('cartItems')) {
+    renderCartPage();
+  }
 });
 
-function checkout(){
+// Run on visibility change (tab switch)
+document.addEventListener('visibilitychange', function() {
+  if (document.visibilityState === 'visible') {
+    updateCartCount();
+  }
+});
+
+// Sync across tabs
+window.addEventListener('storage', function(e) {
+  if (e.key === 'leezworld_cart') {
+    updateCartCount();
+    if (document.getElementById('cartItems')) {
+      renderCartPage();
+    }
+  }
+});
+
+// Checkout function
+function checkout() {
   window.location.href = "checkout.html";
 }

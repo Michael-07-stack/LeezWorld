@@ -10,14 +10,6 @@ color: #222;
 line-height: 1.5;
 }
 
-/* Top bar */
-.top-bar {
-background-color: #222;
-color: white;
-font-size: 13px;
-padding: 6px 0;
-text-align: center;
-}
 
 /* Header */
 header {
@@ -51,33 +43,6 @@ text-decoration: none;
 color: #222;
 }
 
-/* .search-bar {
-flex: 1;
-max-width: 620px;
-position: relative;
-}
-
-.search-bar input {
-width: 100%;
-padding: 12px 16px 12px 48px;
-border: 2px solid #ff6600;
-border-radius: 50px;
-font-size: 16px;
-}
-
-.search-bar button {
-position: absolute;
-right: 6px;
-top: 6px;
-bottom: 6px;
-width: 52px;
-background-color: #ff6600;
-color: white;
-border: none;
-border-radius: 50px;
-cursor: pointer;
-font-size: 18px;
-} */
 
 .header-actions {
 display: flex;
@@ -211,6 +176,21 @@ color: #ff6600;
   display: none;
 }
 
+#cartCount,
+.cart-count {
+  display: inline-flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  min-width: 18px;
+  height: 18px;
+}
+
+#cartCount:empty,
+.cart-count:empty,
+#cartCount[data-count="0"],
+.cart-count[data-count="0"] {
+  display: none !important;
+}
 /* Added to Cart Message */
 .cart-message {
   position: fixed;
@@ -313,9 +293,7 @@ width: 100%;
 }
 
 /* Hero section with background image */
-/* ============================================
-   HERO SECTION - Search Bar First (Same Style)
-   ============================================ */
+
 .hero {
   background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000');
   background-size: cover;
@@ -562,6 +540,20 @@ color: #ff6600;
 margin-bottom: 6px;
 }
 
+.product-prices {
+  min-height: 2.8em;          
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.product-prices .old-price {
+  order: 2;                   
+  font-size: 0.9em;
+  opacity: 0.7;
+}
+
 .old-price {
 color: #888;
 text-decoration: line-through;
@@ -570,9 +562,7 @@ margin-left: 8px;
 }
 
 
-/* ============================================
-   TRUST BADGES SECTION
-   ============================================ */
+/* TRUST BADGES SECTION*/
 .trust-badges {
   background: white;
   padding: 25px 0;
@@ -612,9 +602,7 @@ margin-left: 8px;
   color: #666;
 }
 
-/* ============================================
-   SECTION HEADER WITH VIEW ALL
-   ============================================ */
+/* SECTION HEADER WITH VIEW ALL*/
 .section-header {
   display: flex;
   justify-content: space-between;
@@ -646,9 +634,7 @@ margin-left: 8px;
   gap: 10px;
 }
 
-/* ============================================
-   COUNTDOWN TIMER
-   ============================================ */
+/*COUNTDOWN TIMER*/
 .countdown-timer {
   display: flex;
   align-items: center;
@@ -685,9 +671,7 @@ margin-left: 8px;
   text-transform: uppercase;
 }
 
-/* ============================================
-   CATEGORIES SECTION
-   ============================================ */
+/* CATEGORIES SECTION*/
 .categories-section {
   max-width: 1400px;
   margin: 40px auto;
@@ -728,9 +712,7 @@ margin-left: 8px;
   color: #222;
 }
 
-/* ============================================
-   PROMOTIONAL BANNERS
-   ============================================ */
+/* PROMOTIONAL BANNERS*/
 .promo-banners {
   background: #f5f5f5;
   padding: 50px 0;
@@ -824,9 +806,7 @@ margin-left: 8px;
   gap: 10px;
 }
 
-/* ============================================
-   CUSTOMER REVIEWS SECTION
-   ============================================ */
+/*CUSTOMER REVIEWS SECTION*/
 .reviews-section {
   max-width: 1400px;
   margin: 60px auto;
@@ -900,9 +880,7 @@ margin-left: 8px;
   color: #888;
 }
 
-/* ============================================
-   RESPONSIVE STYLES FOR NEW SECTIONS
-   ============================================ */
+/* RESPONSIVE STYLES FOR NEW SECTIONS*/
 @media (max-width: 992px) {
   .trust-container {
     grid-template-columns: repeat(2, 1fr);
@@ -1081,9 +1059,7 @@ font-size: 15px;
 }
 
 /* Footer */
-/* ============================================
-   LEEZWORLD FOOTER STYLES
-   ============================================ */
+/*LEEZWORLD FOOTER STYLES*/
 
 .site-footer {
   background-color: #1a1a2e;
@@ -1098,9 +1074,7 @@ font-size: 15px;
   padding: 0 20px;
 }
 
-/* ============================================
-   MAIN FOOTER CONTENT
-   ============================================ */
+/*MAIN FOOTER CONTENT*/
 .footer-main {
   padding: 60px 0 40px;
 }
@@ -1272,9 +1246,7 @@ font-size: 15px;
   background: #e65c00;
 }
 
-/* ============================================
-   LEEZWORLD SIMPLIFIED FOOTER
-   ============================================ */
+/*LEEZWORLD SIMPLIFIED FOOTER*/
 
 .site-footer {
   background-color: #1a1a2e;
@@ -1288,9 +1260,7 @@ font-size: 15px;
   padding: 0 20px;
 }
 
-/* ============================================
-   MAIN FOOTER CONTENT
-   ============================================ */
+/* MAIN FOOTER CONTENT*/
 .footer-main {
   padding: 50px 0 40px;
 }
@@ -1408,9 +1378,7 @@ font-size: 15px;
   line-height: 1.5;
 }
 
-/* ============================================
-   FOOTER FEATURES BAR
-   ============================================ */
+/* FOOTER FEATURES BAR*/
 .footer-features {
   background: #232340;
   padding: 25px 0;
@@ -1447,9 +1415,7 @@ font-size: 15px;
   color: #9999aa;
 }
 
-/* ============================================
-   BOTTOM FOOTER
-   ============================================ */
+/* BOTTOM FOOTER */
 .footer-bottom {
   padding: 18px 0;
 }
@@ -1482,7 +1448,7 @@ font-size: 15px;
   color: #ff6600;
 }
 
-/* ============ SEARCH SUGGESTIONS ============ */
+/*  SEARCH SUGGESTIONS  */
 .search-suggestions {
   position: absolute;
   top: 100%;
@@ -1567,9 +1533,9 @@ font-size: 15px;
   color: #088178;
 }
 
-/* ============================================
-   RESPONSIVE STYLES
-   ============================================ */
+
+   /* RESPONSIVE STYLES */
+
 
 @media (max-width: 992px) {
   .footer-main .footer-container {

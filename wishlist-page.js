@@ -1,80 +1,94 @@
-// wishlist-page.js - Handles wishlist page display and interactions
+  
+// WISHLIST-PAGE.JS - FIXED VERSION
+  
+
+// Use the SAME key as cart.js
+const CART_STORAGE_KEY = 'leezworld_cart';
 
 document.addEventListener('DOMContentLoaded', function() {
   // Load and display wishlist items
-  displayWishlistItems();
+  displayWishlistPageItems();
   
   // Setup clear all button
-  setupClearAllButton();
+  setupClearAllBtn();
   
   // Setup modal
-  setupModal();
+  setupConfirmModal();
   
   // Load recommended products
-  loadRecommendedProducts();
+  if (typeof loadRecommendedProducts === 'function') {
+    loadRecommendedProducts();
+  }
+  
+  // Update cart count (call cart.js function)
+  if (typeof updateCartCount === 'function') {
+    updateCartCount();
+  }
 });
 
-// Display all wishlist items
-function displayWishlistItems() {
+  
+// DISPLAY WISHLIST ITEMS
+  
+function displayWishlistPageItems() {
   const wishlistContent = document.getElementById('wishlistContent');
   const emptyWishlist = document.getElementById('emptyWishlist');
   const itemCount = document.getElementById('wishlistItemCount');
   const clearBtn = document.getElementById('clearAllBtn');
+  const recommendedSection = document.getElementById('recommendedSection');
   
   // Get wishlist from localStorage
   const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
   
   // Update item count
-  itemCount.textContent = `(${wishlist.length} ${wishlist.length === 1 ? 'item' : 'items'})`;
+  if (itemCount) {
+    itemCount.textContent = `(${wishlist.length} ${wishlist.length === 1 ? 'item' : 'items'})`;
+  }
   
   // Show/hide appropriate sections
   if (wishlist.length === 0) {
-    wishlistContent.style.display = 'none';
-    emptyWishlist.style.display = 'block';
-    clearBtn.style.display = 'none';
-    document.getElementById('recommendedSection').style.display = 'block';
+    if (wishlistContent) wishlistContent.style.display = 'none';
+    if (emptyWishlist) emptyWishlist.style.display = 'block';
+    if (clearBtn) clearBtn.style.display = 'none';
+    if (recommendedSection) recommendedSection.style.display = 'block';
   } else {
-    wishlistContent.style.display = 'grid';
-    emptyWishlist.style.display = 'none';
-    clearBtn.style.display = 'flex';
-    
-    // Clear existing content
-    wishlistContent.innerHTML = '';
-    
-    // Add each wishlist item
-    wishlist.forEach(function(item) {
-      const itemElement = createWishlistItemElement(item);
-      wishlistContent.appendChild(itemElement);
-    });
-    
-    // Setup remove buttons
-    setupRemoveButtons();
-    
-    // Setup add to cart buttons
-    setupAddToCartButtons();
+    if (wishlistContent) {
+      wishlistContent.style.display = 'grid';
+      wishlistContent.innerHTML = '';
+      
+      // Add each wishlist item
+      wishlist.forEach(function(item) {
+        const itemElement = createWishlistPageItem(item);
+        wishlistContent.appendChild(itemElement);
+      });
+      
+      // Setup buttons
+      setupWishlistRemoveButtons();
+      setupWishlistCartButtons();
+    }
+    if (emptyWishlist) emptyWishlist.style.display = 'none';
+    if (clearBtn) clearBtn.style.display = 'flex';
   }
   
   // Update wishlist count in header
-  updateWishlistCount();
+  updateWishlistHeaderCount();
 }
 
-// Create HTML element for a wishlist item
-function createWishlistItemElement(item) {
+  
+// CREATE WISHLIST ITEM ELEMENT
+  
+function createWishlistPageItem(item) {
   const div = document.createElement('div');
   div.className = 'wishlist-item';
   div.setAttribute('data-id', item.id);
   
   // Calculate discount if old price exists
   let discountBadge = '';
+  let oldPriceHtml = '';
+  
   if (item.oldPrice && item.oldPrice > item.price) {
     const discount = Math.round(((item.oldPrice - item.price) / item.oldPrice) * 100);
     discountBadge = `<span class="discount">-${discount}%</span>`;
-  }
-  
-  // Old price display
-  let oldPriceHtml = '';
-  if (item.oldPrice && item.oldPrice > item.price) {
-    oldPriceHtml = `<span class="old-price">${formatPrice(item.oldPrice)}</span>`;
+    oldPriceHtml = `<span class="old-price">${formatWishlistPagePrice(item.oldPrice)}</span>`;
   }
   
   div.innerHTML = `
@@ -91,7 +105,7 @@ function createWishlistItemElement(item) {
           <a href="${item.link || 'product.html?id=' + item.id}">${item.name}</a>
         </h3>
         <div class="wishlist-item-price">
-          <span class="current-price">${formatPrice(item.price)}</span>
+          <span class="current-price">${formatWishlistPagePrice(item.price)}</span>
           ${oldPriceHtml}
           ${discountBadge}
         </div>
@@ -115,13 +129,30 @@ function createWishlistItemElement(item) {
   return div;
 }
 
-// Format price with Naira symbol
-function formatPrice(price) {
+  
+// FORMAT PRICE (Unique name to avoid conflicts)
+  
+function formatWishlistPagePrice(price) {
   return '₦' + price.toLocaleString();
 }
 
-// Setup remove buttons
-function setupRemoveButtons() {
+  
+// UPDATE WISHLIST COUNT IN HEADER
+  
+function updateWishlistHeaderCount() {
+  const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+  const countElements = document.querySelectorAll('.wishlist-count');
+  
+  countElements.forEach(function(el) {
+    el.textContent = wishlist.length;
+    el.style.display = wishlist.length > 0 ? 'flex' : 'none';
+  });
+}
+
+  
+// SETUP REMOVE BUTTONS
+  
+function setupWishlistRemoveButtons() {
   const removeButtons = document.querySelectorAll('.remove-item-btn');
   
   removeButtons.forEach(function(button) {
@@ -136,20 +167,31 @@ function setupRemoveButtons() {
       
       setTimeout(function() {
         // Remove from localStorage
-        removeFromWishlist(productId);
+        removeItemFromWishlist(productId);
         
         // Re-display items
-        displayWishlistItems();
+        displayWishlistPageItems();
         
         // Show notification
-        showNotification('Removed from wishlist', 'remove');
+        showWishlistPageNotification('Removed from wishlist', 'remove');
       }, 300);
     });
   });
 }
 
-// Setup add to cart buttons
-function setupAddToCartButtons() {
+  
+// REMOVE ITEM FROM WISHLIST
+  
+function removeItemFromWishlist(productId) {
+  let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+  wishlist = wishlist.filter(item => item.id !== productId);
+  localStorage.setItem('wishlist', JSON.stringify(wishlist));
+}
+
+  
+// SETUP ADD TO CART BUTTONS (Unique name!)
+  
+function setupWishlistCartButtons() {
   const addToCartButtons = document.querySelectorAll('.add-to-cart-btn-wishlist');
   
   addToCartButtons.forEach(function(button) {
@@ -157,7 +199,7 @@ function setupAddToCartButtons() {
       const productId = parseInt(button.getAttribute('data-id'));
       
       // Add to cart
-      addToCartFromWishlist(productId);
+      addWishlistItemToCart(productId);
       
       // Change button text temporarily
       const originalText = button.innerHTML;
@@ -172,40 +214,91 @@ function setupAddToCartButtons() {
   });
 }
 
-// Setup clear all button
-function setupClearAllButton() {
-  const clearBtn = document.getElementById('clearAllBtn');
   
-  clearBtn.addEventListener('click', function() {
-    // Show confirmation modal
-    document.getElementById('confirmModal').classList.add('active');
-  });
+// ADD TO CART FROM WISHLIST - FIXED!
+  
+function addWishlistItemToCart(productId) {
+  // Get wishlist
+  const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+  const product = wishlist.find(item => item.id === productId);
+  
+  if (!product) return;
+  
+  // FIXED: Use the SAME key as cart.js!
+  let cart = JSON.parse(localStorage.getItem(CART_STORAGE_KEY)) || [];
+  
+  const existingItem = cart.find(item => item.id === productId);
+  
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    cart.push({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      quantity: 1
+    });
+  }
+  
+  // FIXED: Save with the SAME key as cart.js!
+  localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
+  
+  // Update cart count using cart.js function
+  if (typeof updateCartCount === 'function') {
+    updateCartCount();
+  }
+  
+  // Show notification
+  showWishlistPageNotification('Added to cart!', 'add');
 }
 
-// Setup modal
-function setupModal() {
+  
+// SETUP CLEAR ALL BUTTON
+  
+function setupClearAllBtn() {
+  const clearBtn = document.getElementById('clearAllBtn');
+  
+  if (clearBtn) {
+    clearBtn.addEventListener('click', function() {
+      const modal = document.getElementById('confirmModal');
+      if (modal) modal.classList.add('active');
+    });
+  }
+}
+
+  
+// SETUP CONFIRMATION MODAL
+  
+function setupConfirmModal() {
   const modal = document.getElementById('confirmModal');
+  if (!modal) return;
+  
   const cancelBtn = document.getElementById('cancelClear');
   const confirmBtn = document.getElementById('confirmClear');
   
   // Cancel button
-  cancelBtn.addEventListener('click', function() {
-    modal.classList.remove('active');
-  });
+  if (cancelBtn) {
+    cancelBtn.addEventListener('click', function() {
+      modal.classList.remove('active');
+    });
+  }
   
   // Confirm button
-  confirmBtn.addEventListener('click', function() {
-    modal.classList.remove('active');
-    
-    // Clear wishlist
-    clearWishlist();
-    
-    // Re-display (will show empty state)
-    displayWishlistItems();
-    
-    // Show notification
-    showNotification('Wishlist cleared', 'remove');
-  });
+  if (confirmBtn) {
+    confirmBtn.addEventListener('click', function() {
+      modal.classList.remove('active');
+      
+      // Clear wishlist
+      localStorage.setItem('wishlist', JSON.stringify([]));
+      
+      // Re-display (will show empty state)
+      displayWishlistPageItems();
+      
+      // Show notification
+      showWishlistPageNotification('Wishlist cleared', 'remove');
+    });
+  }
   
   // Click outside modal to close
   modal.addEventListener('click', function(e) {
@@ -213,4 +306,40 @@ function setupModal() {
       modal.classList.remove('active');
     }
   });
+}
+
+  
+// SHOW NOTIFICATION (Unique name!)
+  
+function showWishlistPageNotification(message, type) {
+  // Remove existing notification
+  const existing = document.querySelector('.wishlist-notification');
+  if (existing) existing.remove();
+  
+  // Create notification
+  const notification = document.createElement('div');
+  notification.className = 'wishlist-notification ' + type;
+  notification.innerHTML = `
+    <i class="fa-solid ${type === 'add' ? 'fa-check-circle' : 'fa-heart-crack'}"></i>
+    <span>${message}</span>
+  `;
+  
+  document.body.appendChild(notification);
+  
+  // Animate in
+  setTimeout(() => notification.classList.add('show'), 10);
+  
+  // Remove after delay
+  setTimeout(function() {
+    notification.classList.remove('show');
+    setTimeout(() => notification.remove(), 300);
+  }, 2500);
+}
+
+  
+// LOAD RECOMMENDED PRODUCTS (if needed)
+  
+function loadRecommendedProducts() {
+  // Add your recommended products logic here
+  // This is optional
 }

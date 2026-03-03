@@ -1,6 +1,6 @@
-// ============================================
+ 
 // PRODUCT DATA
-// ============================================
+ 
 const allProducts = [
   // SOFAS & LIVING ROOM
   {
@@ -413,22 +413,22 @@ const allProducts = [
   }
 ];
 
-// ============================================
+ 
 // SETTINGS
-// ============================================
+ 
 const PRODUCTS_PER_PAGE = 12;
 let currentPage = 1;
 
-// ============================================
+ 
 // INITIALIZE PAGE
-// ============================================
+ 
 document.addEventListener('DOMContentLoaded', function() {
   renderProducts();
 });
 
-// ============================================
+ 
 // RENDER PRODUCTS
-// ============================================
+ 
 function renderProducts() {
   const productGrid = document.getElementById('productGrid');
   
@@ -457,9 +457,9 @@ function renderProducts() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ============================================
+ 
 // CREATE PRODUCT CARD
-// ============================================
+ 
 function createProductCard(product) {
   // Create stars HTML
   let starsHtml = '';
@@ -526,9 +526,9 @@ function createProductCard(product) {
   `;
 }
 
-// ============================================
+ 
 // UPDATE RESULTS COUNT
-// ============================================
+ 
 function updateResultsCount(startIndex, endIndex) {
   const resultsCount = document.getElementById('resultsCount');
   const total = allProducts.length;
@@ -537,9 +537,9 @@ function updateResultsCount(startIndex, endIndex) {
   resultsCount.innerHTML = 'Showing <strong>' + (startIndex + 1) + '-' + showing + '</strong> of <strong>' + total + '</strong> products';
 }
 
-// ============================================
+ 
 // RENDER PAGINATION
-// ============================================
+ 
 function renderPagination() {
   const pagination = document.getElementById('pagination');
   const totalPages = Math.ceil(allProducts.length / PRODUCTS_PER_PAGE);
@@ -576,9 +576,9 @@ function renderPagination() {
   pagination.innerHTML = html;
 }
 
-// ============================================
+ 
 // GO TO PAGE
-// ============================================
+ 
 function goToPage(pageNumber) {
   currentPage = pageNumber;
   renderProducts();

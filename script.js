@@ -1,3 +1,36 @@
+const targetDate = new Date("March 7, 2026 23:59:59").getTime();
+
+function countdown(){
+  const now = new Date().getTime();
+  const distance = targetDate - now;
+
+  const day = document.getElementById("days");
+  const hour = document.getElementById("hours");
+  const minute = document.getElementById("minutes");
+  const second = document.getElementById("seconds");
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / ( 1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % ( 1000 * 60)) / 1000);
+
+  (days < 10) ? day.textContent = "0" + days : day.textContent = days;
+  (hours < 10) ? hour.textContent = "0" + hours : hour.textContent = hours;
+  (minutes < 10) ? minute.textContent = "0" + minutes : minute.textContent = minutes;
+  (seconds < 10) ? second.textContent = "0" + seconds : second.textContent = seconds;
+
+  if(distance < 0){
+    day.textContent = "00";
+    hour.textContent = "00";
+    minute.textContent = "00";
+    second.textContent = "00";
+  }
+}
+
+const countdownInterval = setInterval(countdown, 1000);
+
+
+
 // ============ PRODUCT DATABASE ============
 const allProducts = [
   {
@@ -2795,3 +2828,6 @@ const varDelete = document.getElementById("del");
 varDelete.addEventListener("click", (e) => {
   
 })
+
+
+
