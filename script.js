@@ -30,6 +30,48 @@ function countdown(){
 const countdownInterval = setInterval(countdown, 1000);
 
 
+// ==========================================
+// NEWSLETTER SIGNUP - SIMPLE VERSION
+// ==========================================
+
+document.addEventListener('DOMContentLoaded', function() {
+  
+  // Get the button and email input
+  const signUpBtn = document.querySelector('.newsletter button.normal');
+  const emailInput = document.querySelector('.newsletter input[type="email"]');
+  
+  // If button exists, add click event
+  if (signUpBtn) {
+    
+    signUpBtn.addEventListener('click', function(e) {
+      e.preventDefault(); // Stop page from refreshing
+      
+      // Get the email value
+      const email = emailInput.value.trim();
+      
+      // Check if email is empty
+      if (email === '') {
+        alert('⚠️ Please enter your email address');
+        return;
+      }
+      
+      // Check if email has @ and . (simple validation)
+      if (!email.includes('@') || !email.includes('.')) {
+        alert('⚠️ Please enter a valid email address');
+        return;
+      }
+      
+      // Success! Show thank you message
+      alert('🎉 Thank you for subscribing!\n\nYou will receive exclusive deals and updates at:\n' + email);
+      
+      // Clear the input
+      emailInput.value = '';
+      
+    });
+  }
+  
+});
+
 
 // ============ PRODUCT DATABASE ============
 const allProducts = [
