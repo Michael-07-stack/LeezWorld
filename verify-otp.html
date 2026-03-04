@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Verify OTP - LeezWorld</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <link rel="stylesheet" href="main.css"/>
   <style>
     .otp-container {
@@ -170,118 +171,186 @@
     </a>
   </div>
 
-  <script>
-    // Get stored email and display it
-    const email = sessionStorage.getItem('leezworld_email') || 'your email';
-    document.getElementById('userEmail').textContent = email;
-    
-    // OTP input handling - auto move to next input
-    const otpInputs = document.querySelectorAll('.otp-input');
-    
-    otpInputs.forEach(function(input, index) {
-      
-      // Only allow numbers
-      input.addEventListener('input', function() {
-        this.value = this.value.replace(/[^0-9]/g, '');
+<script>
+  // ==========================================
+  // EMAILJS CONFIGURATION
+  // ==========================================
+  const EMAILJS_CONFIG = {
+    publicKey: '7ivOx68DOXXa8lvMH',
+    serviceId: 'service_7179pcq',
+    templateId: 'template_y3tusek'
+  };
+
+  // Initialize EmailJS
+  emailjs.init(EMAILJS_CONFIG.publicKey);
+
+  // ==========================================
+  // GET STORED DATA (from checkout page)
+  // DO NOT generate new OTP here!
+  // ==========================================
+  const userEmail = sessionStorage.getItem('leezworld_email');
+  const storedOTP = sessionStorage.getItem('leezworld_otp');
+  const userName = sessionStorage.getItem('leezworld_name') || 'Customer';
+  
+  // Track if email was already sent
+  let emailSent = sessionStorage.getItem('leezworld_otp_sent') === 'true';
+
+  console.log('📧 Email:', userEmail);
+  console.log('🔐 OTP:', storedOTP);
+  console.log('📨 Email already sent:', emailSent);
+
+  // ==========================================
+  // CHECK IF DATA EXISTS
+  // ==========================================
+  if (!userEmail || !storedOTP) {
+    alert('⚠️ Session expired.\n\nPlease go back to checkout.');
+    window.location.href = 'checkout.html';
+  }
+
+  // Display email on page
+  document.getElementById('userEmail').textContent = userEmail || 'your email';
+
+  // ==========================================
+  // SEND OTP EMAIL FUNCTION
+  // ==========================================
+  function sendOTPEmail(email, otpCode) {
+    if (!email || email === 'your email') {
+      alert('⚠️ Email address is missing.');
+      return;
+    }
+
+    console.log('📤 Sending OTP:', otpCode, 'to:', email);
+
+    const templateParams = {
+      to_email: email,
+      to_name: userName.split(' ')[0],
+      otp_code: otpCode
+    };
+
+    const verifyBtn = document.getElementById('verifyBtn');
+    verifyBtn.disabled = true;
+    verifyBtn.textContent = 'Sending OTP...';
+
+    emailjs.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.templateId, templateParams)
+      .then(function(response) {
+        console.log('✅ Email sent!', response.status);
+        alert('✅ OTP sent to ' + email + '\n\nCheck your inbox.');
         
-        // Move to next input
-        if (this.value && index < otpInputs.length - 1) {
-          otpInputs[index + 1].focus();
-        }
-      });
-      
-      // Handle backspace
-      input.addEventListener('keydown', function(e) {
-        if (e.key === 'Backspace' && !this.value && index > 0) {
-          otpInputs[index - 1].focus();
-        }
-      });
-      
-      // Handle paste
-      input.addEventListener('paste', function(e) {
-        e.preventDefault();
-        const pasteData = e.clipboardData.getData('text').replace(/[^0-9]/g, '');
+        // Mark email as sent
+        sessionStorage.setItem('leezworld_otp_sent', 'true');
+        emailSent = true;
         
-        for (let i = 0; i < pasteData.length && i < otpInputs.length; i++) {
-          otpInputs[i].value = pasteData[i];
-        }
-        
-        // Focus last filled input or last input
-        const focusIndex = Math.min(pasteData.length, otpInputs.length) - 1;
-        if (focusIndex >= 0) {
-          otpInputs[focusIndex].focus();
-        }
+        verifyBtn.disabled = false;
+        verifyBtn.textContent = 'Verify & Place Order';
+      })
+      .catch(function(error) {
+        console.error('❌ Failed:', error);
+        alert('❌ Failed to send OTP.\n\nPlease click "Resend OTP".');
+        verifyBtn.disabled = false;
+        verifyBtn.textContent = 'Verify & Place Order';
       });
+  }
+
+  // ==========================================
+  // SEND OTP ON PAGE LOAD (ONLY ONCE!)
+  // ==========================================
+  window.addEventListener('load', function() {
+    // Only send if not already sent
+    if (!emailSent && userEmail && storedOTP) {
+      console.log('📨 First visit - sending OTP...');
+      sendOTPEmail(userEmail, storedOTP);
+    } else if (emailSent) {
+      console.log('📨 Email already sent - not sending again');
+    }
+  });
+
+  // ==========================================
+  // OTP INPUT HANDLING
+  // ==========================================
+  const otpInputs = document.querySelectorAll('.otp-input');
+  
+  otpInputs.forEach(function(input, index) {
+    input.addEventListener('input', function() {
+      this.value = this.value.replace(/[^0-9]/g, '');
+      if (this.value && index < otpInputs.length - 1) {
+        otpInputs[index + 1].focus();
+      }
     });
     
-    // Verify button click
-    document.getElementById('verifyBtn').addEventListener('click', function() {
-      
-      // Get entered OTP
-      let enteredOTP = '';
-      otpInputs.forEach(function(input) {
-        enteredOTP += input.value;
-      });
-      
-      // Check if all 6 digits entered
-      if (enteredOTP.length !== 6) {
-        document.getElementById('errorMsg').textContent = 'Please enter all 6 digits';
-        document.getElementById('errorMsg').style.display = 'block';
-        return;
-      }
-      
-      // Get stored OTP
-      const correctOTP = sessionStorage.getItem('leezworld_otp');
-      
-      if (enteredOTP === correctOTP) {
-        // OTP is correct - generate tracking ID
-        const trackingId = 'LW' + Date.now().toString().slice(-8);
-        
-        // Store tracking ID
-        sessionStorage.setItem('leezworld_tracking', trackingId);
-        
-        // Clear cart
-        localStorage.setItem('leezworld_cart', JSON.stringify([]));
-        
-        // Clear OTP from session
-        sessionStorage.removeItem('leezworld_otp');
-        
-        // Redirect to success page
-        window.location.href = 'order-success.html';
-        
-      } else {
-        // Wrong OTP
-        document.getElementById('errorMsg').textContent = 'Invalid OTP. Please try again.';
-        document.getElementById('errorMsg').style.display = 'block';
-        
-        // Clear inputs
-        otpInputs.forEach(function(input) {
-          input.value = '';
-        });
-        otpInputs[0].focus();
+    input.addEventListener('keydown', function(e) {
+      if (e.key === 'Backspace' && !this.value && index > 0) {
+        otpInputs[index - 1].focus();
       }
     });
     
-    // Resend OTP
-    document.getElementById('resendLink').addEventListener('click', function(e) {
+    input.addEventListener('paste', function(e) {
       e.preventDefault();
-      
-      // Generate new OTP
-      const newOTP = Math.floor(100000 + Math.random() * 900000).toString();
-      sessionStorage.setItem('leezworld_otp', newOTP);
-      
-      // Show new OTP (for demo)
-      alert('Your new OTP code is: ' + newOTP);
-      
-      // Clear inputs
-      otpInputs.forEach(function(input) {
-        input.value = '';
-      });
-      otpInputs[0].focus();
-      
-      document.getElementById('errorMsg').style.display = 'none';
+      const pasteData = e.clipboardData.getData('text').replace(/[^0-9]/g, '');
+      for (let i = 0; i < pasteData.length && i < otpInputs.length; i++) {
+        otpInputs[i].value = pasteData[i];
+      }
     });
-  </script>
+  });
+
+  // ==========================================
+  // VERIFY BUTTON
+  // ==========================================
+  document.getElementById('verifyBtn').addEventListener('click', function() {
+    let enteredOTP = '';
+    otpInputs.forEach(function(input) {
+      enteredOTP += input.value;
+    });
+    
+    if (enteredOTP.length !== 6) {
+      document.getElementById('errorMsg').textContent = 'Please enter all 6 digits';
+      document.getElementById('errorMsg').style.display = 'block';
+      return;
+    }
+    
+    // Get the current OTP from sessionStorage (in case it was resent)
+    const currentOTP = sessionStorage.getItem('leezworld_otp');
+    
+    if (enteredOTP === currentOTP) {
+      console.log('✅ OTP verified!');
+      
+      const trackingId = 'LW' + Date.now().toString().slice(-8);
+      sessionStorage.setItem('leezworld_tracking', trackingId);
+      
+      // DON'T clear cart here - order-success.html needs it for receipt!
+      // localStorage.setItem('leezworld_cart', JSON.stringify([]));  // ← REMOVE OR COMMENT THIS
+      
+      sessionStorage.removeItem('leezworld_otp');
+      sessionStorage.removeItem('leezworld_otp_sent');
+      
+      window.location.href = 'order-success.html';
+    }else {
+      document.getElementById('errorMsg').textContent = 'Invalid OTP. Please try again.';
+      document.getElementById('errorMsg').style.display = 'block';
+      otpInputs.forEach(function(input) { input.value = ''; });
+      otpInputs[0].focus();
+    }
+  });
+
+  // ==========================================
+  // RESEND OTP (Only place where new OTP is generated!)
+  // ==========================================
+  document.getElementById('resendLink').addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    // Generate NEW OTP only when resending
+    const newOTP = Math.floor(100000 + Math.random() * 900000).toString();
+    sessionStorage.setItem('leezworld_otp', newOTP);
+    sessionStorage.setItem('leezworld_otp_sent', 'false');
+    
+    console.log('🆕 New OTP generated:', newOTP);
+    
+    sendOTPEmail(userEmail, newOTP);
+    
+    otpInputs.forEach(function(input) { input.value = ''; });
+    otpInputs[0].focus();
+    document.getElementById('errorMsg').style.display = 'none';
+  });
+</script>
 
 </body>
 </html>

@@ -1,8 +1,7 @@
   
-// SIMPLE CART FUNCTIONALITY - FIXED VERSION
+// SIMPLE CART FUNCTIONALITY
   
 
-// DON'T initialize cart here - do it in DOMContentLoaded
 let cart = [];
 
   
@@ -322,22 +321,7 @@ window.addEventListener('pageshow', function() {
   }
 });
 
-// Run on visibility change (tab switch)
-document.addEventListener('visibilitychange', function() {
-  if (document.visibilityState === 'visible') {
-    updateCartCount();
-  }
-});
 
-// Sync across tabs
-window.addEventListener('storage', function(e) {
-  if (e.key === 'leezworld_cart') {
-    updateCartCount();
-    if (document.getElementById('cartItems')) {
-      renderCartPage();
-    }
-  }
-});
 
 // Checkout function
 function checkout() {

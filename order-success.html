@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Order Successful - LeezWorld</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <link rel="stylesheet" href="main.css"/>
   <style>
     .success-container {
@@ -155,29 +156,126 @@
     </a>
   </div>
 
-  <script>
-    // Display tracking ID
-    const trackingId = sessionStorage.getItem('leezworld_tracking') || 'LW00000000';
-    document.getElementById('trackingId').textContent = trackingId;
+<script>
+  // ==========================================
+  // EMAILJS CONFIGURATION FOR RECEIPT
+  // ==========================================
+  const EMAILJS_RECEIPT_CONFIG = {
+    publicKey: '7ivOx68DOXXa8lvMH',
+    serviceId: 'service_7179pcq',
+    templateId: 'template_we6x31n'
+  };
+
+  emailjs.init(EMAILJS_RECEIPT_CONFIG.publicKey);
+
+  // ==========================================
+  // SEND ORDER RECEIPT FUNCTION
+  // ==========================================
+  function sendOrderReceipt() {
+    console.log('📧 Preparing to send receipt...');
     
-    // Display email
-    const email = sessionStorage.getItem('leezworld_email') || 'your email';
-    document.getElementById('confirmEmail').textContent = email;
+    const trackingId = sessionStorage.getItem('leezworld_tracking');
+    const customerEmail = sessionStorage.getItem('leezworld_email');
+    const customerName = sessionStorage.getItem('leezworld_name');
+    const customerPhone = sessionStorage.getItem('leezworld_phone');
+    const deliveryAddress = sessionStorage.getItem('leezworld_address');
+    const cart = JSON.parse(localStorage.getItem('leezworld_cart')) || [];
     
-    // Copy tracking ID
-    document.getElementById('copyBtn').addEventListener('click', function() {
-      navigator.clipboard.writeText(trackingId);
-      this.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
-      
-      setTimeout(() => {
-        this.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
-      }, 2000);
+    if (!customerEmail || cart.length === 0) {
+      console.warn('⚠️ Missing data - not sending receipt');
+      return;
+    }
+    
+    const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    const deliveryFee = subtotal >= 150000 ? 0 : 5000;
+    const total = subtotal + deliveryFee;
+    
+    let orderItemsText = '';
+    cart.forEach(function(item, index) {
+      const itemTotal = item.price * item.quantity;
+      orderItemsText += `${index + 1}. ${item.name}\n`;
+      orderItemsText += `   Qty: ${item.quantity} × ₦${item.price.toLocaleString()} = ₦${itemTotal.toLocaleString()}\n\n`;
     });
     
-    // Clear session data
+    const orderDate = new Date().toLocaleDateString('en-NG', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+    
+    const templateParams = {
+      customer_email: customerEmail,
+      customer_name: customerName || 'Customer',
+      customer_phone: customerPhone || 'N/A',
+      delivery_address: deliveryAddress || 'N/A',
+      tracking_id: trackingId,
+      order_date: orderDate,
+      order_items: orderItemsText,
+      subtotal: subtotal.toLocaleString(),
+      delivery_fee: deliveryFee === 0 ? 'FREE' : '₦' + deliveryFee.toLocaleString(),
+      order_total: total.toLocaleString()
+    };
+    
+    emailjs.send(
+      EMAILJS_RECEIPT_CONFIG.serviceId,
+      EMAILJS_RECEIPT_CONFIG.templateId,
+      templateParams
+    )
+    .then(function(response) {
+      console.log('✅ Receipt sent!', response.status);
+      alert('📧 A receipt has been sent to your email:\n\n' + customerEmail);
+    })
+    .catch(function(error) {
+      console.error('❌ Receipt failed:', error);
+      alert('⚠️ Order confirmed!\n\nReceipt email failed.\nContact support for your receipt.');
+    });
+  }
+
+  // ==========================================
+  // YOUR EXISTING CODE BELOW
+  // ==========================================
+  
+  // Display tracking ID
+  const trackingId = sessionStorage.getItem('leezworld_tracking') || 'LW00000000';
+  document.getElementById('trackingId').textContent = trackingId;
+  
+  // Display email
+  const email = sessionStorage.getItem('leezworld_email') || 'your email';
+  document.getElementById('confirmEmail').textContent = email;
+  
+  // Copy tracking ID
+  document.getElementById('copyBtn').addEventListener('click', function() {
+    navigator.clipboard.writeText(trackingId);
+    this.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+    
+    setTimeout(() => {
+      this.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
+    }, 2000);
+  });
+  
+  // Send receipt on page load
+  setTimeout(function() {
+    sendOrderReceipt();
+  }, 500);
+  
+  // Clear cart after receipt is sent
+  setTimeout(function() {
+    localStorage.setItem('leezworld_cart', JSON.stringify([]));
+    console.log('🧹 Cart cleared');
+  }, 2500);
+  
+  // Clear session data
+  setTimeout(function() {
     sessionStorage.removeItem('leezworld_tracking');
     sessionStorage.removeItem('leezworld_email');
-  </script>
+    sessionStorage.removeItem('leezworld_name');
+    sessionStorage.removeItem('leezworld_phone');
+    sessionStorage.removeItem('leezworld_address');
+    console.log('🧹 Session cleared');
+  }, 3000);
+</script>
 
 </body>
 </html>

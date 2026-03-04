@@ -1,24 +1,30 @@
-const targetDate = new Date("March 7, 2026 23:59:59").getTime();
+
+
+// COUNTDOWN FUNCTIONALITY
+const targetDate = new Date("March 7, 2026 23:59:59").getTime(); // sets the target date
 
 function countdown(){
-  const now = new Date().getTime();
-  const distance = targetDate - now;
+  const now = new Date().getTime(); // gets the current time in milliseconds
+  const distance = targetDate - now; // time between now and targetDate in milliseconds
 
   const day = document.getElementById("days");
   const hour = document.getElementById("hours");
   const minute = document.getElementById("minutes");
   const second = document.getElementById("seconds");
 
+  // Calculations for days, hours, minutes and seconds
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
   const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / ( 1000 * 60 * 60));
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((distance % ( 1000 * 60)) / 1000);
 
+  // displaying the contents in the HTML
   (days < 10) ? day.textContent = "0" + days : day.textContent = days;
   (hours < 10) ? hour.textContent = "0" + hours : hour.textContent = hours;
   (minutes < 10) ? minute.textContent = "0" + minutes : minute.textContent = minutes;
   (seconds < 10) ? second.textContent = "0" + seconds : second.textContent = seconds;
 
+  // Sets countdown to 0 when time elapses
   if(distance < 0){
     day.textContent = "00";
     hour.textContent = "00";
@@ -26,11 +32,11 @@ function countdown(){
     second.textContent = "00";
   }
 }
-
+// calls the countdown function
 const countdownInterval = setInterval(countdown, 1000);
 
 
-// NEWSLETTER SIGNUP - SIMPLE VERSION
+// NEWSLETTER SIGNUP 
 
 document.addEventListener('DOMContentLoaded', function() {
   
