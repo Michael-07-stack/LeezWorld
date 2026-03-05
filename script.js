@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// ============ PRODUCT DATABASE ============
+//     PRODUCT DATABASE    
 const allProducts = [
   {
     id: 1,
@@ -2717,31 +2717,13 @@ const allProducts = [
   }
 ];
 
-// ============ SEARCH FUNCTIONALITY ============
+//     SEARCH FUNCTIONALITY    
 
 // Format price with Naira symbol
 function formatPrice(price) {
   return '₦' + price.toLocaleString();
 }
 
-// Generate star rating HTML
-function generateStars(rating) {
-  let stars = '';
-  const fullStars = Math.floor(rating);
-  const hasHalfStar = rating % 1 !== 0;
-  
-  for (let i = 0; i < fullStars; i++) {
-    stars += '<i class="fa-solid fa-star"></i>';
-  }
-  if (hasHalfStar) {
-    stars += '<i class="fa-solid fa-star-half-stroke"></i>';
-  }
-  const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
-  for (let i = 0; i < emptyStars; i++) {
-    stars += '<i class="fa-regular fa-star"></i>';
-  }
-  return stars;
-}
 
 // Search products
 function searchProducts(query) {
@@ -2762,24 +2744,8 @@ function searchProducts(query) {
   });
 }
 
-// Perform search and redirect to results page
-function performSearch(query) {
-  if (!query || query.trim() === '') {
-    alert('Please enter a search term');
-    return;
-  }
-  
-  const results = searchProducts(query);
-  
-  // Store results and query in localStorage
-  localStorage.setItem('searchResults', JSON.stringify(results));
-  localStorage.setItem('searchQuery', query);
-  
-  // Redirect to search results page
-  window.location.href = 'search-results.html';
-}
 
-// ============ SEARCH BAR EVENT LISTENERS ============
+//     SEARCH BAR EVENT LISTENERS    
 document.addEventListener('DOMContentLoaded', function() {
   
   // Hero search bar
@@ -2813,7 +2779,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// ============ SEARCH SUGGESTIONS (AUTOCOMPLETE) ============
+//     SEARCH SUGGESTIONS (AUTOCOMPLETE)    
 function showSearchSuggestions(query) {
   const results = searchProducts(query).slice(0, 5); // Show max 5 suggestions
   

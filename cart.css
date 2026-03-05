@@ -1,6 +1,6 @@
-/* ============================================
+   /*
    CART PAGE STYLES
-   ============================================ */
+      */
 
 .cart-section {
   padding: 40px 20px;
@@ -19,9 +19,9 @@
   margin-bottom: 30px;
 }
 
-/* ============================================
+   /*
    EMPTY CART
-   ============================================ */
+      */
 .empty-cart {
   background: white;
   border-radius: 12px;
@@ -74,18 +74,18 @@
   background: #e65c00;
 }
 
-/* ============================================
+   /*
    CART CONTENT
-   ============================================ */
+      */
 .cart-content {
   display: grid;
   grid-template-columns: 1fr 380px;
   gap: 30px;
 }
 
-/* ============================================
+   /*
    CART ITEMS SECTION
-   ============================================ */
+      */
 .cart-items-section {
   background: white;
   border-radius: 12px;
@@ -104,9 +104,9 @@
   font-size: 14px;
 }
 
-/* ============================================
+   /*
    CART ITEM
-   ============================================ */
+      */
 .cart-item {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr 50px;
@@ -259,9 +259,7 @@
   color: white;
 }
 
-/* ============================================
-   CART SUMMARY
-   ============================================ */
+/* CART SUMMARY */
 .cart-summary {
   background: white;
   border-radius: 12px;
@@ -369,9 +367,9 @@
   color: #28a745;
 }
 
-/* ============================================
+   /*
    RESPONSIVE STYLES
-   ============================================ */
+      */
 
 @media (max-width: 992px) {
   .cart-content {

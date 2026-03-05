@@ -172,9 +172,9 @@
   </div>
 
 <script>
-  // ==========================================
+     
   // EMAILJS CONFIGURATION
-  // ==========================================
+     
   const EMAILJS_CONFIG = {
     publicKey: '7ivOx68DOXXa8lvMH',
     serviceId: 'service_7179pcq',
@@ -184,10 +184,10 @@
   // Initialize EmailJS
   emailjs.init(EMAILJS_CONFIG.publicKey);
 
-  // ==========================================
+     
   // GET STORED DATA (from checkout page)
   // DO NOT generate new OTP here!
-  // ==========================================
+     
   const userEmail = sessionStorage.getItem('leezworld_email');
   const storedOTP = sessionStorage.getItem('leezworld_otp');
   const userName = sessionStorage.getItem('leezworld_name') || 'Customer';
@@ -199,9 +199,9 @@
   console.log('🔐 OTP:', storedOTP);
   console.log('📨 Email already sent:', emailSent);
 
-  // ==========================================
+     
   // CHECK IF DATA EXISTS
-  // ==========================================
+     
   if (!userEmail || !storedOTP) {
     alert('⚠️ Session expired.\n\nPlease go back to checkout.');
     window.location.href = 'checkout.html';
@@ -210,9 +210,9 @@
   // Display email on page
   document.getElementById('userEmail').textContent = userEmail || 'your email';
 
-  // ==========================================
+     
   // SEND OTP EMAIL FUNCTION
-  // ==========================================
+     
   function sendOTPEmail(email, otpCode) {
     if (!email || email === 'your email') {
       alert('⚠️ Email address is missing.');
@@ -251,9 +251,9 @@
       });
   }
 
-  // ==========================================
+     
   // SEND OTP ON PAGE LOAD (ONLY ONCE!)
-  // ==========================================
+     
   window.addEventListener('load', function() {
     // Only send if not already sent
     if (!emailSent && userEmail && storedOTP) {
@@ -264,9 +264,9 @@
     }
   });
 
-  // ==========================================
+     
   // OTP INPUT HANDLING
-  // ==========================================
+     
   const otpInputs = document.querySelectorAll('.otp-input');
   
   otpInputs.forEach(function(input, index) {
@@ -292,9 +292,9 @@
     });
   });
 
-  // ==========================================
+     
   // VERIFY BUTTON
-  // ==========================================
+     
   document.getElementById('verifyBtn').addEventListener('click', function() {
     let enteredOTP = '';
     otpInputs.forEach(function(input) {
@@ -331,9 +331,9 @@
     }
   });
 
-  // ==========================================
+     
   // RESEND OTP (Only place where new OTP is generated!)
-  // ==========================================
+     
   document.getElementById('resendLink').addEventListener('click', function(e) {
     e.preventDefault();
     

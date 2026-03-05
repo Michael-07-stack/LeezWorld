@@ -1,13 +1,13 @@
-// ==========================================
+   
 // SHOP.JS - 75 PRODUCTS (15 PER PAGE = 5 PAGES)
-// ==========================================
+   
 
 // PRODUCT DATA - CURATED 75 PRODUCTS
 const allProducts = [
   
-  // ==========================================
+     
   // SOFAS & LIVING ROOM (12 Products)
-  // ==========================================
+     
   {
     id: 1,
     name: "Modern Chesterfield 3-Seater Sofa – Faux Leather",
@@ -153,9 +153,9 @@ const allProducts = [
     discount: 30
   },
 
-  // ==========================================
+     
   // DINING SETS (12 Products)
-  // ==========================================
+     
   {
     id: 3,
     name: "9-Piece Extendable Dining Table Set – Solid Wood",
@@ -301,9 +301,9 @@ const allProducts = [
     discount: 28
   },
 
-  // ==========================================
+     
   // BEDS & BEDROOM (12 Products)
-  // ==========================================
+     
   {
     id: 4,
     name: "Queen Size Upholstered Platform Bed – Beige",
@@ -449,9 +449,9 @@ const allProducts = [
     discount: 22
   },
 
-  // ==========================================
+     
   // WARDROBES (12 Products)
-  // ==========================================
+     
   {
     id: 5,
     name: "4-Door Sliding Wardrobe with Mirror – Walnut",
@@ -597,9 +597,9 @@ const allProducts = [
     discount: 28
   },
 
-  // ==========================================
+     
   // INTERIOR DECOR (10 Products)
-  // ==========================================
+     
   {
     id: 6,
     name: "Modern Glass Top Coffee Table with Storage",
@@ -721,9 +721,9 @@ const allProducts = [
     discount: null
   },
 
-  // ==========================================
+     
   // DOORS & WINDOWS (9 Products)
-  // ==========================================
+     
   {
     id: 86,
     name: "Modern Minimalist Entry Door – Matte Black Steel",
@@ -833,9 +833,9 @@ const allProducts = [
     discount: 25
   },
 
-  // ==========================================
+     
   // OFFICE FURNITURE (8 Products)
-  // ==========================================
+     
   {
     id: 8,
     name: "Ergonomic Home Office Chair – Mesh Back",
@@ -934,22 +934,22 @@ const allProducts = [
   }
 ];
 
-// ==========================================
+   
 // SETTINGS
-// ==========================================
+   
 const PRODUCTS_PER_PAGE = 15;
 let currentPage = 1;
 
-// ==========================================
+   
 // INITIALIZE PAGE
-// ==========================================
+   
 document.addEventListener('DOMContentLoaded', function() {
   renderProducts();
 });
 
-// ==========================================
+   
 // RENDER PRODUCTS
-// ==========================================
+   
 function renderProducts() {
   const productGrid = document.getElementById('productGrid');
   
@@ -978,9 +978,9 @@ function renderProducts() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// ==========================================
+   
 // CREATE PRODUCT CARD
-// ==========================================
+   
 function createProductCard(product) {
   // Create stars HTML
   let starsHtml = '';
@@ -1047,9 +1047,9 @@ function createProductCard(product) {
   `;
 }
 
-// ==========================================
+   
 // UPDATE RESULTS COUNT
-// ==========================================
+   
 function updateResultsCount(startIndex, endIndex) {
   const resultsCount = document.getElementById('resultsCount');
   const total = allProducts.length;
@@ -1058,9 +1058,9 @@ function updateResultsCount(startIndex, endIndex) {
   resultsCount.innerHTML = 'Showing <strong>' + (startIndex + 1) + '-' + showing + '</strong> of <strong>' + total + '</strong> products';
 }
 
-// ==========================================
+   
 // RENDER PAGINATION
-// ==========================================
+   
 function renderPagination() {
   const pagination = document.getElementById('pagination');
   const totalPages = Math.ceil(allProducts.length / PRODUCTS_PER_PAGE);
@@ -1097,9 +1097,9 @@ function renderPagination() {
   pagination.innerHTML = html;
 }
 
-// ==========================================
+   
 // GO TO PAGE
-// ==========================================
+   
 function goToPage(pageNumber) {
   currentPage = pageNumber;
   renderProducts();
