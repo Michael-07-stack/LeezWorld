@@ -1,5 +1,5 @@
   
-// WISHLIST-PAGE.JS - FIXED VERSION
+
   
 
 // Use the SAME key as cart.js
